@@ -12,7 +12,9 @@ export default function Film() {
 
         <p className="text-[18px] mt-5 text-center">Simak video profil Desa Senaru dan Desa Bayan berikut ini: </p>
 
-        <div className="w-[90%] max-w-[450px] lg:max-w-[700px] aspect-[700/368] bg-gradient-to-br from-green-2 from-30% to-yellow-1 rounded-[25px] mt-[60px]" />
+        <div className="w-[90%] max-w-[450px] lg:max-w-[700px] aspect-[700/368] bg-gradient-to-br from-green-2 from-30% to-yellow-1 rounded-[25px] mt-[60px] flex justify-center items-center text-white text-[30px] font-semibold">
+          Segera Hadir
+        </div>
       </section>
       <SideDeco position={true} />
       <SideDeco position={false} />
