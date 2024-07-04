@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 export default function Navbar() {
   const router = useRouter();
   return(
-    <nav className="fixed top-0 py-5 px-[20px] md:px-[50px] lg:px-[100px] flex w-full justify-between text-white items-center">
+    <nav data-aos="fade-down" data-aos-delay="400" className="fixed top-0 py-5 px-[20px] md:px-[50px] lg:px-[100px] flex w-full justify-between text-white items-center">
       <Link href="/">
       <div className="flex font-medium text-white items-center gap-2">
         <Image src={LogoWhite} alt="" className="size-[48px]" />
