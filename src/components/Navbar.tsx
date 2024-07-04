@@ -15,7 +15,7 @@ export default function Navbar() {
   }, [scrollPosition])
 
   return(
-    <nav data-aos="fade-down" data-aos-delay="0" className={"fixed top-0 py-5 px-[20px] md:px-[50px] lg:px-[100px] flex w-full justify-between text-white items-center z-[1]"} style={{background: `rgba(48,135,129,${scrollPerVH > 0.9 ? 1 : scrollPerVH})`}}>
+    <nav data-aos="fade-down" data-aos-delay="0" className={"fixed top-0 py-5 px-[20px] md:px-[50px] lg:px-[100px] flex w-full justify-between text-white items-center z-[1]"} style={{background: `rgba(24,64,15,${scrollPerVH > 0.9 ? 1 : scrollPerVH})`}}>
       <Link href="/">
       <div className="flex font-medium text-white items-center gap-2">
         <Image src={LogoWhite} alt="" className="size-[48px]" />
