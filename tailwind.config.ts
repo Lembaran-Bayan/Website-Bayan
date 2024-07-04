@@ -10,6 +10,15 @@ const config: Config = {
     extend: {
       fontFamily: {
         jakarta: "Plus Jakarta Sans"
+      },
+      colors: {
+        green: {
+          1: "#18400F",
+          2: "#308681"
+        },
+        yellow: {
+          1: "#FAFF04"
+        }
       }
     },
   },
