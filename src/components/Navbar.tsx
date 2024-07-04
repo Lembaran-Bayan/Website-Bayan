@@ -1,12 +1,21 @@
 import LogoWhite from "@/../public/LogoWhite.png";
+import useScrollPosition from "@/hooks/useScrollPosition";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const router = useRouter();
+  const scrollPosition = useScrollPosition();
+  const [scrollPerVH, setScrollPerVH] = useState<number>(0);
+
+  useEffect(() => {
+    setScrollPerVH(scrollPosition / window.innerHeight)
+  }, [scrollPosition])
+
   return(
-    <nav data-aos="fade-down" data-aos-delay="400" className="fixed top-0 py-5 px-[20px] md:px-[50px] lg:px-[100px] flex w-full justify-between text-white items-center">
+    <nav data-aos="fade-down" data-aos-delay="0" className={"fixed top-0 py-5 px-[20px] md:px-[50px] lg:px-[100px] flex w-full justify-between text-white items-center z-[1]"} style={{background: `rgba(48,135,129,${scrollPerVH > 0.9 ? 1 : scrollPerVH})`}}>
       <Link href="/">
       <div className="flex font-medium text-white items-center gap-2">
         <Image src={LogoWhite} alt="" className="size-[48px]" />
