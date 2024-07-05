@@ -64,7 +64,7 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <div className="relative flex items-center">
+      <div className="relative flex items-center lg:hidden">
         <button
           className="w-[25px] lg:hidden"
           onClick={() => {
