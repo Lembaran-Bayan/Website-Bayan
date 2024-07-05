@@ -9,7 +9,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Film />
-      <Desa />
+      {/* <Desa /> */}
     </main>
   );
 }
