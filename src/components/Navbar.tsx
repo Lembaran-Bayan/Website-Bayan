@@ -64,19 +64,75 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <button
-        className="w-[25px]"
-        onClick={() => {
-          setIsMenuOpen(!isMenuOpen);
-        }}
-      >
-        <div className="flex flex-col gap-1.5 lg:hidden w-[25px] justify-center items-center relative">
-          <div className={"bg-white h-[3px] rounded-full w-full transition " + (isMenuOpen ? "scale-0" : "delay-200")} />
-          <div className={"bg-white h-[3px] rounded-full w-full transition " + (isMenuOpen ? "rotate-45 delay-200" : "")} />
-          <div className={"bg-white h-[3px] rounded-full w-full transition absolute " + (isMenuOpen ? "-rotate-45 delay-200" : "")} />
-          <div className={"bg-white h-[3px] rounded-full w-full transition origin-left " + (isMenuOpen ? "scale-0" : "delay-200")} />
+      <div className="relative flex items-center">
+        <button
+          className="w-[25px] lg:hidden"
+          onClick={() => {
+            setIsMenuOpen(!isMenuOpen);
+          }}
+        >
+          <div className="flex flex-col gap-1.5 w-[25px] justify-center items-center relative">
+            <div
+              className={"bg-white h-[3px] rounded-full w-full transition " + (isMenuOpen ? "scale-0" : "delay-200")}
+            />
+            <div
+              className={"bg-white h-[3px] rounded-full w-full transition " + (isMenuOpen ? "rotate-45 delay-200" : "")}
+            />
+            <div
+              className={
+                "bg-white h-[3px] rounded-full w-full transition absolute " + (isMenuOpen ? "-rotate-45 delay-200" : "")
+              }
+            />
+            <div
+              className={
+                "bg-white h-[3px] rounded-full w-full transition origin-left " + (isMenuOpen ? "scale-0" : "delay-200")
+              }
+            />
+          </div>
+        </button>
+
+        <div
+          className={
+            "absolute top-[calc(100%+40px)] right-0 bg-white font-medium text-green-1 grid px-8 py-5 transition-[grid-template-rows,padding,color,background-color] delay-200 " +
+            (isMenuOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr] !py-0") +
+            (scrollPerVH > 0.6 ? " bg-green-1 text-white" : "")
+          }
+        >
+          <div className="overflow-hidden flex flex-col gap-2 w-max">
+            <Link
+              className="block w-fit text-[14px] md:text-[18px] after:block after:w-full after:h-[2px] after:bg-green-1"
+              href="/"
+            >
+              Beranda
+            </Link>
+
+            <Link
+              className="block w-fit text-[14px] md:text-[18px] after:block after:w-full after:h-[2px] after:bg-green-1 after:scale-0 hover:after:scale-[100%] after:transition after:duration-200 after:origin-left"
+              href="/coming-soon"
+            >
+              Profil
+            </Link>
+            <Link
+              className="block w-fit text-[14`px] md:text-[18px] after:block after:w-full after:h-[2px] after:bg-green-1 after:scale-0 hover:after:scale-[100%] after:transition after:duration-200 after:origin-left"
+              href="/coming-soon"
+            >
+              Wisata dan Budaya
+            </Link>
+            <Link
+              className="block w-fit text-[14`px] md:text-[18px] after:block after:w-full after:h-[2px] after:bg-green-1 after:scale-0 hover:after:scale-[100%] after:transition after:duration-200 after:origin-left"
+              href="/coming-soon"
+            >
+              Kegiatan
+            </Link>
+            <Link
+              className="block w-fit text-[14px] md:text-[18px] after:block after:w-full after:h-[2px] after:bg-green-1 after:scale-0 hover:after:scale-[100%] after:transition after:duration-200 after:origin-left"
+              href="/coming-soon"
+            >
+              Galeri
+            </Link>
+          </div>
         </div>
-      </button>
+      </div>
     </nav>
   );
 }
