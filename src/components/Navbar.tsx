@@ -9,6 +9,7 @@ export default function Navbar() {
   const router = useRouter();
   const scrollPosition = useScrollPosition();
   const [scrollPerVH, setScrollPerVH] = useState<number>(0);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   useEffect(() => {
     setScrollPerVH(scrollPosition / window.innerHeight);
@@ -19,7 +20,7 @@ export default function Navbar() {
       data-aos="fade-down"
       data-aos-delay="0"
       className={
-        "fixed top-0 py-5 px-[20px] md:px-[50px] lg:px-[100px] flex w-full justify-between text-white items-center z-[99]"
+        "fixed top-0 py-3 md:py-5 px-[20px] md:px-[50px] lg:px-[100px] flex w-full justify-between text-white items-center z-[99]"
       }
       style={{ background: `rgba(24,64,15,${scrollPerVH > 0.9 ? 1 : Number(scrollPerVH.toFixed(2))})` }}
     >
@@ -30,11 +31,12 @@ export default function Navbar() {
             alt=""
             className="size-[48px]"
           />
-          <h1 className="text-shadow-2 text-[25px]">
+          <h1 className="text-shadow-2 text-[18px] md:text-[25px]">
             Lembaran <span className="font-bold">Bayan</span>
           </h1>
         </div>
       </Link>
+
       <div className="text-shadow-2 lg:flex gap-7 hidden">
         <Link
           href="/"
@@ -61,6 +63,20 @@ export default function Navbar() {
           Kegiatan
         </Link>
       </div>
+
+      <button
+        className="w-[25px]"
+        onClick={() => {
+          setIsMenuOpen(!isMenuOpen);
+        }}
+      >
+        <div className="flex flex-col gap-1.5 lg:hidden w-[25px] justify-center items-center relative">
+          <div className={"bg-white h-[3px] rounded-full w-full transition " + (isMenuOpen ? "scale-0" : "delay-200")} />
+          <div className={"bg-white h-[3px] rounded-full w-full transition " + (isMenuOpen ? "rotate-45 delay-200" : "")} />
+          <div className={"bg-white h-[3px] rounded-full w-full transition absolute " + (isMenuOpen ? "-rotate-45 delay-200" : "")} />
+          <div className={"bg-white h-[3px] rounded-full w-full transition origin-left " + (isMenuOpen ? "scale-0" : "delay-200")} />
+        </div>
+      </button>
     </nav>
   );
 }
