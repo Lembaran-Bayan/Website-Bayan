@@ -93,7 +93,7 @@ export default function Navbar() {
 
         <div
           className={
-            "absolute top-[calc(100%+40px)] right-0 bg-transparent font-medium text-white //text-green-1 grid px-8 py-5 transition-[grid-template-rows,padding,color,background-color] delay-200 " +
+            "absolute top-[calc(100%+40px)] right-0 bg-transparent font-medium text-white //text-green-1 grid px-8 py-5 transition-[grid-template-rows,padding,color] " +
             (isMenuOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr] !py-0") +
             (scrollPerVH > 0.6 ? " //bg-green-1 text-white" : "")
           }
