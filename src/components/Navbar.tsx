@@ -70,6 +70,7 @@ export default function Navbar() {
           onClick={() => {
             setIsMenuOpen(!isMenuOpen);
           }}
+          aria-label="Toggle Navigation Menu"
         >
           <div className="flex flex-col gap-1.5 w-[25px] justify-center items-center relative">
             <div
