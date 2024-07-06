@@ -16,6 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
     <Head>
       <link rel="icon" href="/Logo.png" />
+      <link rel="preload" href="/Rinjani.webp" as="image"></link>
       <title>Lembaran Bayan</title>
     </Head>
     <Component {...pageProps} />
