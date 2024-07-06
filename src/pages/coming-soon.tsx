@@ -6,7 +6,7 @@ import Rinjani from "@/../public/Rinjani.webp"
 export default function ComingSoon() {
   return (
     <main className="min-h-screen bg-cover bg-center flex flex-col justify-center items-center font-jakarta">
-      <div className="absolute w-full h-full">
+      <div className="absolute w-full h-screen">
         <Image
           priority
           src={Rinjani}
