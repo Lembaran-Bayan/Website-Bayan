@@ -17,8 +17,8 @@ export default function Navbar() {
 
   return (
     <nav
-      data-aos="fade-down"
-      data-aos-delay="0"
+      // data-aos="fade-down"
+      // data-aos-delay="0"
       className={
         "fixed top-0 py-3 md:py-5 px-[20px] md:px-[50px] lg:px-[100px] flex w-full justify-between text-white items-center z-[99]"
       }
