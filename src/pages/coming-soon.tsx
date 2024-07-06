@@ -1,10 +1,19 @@
 import Link from "next/link";
 import Logo from "@/../public/Logo.png";
 import Image from "next/image";
+import Rinjani from "@/../public/Rinjani.webp"
 
 export default function ComingSoon() {
   return (
-    <main className="min-h-screen bg-[url('/Rinjani.png')] bg-cover bg-center flex flex-col justify-center items-center font-jakarta">
+    <main className="min-h-screen bg-cover bg-center flex flex-col justify-center items-center font-jakarta">
+      <div className="absolute w-full h-full">
+        <Image
+          priority
+          src={Rinjani}
+          alt=""
+          className="object-cover w-full h-full"
+        />
+      </div>
       <section data-aos="fade-up" className="bg-gradient-to-br from-white/40 to-white/20 flex flex-col justify-center items-center px-10 py-6 rounded-[15px] outline outline-white outline-2">
         <Image
           src={Logo}
