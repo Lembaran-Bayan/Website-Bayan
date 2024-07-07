@@ -1,5 +1,7 @@
 import { useState } from "react";
 import SideDeco from "./SideDeco";
+import Image from "next/image";
+import KluMap from "@/../public/KluMap.svg";
 
 export default function Desa() {
   const [activeVillage, setActiveVillage] = useState<null | "bayan" | "senaru">(null);
@@ -11,7 +13,7 @@ export default function Desa() {
           Kenali Desa <strong>Bayan</strong> dan Desa <strong>Senaru</strong>
         </h1>
 
-        <div className="flex w-fit px-[200px] justify-center items-center overflow-visible gap-10 py-[150px] bg-gradient-to-br from-green-2 to-yellow-1 rounded-[25px]">
+        {/* <div className="flex w-fit px-[200px] justify-center items-center overflow-visible gap-10 py-[150px] bg-gradient-to-br from-green-2 to-yellow-1 rounded-[25px]">
           <button
             onClick={() => setActiveVillage("senaru")}
             className={
@@ -30,6 +32,10 @@ export default function Desa() {
           >
             Bayan
           </button>
+        </div> */}
+
+        <div>
+          <Image src={KluMap} alt="Peta Kecamatan Lombok Utara" />
         </div>
 
         <div className="mt-[30px] w-[90%] max-w-[730px]">
