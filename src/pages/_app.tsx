@@ -4,6 +4,7 @@ import Head from "next/head";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Navbar from "@/components/Navbar";
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -13,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <>
+    <main className="font-jakarta">
       <Head>
         <link
           rel="icon"
@@ -30,8 +31,9 @@ export default function App({ Component, pageProps }: AppProps) {
           content="Temukan budaya yang kaya, pemandangan menakjubkan, dan semangat komunitas di Kecamatan Bayan, Kabupaten Lombok Utara, Provinsi Lombok Utara. Jelajahi atraksi lokal, acara, dan layanan yang disediakan untuk penduduk dan pengunjung. Tetap terinformasi dan terhubung dengan berita dan pembaruan terbaru dari komunitas kami."
         />
       </Head>
+      <Navbar />
       <Component {...pageProps} />
-    </>
+    </main>
   );
 }
 

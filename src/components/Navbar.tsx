@@ -15,6 +15,10 @@ export default function Navbar() {
     setScrollPerVH(scrollPosition / window.innerHeight);
   }, [scrollPosition]);
 
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [router])
+
   return (
     <nav
       // data-aos="fade-down"
@@ -40,27 +44,48 @@ export default function Navbar() {
       <div className="text-shadow-2 lg:flex gap-7 hidden">
         <Link
           href="/"
-          className="after:w-full after:h-[3px] after:bg-white after:absolute relative after:top-[100%] after:left-0 //after:shadow-[0_0_5px_#000]"
+          className={
+            "after:h-[3px] after:bg-white after:absolute relative after:top-[100%] after:left-0 after:w-[0px] hover:after:w-full after:transition-width after:duration-200 " +
+            (router.pathname === "/" ? "after:w-full" : "after:w-0")
+          }
         >
           Beranda
         </Link>
         <Link
-          href="/coming-soon"
-          className="after:h-[3px] after:bg-white after:absolute relative after:top-[100%] after:left-0 after:w-[0px] hover:after:w-full after:transition-width after:duration-200"
+          href="/profile"
+          className={
+            "after:h-[3px] after:bg-white after:absolute relative after:top-[100%] after:left-0 after:w-[0px] hover:after:w-full after:transition-width after:duration-200 " +
+            (router.pathname === "/profile" ? "after:w-full" : "after:w-0")
+          }
         >
           Profil
         </Link>
         <Link
-          href="/coming-soon"
-          className="after:h-[3px] after:bg-white after:absolute relative after:top-[100%] after:left-0 after:w-[0px] hover:after:w-full after:transition-width after:duration-200"
+          href="/wisata-dan-budaya"
+          className={
+            "after:h-[3px] after:bg-white after:absolute relative after:top-[100%] after:left-0 after:w-[0px] hover:after:w-full after:transition-width after:duration-200 " +
+            (router.pathname === "/wisata-dan-budaya" ? "after:w-full" : "after:w-0")
+          }
         >
           Wisata dan Budaya
         </Link>
         <Link
-          href="/coming-soon"
-          className="after:h-[3px] after:bg-white after:absolute relative after:top-[100%] after:left-0 after:w-[0px] hover:after:w-full after:transition-width after:duration-200"
+          href="/kegiatan"
+          className={
+            "after:h-[3px] after:bg-white after:absolute relative after:top-[100%] after:left-0 after:w-[0px] hover:after:w-full after:transition-width after:duration-200 " +
+            (router.pathname === "/kegiatan" ? "after:w-full" : "after:w-0")
+          }
         >
           Kegiatan
+        </Link>
+        <Link
+          href="/galeri"
+          className={
+            "after:h-[3px] after:bg-white after:absolute relative after:top-[100%] after:left-0 after:w-[0px] hover:after:w-full after:transition-width after:duration-200 " +
+            (router.pathname === "/galeri" ? "after:w-full" : "after:w-0")
+          }
+        >
+          Galeri
         </Link>
       </div>
 
