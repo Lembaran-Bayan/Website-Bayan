@@ -102,31 +102,31 @@ export default function Navbar() {
         >
           <div className="overflow-hidden flex flex-col gap-2 w-max">
             <Link
-              className="block w-fit text-[14px] md:text-[18px] after:block after:w-full after:h-[2px] after:bg-white text-shadow-2"
+              className="block w-fit text-[14px] md:text-[18px] after:block after:w-full after:h-[3px] after:bg-white text-shadow-2"
               href="/"
             >
               Beranda
             </Link>
             <Link
-              className="block w-fit text-[14px] md:text-[18px] after:block after:w-full after:h-[2px] after:bg-white text-shadow-2 after:scale-x-0 hover:after:scale-x-[100%] after:transition after:duration-300 after:origin-left"
+              className="relative block w-fit text-[14px] md:text-[18px] after:block after:w-0 after:h-[3px] after:bg-white text-shadow-2 hover:after:w-full after:transition-width after:duration-200"
               href="/coming-soon"
             >
               Profil
             </Link>
             <Link
-              className="block w-fit text-[14`px] md:text-[18px] after:block after:w-full after:h-[2px] after:bg-white text-shadow-2 after:scale-x-0 hover:after:scale-x-[100%] after:transition after:duration-300 after:origin-left"
+              className="relative block w-fit text-[14px] md:text-[18px] after:block after:w-0 after:h-[3px] after:bg-white text-shadow-2 hover:after:w-full after:transition-width after:duration-200"
               href="/coming-soon"
             >
               Wisata dan Budaya
             </Link>
             <Link
-              className="block w-fit text-[14`px] md:text-[18px] after:block after:w-full after:h-[2px] after:bg-white text-shadow-2 after:scale-x-0 hover:after:scale-x-[100%] after:transition after:duration-300 after:origin-left"
+              className="relative block w-fit text-[14px] md:text-[18px] after:block after:w-0 after:h-[3px] after:bg-white text-shadow-2 hover:after:w-full after:transition-width after:duration-200"
               href="/coming-soon"
             >
               Kegiatan
             </Link>
             <Link
-              className="block w-fit text-[14px] md:text-[18px] after:block after:w-full after:h-[2px] after:bg-white text-shadow-2 after:scale-x-0 hover:after:scale-x-[100%] after:transition after:duration-300 after:origin-left"
+              className="relative block w-fit text-[14px] md:text-[18px] after:block after:w-0 after:h-[3px] after:bg-white text-shadow-2 hover:after:w-full after:transition-width after:duration-200"
               href="/coming-soon"
             >
               Galeri
