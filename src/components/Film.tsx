@@ -3,7 +3,7 @@ import SideDeco from "./SideDeco";
 
 export default function Film() {
   return (
-    <main className="min-h-screen bg-white flex flex-col justify-center items-center relative overflow-x-hidden w-full">
+    <main className="bg-white flex flex-col justify-center items-center relative overflow-x-hidden w-full py-20 overflow-y-hidden">
       <section className="z-[1] flex flex-col justify-center items-center w-full">
         <div data-aos="fade-up" className="flex items-center justify-center gap-[11px]">
           <h1 className="text-green-1 font-semibold text-[25px] md:text-[30px]">Film Dokumenter</h1>

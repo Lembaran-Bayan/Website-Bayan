@@ -8,7 +8,7 @@ import SideDeco from "./SideDeco";
 export default function Footer() {
   return (
     <main>
-      <section className="pt-10 pb-[55px] flex flex-col justify-center items-center relative overflow-hidden">
+      <section className="pt-5 sm:pt-10 pb-[55px] flex flex-col justify-center items-center relative overflow-hidden">
         <h1
           data-aos="fade-up"
           className="text-center text-[24px] sm:text-[27px]"
