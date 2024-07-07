@@ -127,32 +127,32 @@ export default function Navbar() {
         >
           <div className="overflow-hidden flex flex-col gap-2 w-max">
             <Link
-              className="block w-fit text-[14px] md:text-[18px] after:block after:w-full after:h-[3px] after:bg-white text-shadow-2"
+              className={"relative block w-fit text-[14px] md:text-[18px] after:block after:h-[3px] after:bg-white text-shadow-2 hover:after:w-full after:transition-width after:duration-200 " + (router.pathname === "/" ? "after:w-full" : "after:w-0")}
               href="/"
             >
               Beranda
             </Link>
             <Link
-              className="relative block w-fit text-[14px] md:text-[18px] after:block after:w-0 after:h-[3px] after:bg-white text-shadow-2 hover:after:w-full after:transition-width after:duration-200"
-              href="/coming-soon"
+              className={"relative block w-fit text-[14px] md:text-[18px] after:block after:h-[3px] after:bg-white text-shadow-2 hover:after:w-full after:transition-width after:duration-200 " + (router.pathname === "/profile" ? "after:w-full" : "after:w-0")}
+              href="/profile"
             >
               Profil
             </Link>
             <Link
-              className="relative block w-fit text-[14px] md:text-[18px] after:block after:w-0 after:h-[3px] after:bg-white text-shadow-2 hover:after:w-full after:transition-width after:duration-200"
-              href="/coming-soon"
+              className={"relative block w-fit text-[14px] md:text-[18px] after:block after:h-[3px] after:bg-white text-shadow-2 hover:after:w-full after:transition-width after:duration-200 " + (router.pathname === "/wisata-dan-budaya" ? "after:w-full" : "after:w-0")}
+              href="/wisata-dan-budaya"
             >
               Wisata dan Budaya
             </Link>
             <Link
-              className="relative block w-fit text-[14px] md:text-[18px] after:block after:w-0 after:h-[3px] after:bg-white text-shadow-2 hover:after:w-full after:transition-width after:duration-200"
-              href="/coming-soon"
+              className={"relative block w-fit text-[14px] md:text-[18px] after:block after:h-[3px] after:bg-white text-shadow-2 hover:after:w-full after:transition-width after:duration-200 " + (router.pathname === "/kegiatan" ? "after:w-full" : "after:w-0")}
+              href="/kegiatan"
             >
               Kegiatan
             </Link>
             <Link
-              className="relative block w-fit text-[14px] md:text-[18px] after:block after:w-0 after:h-[3px] after:bg-white text-shadow-2 hover:after:w-full after:transition-width after:duration-200"
-              href="/coming-soon"
+              className={"relative block w-fit text-[14px] md:text-[18px] after:block after:h-[3px] after:bg-white text-shadow-2 hover:after:w-full after:transition-width after:duration-200 " + (router.pathname === "/galeri" ? "after:w-full" : "after:w-0")}
+              href="/galeri"
             >
               Galeri
             </Link>
