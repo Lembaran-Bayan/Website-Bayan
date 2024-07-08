@@ -12,7 +12,7 @@ export default function Film() {
 
         <p data-aos="fade-up" data-aos-delay="400" className="text-[18px] mt-5 text-center px-5">Simak video profil Desa Senaru dan Desa Bayan berikut ini: </p>
 
-        <div data-aos="fade-up" data-aos-delay="600" className="w-[90%] md:max-w-[700px] aspect-[700/368] bg-gradient-to-br from-green-2 from-20% to-yellow-1 rounded-[25px] mt-[60px] flex justify-center items-center text-white text-[24px] md:text-[30px] font-semibold text-shadow-1">
+        <div data-aos="fade-up" data-aos-delay="600" className="w-[90%] md:max-w-[700px] aspect-[700/368] bg-gradient-to-br from-green-2 from-20% to-yellow-1 rounded-[40px] mt-[60px] flex justify-center items-center text-white text-[24px] md:text-[30px] font-semibold text-shadow-1">
           Segera Hadir
         </div>
       </section>
