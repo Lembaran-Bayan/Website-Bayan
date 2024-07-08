@@ -80,13 +80,13 @@ export default function Navbar() {
           Kegiatan
         </Link>
         <Link
-          href="/galeri"
+          href="/umkm"
           className={
             "after:h-[3px] after:bg-white after:absolute relative after:top-[100%] after:left-0 after:w-[0px] hover:after:w-full after:transition-width after:duration-200 " +
-            (router.pathname === "/galeri" ? "after:w-full" : "after:w-0")
+            (router.pathname === "/umkm" ? "after:w-full" : "after:w-0")
           }
         >
-          Galeri
+          UMKM
         </Link>
       </div>
 
@@ -152,10 +152,10 @@ export default function Navbar() {
               Kegiatan
             </Link>
             <Link
-              className={"relative block w-fit text-[14px] md:text-[18px] after:block after:h-[3px] after:bg-white text-shadow-2 hover:after:w-full after:transition-width after:duration-200 " + (router.pathname === "/galeri" ? "after:w-full" : "after:w-0")}
-              href="/galeri"
+              className={"relative block w-fit text-[14px] md:text-[18px] after:block after:h-[3px] after:bg-white text-shadow-2 hover:after:w-full after:transition-width after:duration-200 " + (router.pathname === "/umkm" ? "after:w-full" : "after:w-0")}
+              href="/umkm"
             >
-              Galeri
+              UMKM
             </Link>
           </div>
         </div>
