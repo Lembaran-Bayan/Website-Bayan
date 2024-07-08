@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>Lembaran Bayan</title>
         <meta
           name="description"
-          content="Temukan budaya yang kaya, pemandangan menakjubkan, dan semangat komunitas di Kecamatan Bayan, Kabupaten Lombok Utara, Provinsi Lombok Utara. Jelajahi atraksi lokal, acara, dan layanan yang disediakan untuk penduduk dan pengunjung. Tetap terinformasi dan terhubung dengan berita dan pembaruan terbaru dari komunitas kami."
+          content="Website Kecamatan Bayan oleh tim KKN PPM UGM Lembaran Bayan 2024. Temukan budaya yang kaya, pemandangan menakjubkan, dan semangat komunitas di Kecamatan Bayan, Kabupaten Lombok Utara, Provinsi Lombok Utara. Jelajahi atraksi lokal, acara, dan layanan yang disediakan untuk penduduk dan pengunjung. Tetap terinformasi dan terhubung dengan berita dan pembaruan terbaru dari komunitas kami."
         />
       </Head>
       <Navbar />
