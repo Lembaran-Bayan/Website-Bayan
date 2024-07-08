@@ -5,7 +5,7 @@ export default function ProfilePage() {
   return(
     <main className="bg-white min-h-screen">
       <section className="min-h-screen flex flex-col justify-center items-center">
-      <div className="absolute w-full h-full">
+      <div className="absolute w-full h-screen">
         <Image
           priority
           src={Umkm}
