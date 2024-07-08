@@ -124,7 +124,7 @@ export default function Navbar() {
             (isMenuOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr] !py-0") +
             (scrollPerVH > 0.6 ? " //bg-green-1 text-white" : "")
           }
-          style={{ background: `rgba(24,64,15,${scrollPerVH > 0.9 ? 1 : Number(scrollPerVH.toFixed(2))})` }}
+          style={{ background: opaqueRoutes.includes(router.pathname) ? "rgba(24,64,15)" : `rgba(24,64,15,${scrollPerVH > 0.9 ? 1 : Number(scrollPerVH.toFixed(2))})` }}
         >
           <div className="overflow-hidden flex flex-col gap-2 w-max">
             <Link
