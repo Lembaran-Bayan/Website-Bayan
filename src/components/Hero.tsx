@@ -11,6 +11,7 @@ export default function Hero() {
           alt=""
           className="object-cover w-full h-full"
         />
+        <div className="bg-gradient-to-b from-black/20 from-10% via-transparent to-white/0 w-full h-full absolute z-[1] top-0 left-0" />
       </div>
       <div className="text-center text-[24px] md:text-[28px] text-shadow-1 text-white font-medium p-5 sm:p-0">
         <h2 data-aos="fade-up">Memulai Lembaran</h2>
