@@ -25,6 +25,9 @@ export default function App({ Component, pageProps }: AppProps) {
           href="/Rinjani.webp"
           as="image"
         ></link>
+        <link rel="preload" href="/Budaya.webp" as="image"></link>
+        <link rel="preload" href="/Umkm 2.webp" as="image"></link>
+        <link rel="preload" href="/Kegiatan.webp" as="image"></link>
         <title>Lembaran Bayan</title>
         <meta
           name="description"
