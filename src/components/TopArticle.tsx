@@ -3,7 +3,7 @@ import SideDeco from "./SideDeco";
 
 export default function TopArticle() {
   return (
-    <section className="py-20 md:py-[120px] flex flex-col justify-center items-center relative overflow-hidden">
+    <section className="pt-20 pb-10 md:pt-[120px] flex flex-col justify-center items-center relative overflow-hidden">
       <SideDeco position={true} />
       <SideDeco position={false} />
       <div
