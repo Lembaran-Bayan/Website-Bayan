@@ -1,9 +1,16 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { useEffect, useRef, useState } from "react";
+import { MdPlayCircle } from "react-icons/md";
 
 function ArticleSlide() {
   return (
-    <div className="flex flex-col justify-center items-center">
+    <button
+      onClick={() => {
+        console.log("clicked");
+      }}
+      className="flex flex-col justify-center items-center p-3 hover:shadow-[0_0_5px_rgba(0,0,0,.6)] bg-white rounded-[15px] w-full flex-shrink-0 transition"
+    >
       <div className="w-full h-[320px] aspect-[19/16] bg-gradient-to-br from-green-2 from-20% to-yellow-1 rounded-[40px] flex justify-center items-center text-white text-[24px] md:text-[30px] font-semibold text-shadow-1">
         Segera Hadir
       </div>
@@ -23,33 +30,82 @@ function ArticleSlide() {
           consequat.
         </p>
       </div>
-    </div>
+    </button>
   );
 }
 
 export default function ArticleSlider() {
+  const [screenWidth, setScreenWidth] = useState(0);
+  const [swiper, setSwiper] = useState<any>(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <section className="flex flex-col justify-center items-center">
+    <section className="flex flex-col sm:flex-row justify-center items-center relative">
+      <button
+        className="outline outline-transparent hover:outline-green-1 transition-[outline] rounded-full hidden sm:block"
+        onClick={() => swiper.slidePrev()}
+      >
+        <MdPlayCircle className="text-[50px] text-green-1 top-[50%] left-0 scale-[-1]" />
+      </button>
       <Swiper
         spaceBetween={50}
-        slidesPerView={2}
+        slidesPerView={screenWidth >= 900 ? 2 : 1}
         onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-        className="!flex !justify-center !items-center !w-[840px] bg-blue-500/10"
+        className="!flex !justify-center !items-center w-[90%] !max-w-[840px] !p-1 sm:!p-5 sm:!mx-5"
+        onSwiper={setSwiper}
       >
         <SwiperSlide className="!flex !justify-center !items-center">
           <ArticleSlide />
         </SwiperSlide>
         <SwiperSlide className="!flex !justify-center !items-center">
-          <div className="w-[410px] h-[400px] bg-red-500/20">Slide 2</div>
+          <ArticleSlide />
         </SwiperSlide>
         <SwiperSlide className="!flex !justify-center !items-center">
-          <div className="w-[410px] h-[400px] bg-red-500/20">Slide 3</div>
+          <ArticleSlide />
         </SwiperSlide>
         <SwiperSlide className="!flex !justify-center !items-center">
-          <div className="w-[410px] h-[400px] bg-red-500/20">Slide 4</div>
+          <ArticleSlide />
+        </SwiperSlide>
+        <SwiperSlide className="!flex !justify-center !items-center">
+          <ArticleSlide />
         </SwiperSlide>
       </Swiper>
+      <button
+        className="outline outline-transparent hover:outline-green-1 transition-[outline] rounded-full hidden sm:block"
+        onClick={() => {
+          swiper.slideNext();
+        }}
+      >
+        <MdPlayCircle className="text-[50px] text-green-1 top-[50%] left-0" />
+      </button>
+      <div className="flex gap-5">
+        <button
+          className="outline outline-transparent hover:outline-green-1 transition-[outline] rounded-full sm:hidden"
+          onClick={() => swiper.slidePrev()}
+        >
+          <MdPlayCircle className="text-[40px] text-green-1 top-[50%] left-0 scale-[-1]" />
+        </button>
+        <button
+          className="outline outline-transparent hover:outline-green-1 transition-[outline] rounded-full sm:hidden"
+          onClick={() => {
+            swiper.slideNext();
+          }}
+        >
+          <MdPlayCircle className="text-[40px] text-green-1 top-[50%] left-0" />
+        </button>
+      </div>
     </section>
   );
 }
