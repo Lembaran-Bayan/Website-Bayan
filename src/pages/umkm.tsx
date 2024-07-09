@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Umkm from "@/../public/Umkm.webp";
+import Umkm from "@/../public/Umkm 2.webp";
 
 export default function ProfilePage() {
   return(
@@ -12,7 +12,7 @@ export default function ProfilePage() {
           alt=""
           className="object-cover w-full h-full"
         />
-        <div className="bg-gradient-to-b from-black/70 to-black/20 to-95% w-full h-full absolute z-[1] top-0 left-0" />
+        <div className="bg-gradient-to-b from-black/60 to-black/10 to-95% w-full h-full absolute z-[1] top-0 left-0" />
       </div>
       <div className="text-center text-[24px] md:text-[28px] text-shadow-1 text-white font-medium p-5 sm:p-0 z-[2]">
         <h2 data-aos="fade-up">Nadi Ekonomi Negeri,</h2>
