@@ -1,8 +1,6 @@
 import Image from "next/image";
-import Budaya from "@/../public/Budaya.webp";
-import { MdMenuBook } from "react-icons/md";
+import Budaya from "@/../public/Budaya 2.webp";
 import Footer from "@/components/Footer";
-import SideDeco from "@/components/SideDeco";
 import TopArticle from "@/components/TopArticle";
 
 export default function ProfilePage() {
@@ -31,7 +29,7 @@ export default function ProfilePage() {
       </section>
 
       <TopArticle />
-      
+
       <Footer />
     </main>
   );
