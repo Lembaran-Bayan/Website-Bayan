@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Umkm from "@/../public/Umkm 2.webp";
+import TopArticle from "@/components/TopArticle";
+import Footer from "@/components/Footer";
 
 export default function ProfilePage() {
   return(
@@ -26,7 +28,9 @@ export default function ProfilePage() {
       </div>
       </section>
 
-      {/* <section className="min-h-screen"></section> */}
+      <TopArticle />
+
+      <Footer />
     </main>
   )
 }
