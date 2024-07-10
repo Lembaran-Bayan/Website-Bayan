@@ -39,6 +39,7 @@ export default function ArticleSlider() {
   const [swiper, setSwiper] = useState<any>(null);
 
   useEffect(() => {
+    setScreenWidth(window.innerWidth)
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
     };
@@ -62,6 +63,11 @@ export default function ArticleSlider() {
       <Swiper
         spaceBetween={50}
         slidesPerView={screenWidth >= 900 ? 2 : 1}
+        // breakpoints={{
+        //   768: {
+        //     slidesPerView: 1,
+        //   },
+        // }}
         onSlideChange={() => console.log("slide change")}
         className="!flex !justify-center !items-center w-[90%] !max-w-[840px] !p-1 sm:!p-5 sm:!mx-5"
         onSwiper={setSwiper}
