@@ -2,6 +2,7 @@ import Image from "next/image";
 import Kegiatan from "@/../public/Kegiatan.webp"
 import TopArticle from "@/components/TopArticle";
 import Footer from "@/components/Footer";
+import ArticleSlider from "@/components/ArticleSlider";
 
 export default function ProfilePage() {
   return (
@@ -29,6 +30,8 @@ export default function ProfilePage() {
       </section>
 
       <TopArticle />
+
+      <ArticleSlider />
 
       <Footer />
     </main>

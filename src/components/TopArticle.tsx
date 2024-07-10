@@ -49,7 +49,7 @@ export default function TopArticle() {
           consequat.
         </p>
       </div>
-      <Button ariaLabel="Baca Selengkapnya" className="mt-4" disabled={true}>
+      <Button ariaLabel="Baca Selengkapnya" className="mt-4" disabled={false}>
         Baca Selengkapnya
       </Button>
     </section>
