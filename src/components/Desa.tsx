@@ -9,7 +9,7 @@ export default function Desa() {
   return (
     <main className="//min-h-screen bg-white relative overflow-x-hidden flex justify-center items-center font-jakarta pb-[100px]">
       <section className="z-[1] w-full flex flex-col justify-center items-center">
-        <h1 className="text-[31px] pb-[18px] text-green-1">
+        <h1 className="text-[31px] pb-[18px] text-green-1 text-center">
           Kenali Desa <strong>Bayan</strong> dan Desa <strong>Senaru</strong>
         </h1>
 
