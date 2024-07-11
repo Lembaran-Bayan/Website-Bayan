@@ -22,7 +22,7 @@ export default function Footer({className}: Props) {
 
         <div
           data-aos="fade-up"
-          data-aos-delay="400"
+          data-aos-delay="200"
           className="py-5 px-3 md:px-20 bg-white shadow-[0_8px_7px_rgba(0,0,0,.5)] w-[90%] rounded-[15px] max-w-[965px] flex justify-center gap-4 mt-[22px] flex-wrap"
         >
           <a
