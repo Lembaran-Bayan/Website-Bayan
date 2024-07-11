@@ -36,7 +36,7 @@ export default function ProfilePage() {
 
       <PostArticle />
 
-      <Footer />
+      <Footer className="!pt-20" />
     </main>
   );
 }

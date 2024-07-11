@@ -5,10 +5,14 @@ import Nasa from "@/../public/Nasa.svg";
 import Image from "next/image";
 import SideDeco from "./SideDeco";
 
-export default function Footer() {
+interface Props {
+  className?: string;
+}
+
+export default function Footer({className}: Props) {
   return (
     <main>
-      <section className="pt-5 sm:pt-10 pb-[55px] flex flex-col justify-center items-center relative overflow-hidden">
+      <section className={"pt-5 sm:pt-10 pb-[55px] flex flex-col justify-center items-center relative overflow-hidden " + className}>
         <h1
           data-aos="fade-up"
           className="text-center text-[24px] sm:text-[27px]"
