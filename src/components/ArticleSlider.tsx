@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { useEffect, useRef, useState } from "react";
 import { MdPlayCircle } from "react-icons/md";
+import SideDeco from "./SideDeco";
 
 function ArticleSlide() {
   return (
@@ -53,7 +54,9 @@ export default function ArticleSlider() {
   }, []);
 
   return (
-    <section className="flex flex-col sm:flex-row justify-center items-center relative">
+    <section className="flex flex-col sm:flex-row justify-center items-center relative pb-20">
+      <SideDeco position={true} />
+      <SideDeco position={false} />
       <button
         className="outline outline-transparent hover:outline-green-1 transition-[outline] rounded-full hidden sm:block"
         onClick={() => swiper.slidePrev()}
