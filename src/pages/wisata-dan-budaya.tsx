@@ -3,6 +3,7 @@ import Budaya from "@/../public/Budaya 2.webp";
 import Footer from "@/components/Footer";
 import TopArticle from "@/components/TopArticle";
 import ArticleSlider from "@/components/ArticleSlider";
+import PostArticle from "@/components/PostArticle";
 
 export default function ProfilePage() {
   return (
@@ -32,6 +33,8 @@ export default function ProfilePage() {
       <TopArticle />
 
       <ArticleSlider />
+
+      <PostArticle />
 
       <Footer />
     </main>
