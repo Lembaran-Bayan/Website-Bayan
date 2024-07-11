@@ -54,7 +54,7 @@ export default function ArticleSlider() {
   }, []);
 
   return (
-    <section className="flex flex-col sm:flex-row justify-center items-center relative pb-20">
+    <section className="flex flex-col sm:flex-row justify-center items-center relative pb-20 overflow-x-hidden">
       <SideDeco position={true} />
       <SideDeco position={false} />
       <button
