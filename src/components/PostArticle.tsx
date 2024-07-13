@@ -12,14 +12,14 @@ export default function PostArticle() {
       </div> */}
 
       <div className="mt-2">
-        <h1 className="max-w-[437px] text-[25px] md:text-[30px] lg:text-[36px] font-semibold text-center">
+        <h1 className="max-w-[437px] text-[25px] md:text-[30px] lg:text-[36px] font-semibold text-center mx-auto">
           Ingin Artikelmu Dimuat di Lembaran Bayan?
         </h1>
         <p className="text-[16px] md:text-[18px] max-w-[500px] mt-4 text-center">
           Kirimkan draft artikelmu terkait UMKM, wisata, budaya, atau kegiatan yang ada di Bayan.
         </p>
         <button
-          className="flex items-center gap-5 text-[18px] mt-5 font-medium py-2 mx-auto bg-black/60 hover:bg-black font-poppins px-10 rounded-full transition hover:shadow-[0_0_4px_rgba(0,0,0,.4)] active:shadow-[0_0_8px_#000]"
+          className="flex items-center gap-5 text-[16px] md:text-[18px] mt-5 font-medium py-2 mx-auto bg-black/60 hover:bg-black font-poppins px-10 rounded-full transition hover:shadow-[0_0_4px_rgba(0,0,0,.4)] active:shadow-[0_0_8px_#000]"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
