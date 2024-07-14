@@ -30,7 +30,7 @@ export default function PostArticle() {
           Kirimkan draft artikelmu terkait UMKM, wisata, budaya, atau kegiatan yang ada di Bayan.
         </p>
         <button
-          className="flex items-center gap-5 text-[16px] md:text-[18px] mt-5 font-medium py-2 mx-auto bg-black/60 hover:bg-black font-poppins px-10 rounded-full transition hover:shadow-[0_0_6px_rgba(255,255,255,.8)] active:shadow-[0_0_8px_#FFF]"
+          className="flex items-center gap-5 text-[16px] md:text-[18px] mt-5 font-medium py-2 mx-auto bg-black/60 hover:bg-black font-poppins px-10 rounded-full transition shadow-[0_0_2px_rgba(255,255,255,.5)] hover:shadow-[0_0_6px_rgba(255,255,255,.8)] active:shadow-[0_0_8px_#FFF]"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
