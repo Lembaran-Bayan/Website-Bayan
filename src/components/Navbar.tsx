@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
-  const opaqueRoutes = ["/profile"];
+  const opaqueRoutes = ["profile", "article"];
   const router = useRouter();
   const scrollPosition = useScrollPosition();
   const [scrollPerVH, setScrollPerVH] = useState<number>(0);
@@ -18,6 +18,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setIsMenuOpen(false);
+    console.log(router.pathname.split("/")[1])
   }, [router])
 
   return (
@@ -27,7 +28,7 @@ export default function Navbar() {
       className={
         "fixed top-0 py-3 md:py-5 px-[20px] md:px-[50px] lg:px-[100px] flex w-full justify-between text-white items-center z-[99]"
       }
-      style={{ background: opaqueRoutes.includes(router.pathname) ? "rgba(24,64,15)" : `rgba(24,64,15,${scrollPerVH > 0.9 ? 1 : Number(scrollPerVH.toFixed(2))})` }}
+      style={{ background: opaqueRoutes.includes(router.pathname.split("/")[1]) ? "rgba(24,64,15)" : `rgba(24,64,15,${scrollPerVH > 0.9 ? 1 : Number(scrollPerVH.toFixed(2))})` }}
     >
       <Link href="/">
         <div className="flex font-medium text-white items-center gap-2">
