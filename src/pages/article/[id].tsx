@@ -21,7 +21,7 @@ export default function ArticlePage() {
           Nama Desa
         </div>
 
-        <div className="w-[620px] aspect-[620/415] bg-gradient-to-br from-green-2 from-20% to-yellow-1 rounded-[30px]" />
+        <div className="w-[90%] max-w-[620px] aspect-[620/415] bg-gradient-to-br from-green-2 from-20% to-yellow-1 rounded-[30px]" />
 
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-green-1 font-bold text-[29px] md:text-[39px]">Artikel Nomor {router.query.id}</h1>
