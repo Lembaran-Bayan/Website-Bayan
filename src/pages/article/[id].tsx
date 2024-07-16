@@ -1,4 +1,5 @@
 import Button from "@/components/Button";
+import SideDeco from "@/components/SideDeco";
 import { useRouter } from "next/router";
 import { MdInsertLink } from "react-icons/md";
 
@@ -15,7 +16,9 @@ export default function ArticlePage() {
   const router = useRouter();
 
   return (
-    <main className="pt-[200px] pb-[120px]">
+    <main className="pt-[200px] pb-[120px] relative overflow-hidden">
+      <SideDeco position={true} />
+      <SideDeco position={false} />
       <section className="flex flex-col justify-center items-center gap-8">
         <div className="flex justify-center items-center font-poppins px-10 py-2 bg-green-1 rounded-full text-white">
           Nama Desa
