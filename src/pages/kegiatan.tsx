@@ -3,7 +3,6 @@ import Kegiatan from "@/../public/Kegiatan.webp"
 import TopArticle from "@/components/TopArticle";
 import Footer from "@/components/Footer";
 import ArticleSlider from "@/components/ArticleSlider";
-import PostArticle from "@/components/PostArticle";
 
 export default function ProfilePage() {
   return (
