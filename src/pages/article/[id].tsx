@@ -19,7 +19,7 @@ export default function ArticlePage() {
     <main className="pt-[200px] pb-[120px] relative overflow-hidden">
       <SideDeco position={true} />
       <SideDeco position={false} />
-      <section className="flex flex-col justify-center items-center gap-8">
+      <section className="flex flex-col justify-center items-center gap-8 z-[1] relative">
         <div className="flex justify-center items-center font-poppins px-10 py-2 bg-green-1 rounded-full text-white">
           Nama Desa
         </div>
@@ -32,8 +32,8 @@ export default function ArticlePage() {
         </div>
       </section>
 
-      <section className="flex flex-col justify-center items-center mt-12">
-        <p className="text-justify max-w-[844px] text-[22px]">
+      <section className="flex flex-col justify-center items-center mt-12 z-[1] relative">
+        <p className="text-justify w-[90%] max-w-[844px] text-[22px]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
