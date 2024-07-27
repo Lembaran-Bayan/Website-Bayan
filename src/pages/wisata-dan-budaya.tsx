@@ -65,11 +65,12 @@ export default function ProfilePage() {
               name: "Masjid Kuno Bayan",
               iconUrl: "/MarkerIcon.png",
               iconSize: [20, 38],
-              iconAnchor: [20, 20],
-              popupAnchor: [20, 20],
+              iconAnchor: [10, 38],
+              popupAnchor: [20, -19],
               children: (
-                <div className="bg-white/70 p-4 rounded-[14px]">
-                  <h1 className="text-[20px] font-jakarta font-semibold">Masjid Kuno Bayan</h1>
+                <div className="bg-white/90 p-4 rounded-[15px]">
+                  <h1 className="text-[20px] font-jakarta font-semibold mb-2">Masjid Kuno Bayan</h1>
+                  <div className="w-[250px] aspect-[5/3] bg-gradient-to-br from-green-2 to-yellow-1" />
                 </div>
               ),
             },

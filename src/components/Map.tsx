@@ -57,9 +57,10 @@ function Map({
                 key={marker.key}
               >
                 <Tooltip
-                  className="!p-0 !bg-transparent !outline-none !border-0"
+                  className="!p-0 !bg-transparent !outline-none !border-0 !shadow-none"
                   interactive
                   offset={marker?.popupAnchor}
+                  permanent
                 >
                   {marker?.children}
                 </Tooltip>
