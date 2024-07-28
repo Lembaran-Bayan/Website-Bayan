@@ -52,6 +52,7 @@
 
 .leaflet-control {
   margin: 20px !important;
+  user-select: none;
 }
 
 .leaflet-popup-content {

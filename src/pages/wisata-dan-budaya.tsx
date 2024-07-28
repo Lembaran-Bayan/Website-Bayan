@@ -59,8 +59,6 @@ export default function ProfilePage() {
         </div>
         <Map
           center={[-8.2695575, 116.4265542]}
-          current={[0, 0]}
-          image="/Logo.png"
           markers={[
             {
               position: [-8.2666852, 116.4271543],

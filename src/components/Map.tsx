@@ -8,14 +8,10 @@ function Map({
   geojson,
   center,
   markers,
-  current,
-  image = "1",
 }: {
   geojson?: any;
   center?: [number, number];
   markers?: any;
-  current?: [number, number];
-  image?: string;
 }) {
   const RefreshMapCenter = ({ newCenter }: { newCenter: [number, number] }) => {
     const map = useMap();
@@ -33,7 +29,7 @@ function Map({
     <div className="w-[90%] max-w-[1020px] aspect-[3/4] sm:aspect-[1020/615] rounded-[30px] md:rounded-[45px] overflow-hidden">
       <MapContainer
         center={center ?? [-7.801363, 110.364787]}
-        zoom={15}
+        zoom={16}
         scrollWheelZoom={true}
         className="w-full h-full"
       >
@@ -76,15 +72,6 @@ function Map({
             }}
           />
         )}
-        {/* <Marker
-          position={current[0] !== 0 && current[1] !== 0 ? current : center}
-          icon={
-            new Icon({
-              iconUrl: "/Logo.png",
-              iconSize: [50, 50],
-            })
-          }
-        /> */}
       </MapContainer>
     </div>
   );
