@@ -10,6 +10,7 @@ import { MdMap } from "react-icons/md";
 import MapPopup from "@/components/MapPopup";
 import calculateMiddlePoint from "@/utilities/CalculateCentroid";
 import listWisata from "@/data/pariwisata.json";
+import SideDeco from "@/components/SideDeco";
 
 export default function ProfilePage() {
   const centroid: [number, number] = [-8.269707961538461,116.41556806153848];
@@ -81,7 +82,9 @@ export default function ProfilePage() {
 
       <PostArticle />
 
-      <section className="flex flex-col justify-center items-center relative z-[0] my-[120px] gap-[30px]">
+      <section className="flex flex-col justify-center items-center relative z-[0] py-[120px] gap-[30px] overflow-x-hidden">
+        <SideDeco position={true} />
+        <SideDeco position={false} />
         <div
           data-aos="fade-up"
           className="flex items-center justify-center gap-[11px]"

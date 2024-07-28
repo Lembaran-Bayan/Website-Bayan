@@ -3,15 +3,16 @@ import Kegiatan from "@/../public/Kegiatan.webp";
 import TopArticle from "@/components/TopArticle";
 import Footer from "@/components/Footer";
 import ArticleSlider from "@/components/ArticleSlider";
-import { useEffect, useMemo} from "react";
+import { useEffect, useMemo } from "react";
 import dynamic from "next/dynamic";
 import { MdMap } from "react-icons/md";
 import MapPopup from "@/components/MapPopup";
 import listKegiatan from "@/data/kegiatan.json";
 import calculateMiddlePoint from "@/utilities/CalculateCentroid";
+import SideDeco from "@/components/SideDeco";
 
 export default function ProfilePage() {
-  const centroid: [number, number] = [-8.269707961538461,116.41556806153848];
+  const centroid: [number, number] = [-8.269707961538461, 116.41556806153848];
   const zoom = 13;
   const Map = useMemo(
     () =>
@@ -77,7 +78,9 @@ export default function ProfilePage() {
 
       <ArticleSlider />
 
-      <section className="flex flex-col justify-center items-center relative z-[0] my-[120px] gap-[30px]">
+      <section className="flex flex-col justify-center items-center relative z-[0] py-[120px] gap-[30px] overflow-x-hidden">
+        <SideDeco position={true} />
+        <SideDeco position={false} />
         <div
           data-aos="fade-up"
           className="flex items-center justify-center gap-[11px]"

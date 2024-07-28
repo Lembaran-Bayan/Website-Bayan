@@ -10,9 +10,10 @@ import { useEffect, useMemo } from "react";
 import listUmkm from "@/data/pariwisata.json";
 import calculateMiddlePoint from "@/utilities/CalculateCentroid";
 import MapPopup from "@/components/MapPopup";
+import SideDeco from "@/components/SideDeco";
 
 export default function ProfilePage() {
-  const centroid: [number, number] = [-8.269707961538461,116.41556806153848];
+  const centroid: [number, number] = [-8.269707961538461, 116.41556806153848];
   const zoom = 13;
   const Map = useMemo(
     () =>
@@ -51,28 +52,28 @@ export default function ProfilePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return(
+  return (
     <main className="bg-white min-h-screen">
       <section className="min-h-screen flex flex-col justify-center items-center">
-      <div className="absolute w-full h-screen">
-        <Image
-          priority
-          src={Umkm}
-          alt=""
-          className="object-cover w-full h-full"
-        />
-        <div className="bg-gradient-to-b from-black/60 to-black/10 to-95% w-full h-full absolute z-[1] top-0 left-0" />
-      </div>
-      <div className="text-center text-[24px] md:text-[28px] text-shadow-1 text-white font-medium p-5 sm:p-0 z-[2]">
-        <h2 data-aos="fade-up">Nadi Ekonomi Negeri,</h2>
-        <h2
-          data-aos="fade-up"
-          data-aos-delay="400"
-          className="text-[30px] md:text-[40px]"
-        >
-          Kenali <span className="font-bold">UMKM</span>
-        </h2>
-      </div>
+        <div className="absolute w-full h-screen">
+          <Image
+            priority
+            src={Umkm}
+            alt=""
+            className="object-cover w-full h-full"
+          />
+          <div className="bg-gradient-to-b from-black/60 to-black/10 to-95% w-full h-full absolute z-[1] top-0 left-0" />
+        </div>
+        <div className="text-center text-[24px] md:text-[28px] text-shadow-1 text-white font-medium p-5 sm:p-0 z-[2]">
+          <h2 data-aos="fade-up">Nadi Ekonomi Negeri,</h2>
+          <h2
+            data-aos="fade-up"
+            data-aos-delay="400"
+            className="text-[30px] md:text-[40px]"
+          >
+            Kenali <span className="font-bold">UMKM</span>
+          </h2>
+        </div>
       </section>
 
       <TopArticle />
@@ -81,7 +82,9 @@ export default function ProfilePage() {
 
       <PostArticle />
 
-      <section className="flex flex-col justify-center items-center relative z-[0] my-[120px] gap-[30px]">
+      <section className="flex flex-col justify-center items-center relative z-[0] py-[120px] gap-[30px] overflow-x-hidden">
+        <SideDeco position={true} />
+        <SideDeco position={false} />
         <div
           data-aos="fade-up"
           className="flex items-center justify-center gap-[11px]"
@@ -98,5 +101,5 @@ export default function ProfilePage() {
 
       <Footer className="!pt-20" />
     </main>
-  )
+  );
 }
