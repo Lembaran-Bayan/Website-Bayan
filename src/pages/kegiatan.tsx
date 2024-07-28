@@ -3,14 +3,16 @@ import Kegiatan from "@/../public/Kegiatan.webp";
 import TopArticle from "@/components/TopArticle";
 import Footer from "@/components/Footer";
 import ArticleSlider from "@/components/ArticleSlider";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import { MdMap } from "react-icons/md";
 import MapPopup from "@/components/MapPopup";
 import Gmap from "@/../public/Gmap.webp";
 import listKegiatan from "@/data/kegiatan.json";
+import calculateMiddlePoint from "@/utilities/CalculateCentroid";
 
 export default function ProfilePage() {
+  const [centroid, setCentroid] = useState<[number, number]>([0,0]);
   const Map = useMemo(
     () =>
       dynamic(() => import("@/components/Map"), {
@@ -43,6 +45,13 @@ export default function ProfilePage() {
       popupAnchor: [0, -30],
     });
   });
+
+  useEffect(() => {
+    if (centroid[0] === 0 && centroid[1] === 0) {
+      setCentroid(calculateMiddlePoint(kegiatanMarkers));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [kegiatanMarkers]);
 
   return (
     <main className="bg-white min-h-screen">
@@ -81,7 +90,7 @@ export default function ProfilePage() {
           <MdMap className="text-[34px] text-green-1" />
         </div>
         <Map
-          center={[-8.2695575, 116.4265542]}
+          center={centroid}
           markers={kegiatanMarkers}
           zoom={13}
         />
