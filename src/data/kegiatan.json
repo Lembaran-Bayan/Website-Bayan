@@ -68,5 +68,11 @@
     "name": "Pintu Pendakian Senaru TN Gunung Rinjani",
     "position": [-8.3185854, 116.3833505],
     "kegiatans": ["Sosialisasi Fotografi \"Lensa Penghasil Cuan\"", "Sosialisasi Digital Marketing"]
+  },
+  {
+    "id": 12,
+    "name": "Kantor Camat Bayan",
+    "position": [-8.229826, 116.425924],
+    "kegiatans": ["Upacara Penerimaan"]
   }
 ]

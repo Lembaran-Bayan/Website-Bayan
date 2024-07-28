@@ -12,7 +12,8 @@ import listKegiatan from "@/data/kegiatan.json";
 import calculateMiddlePoint from "@/utilities/CalculateCentroid";
 
 export default function ProfilePage() {
-  const centroid: [number, number] = [-8.285868425, 116.41376942500001];
+  const centroid: [number, number] = [-8.26964188888889, 116.41511993333334];
+  const zoom = 13;
   const Map = useMemo(
     () =>
       dynamic(() => import("@/components/Map"), {
@@ -89,7 +90,7 @@ export default function ProfilePage() {
         <Map
           center={centroid}
           markers={kegiatanMarkers}
-          zoom={13}
+          zoom={zoom}
         />
       </section>
 
