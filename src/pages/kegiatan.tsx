@@ -12,7 +12,7 @@ import listKegiatan from "@/data/kegiatan.json";
 import calculateMiddlePoint from "@/utilities/CalculateCentroid";
 
 export default function ProfilePage() {
-  const centroid: [number, number] = [-8.26964188888889, 116.41511993333334];
+  const centroid: [number, number] = [-8.269707961538461,116.41556806153848];
   const zoom = 13;
   const Map = useMemo(
     () =>
@@ -32,7 +32,6 @@ export default function ProfilePage() {
       kegiatans: kegiatan.kegiatans,
       children: (
         <MapPopup
-          image={Gmap}
           name={kegiatan.name}
           key={kegiatan.id}
           kegiatans={kegiatan.kegiatans}
@@ -47,7 +46,7 @@ export default function ProfilePage() {
   });
 
   useEffect(() => {
-    console.log(calculateMiddlePoint(kegiatanMarkers));
+    console.log(calculateMiddlePoint(kegiatanMarkers)[0] + "," + calculateMiddlePoint(kegiatanMarkers)[1]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

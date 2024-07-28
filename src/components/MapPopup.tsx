@@ -1,18 +1,30 @@
 import Image, { StaticImageData } from "next/image";
 import Gmap from "@/../public/Gmap.webp";
 
-export default function MapPopup({ name, link, image, kegiatans }: { name: string; link?: string; image: StaticImageData; kegiatans?: string[] }) {
+export default function MapPopup({
+  name,
+  link,
+  image,
+  kegiatans,
+}: {
+  name: string;
+  link?: string;
+  image?: StaticImageData;
+  kegiatans?: string[];
+}) {
   return (
     <div className="md:p-3 rounded-[15px] flex flex-col justify-center items-center p-2 !w-fit !translate-x-0 font-jakarta">
-      <h1 className="text-[20px] font-jakarta font-semibold mb-2 text-center">{name}</h1>
-      <div className="w-[250px] md:w-[300px] aspect-[5/3] relative flex justify-center items-center overflow-hidden">
-        <Image
-          src={image}
-          alt={"Foto " + name}
-          className="z-[1] relative"
-        />
-        <div className="bg-gradient-to-br from-green-2 to-yellow-1 animate-pulse w-full h-full absolute top-0 left-0" />
-      </div>
+      <h1 className="text-[20px] font-jakarta font-semibold w-[250px] md:w-[300px]">{name}</h1>
+      {image && (
+        <div className="w-[250px] md:w-[300px] aspect-[5/3] relative flex justify-center items-center overflow-hidden">
+          <Image
+            src={image}
+            alt={"Foto " + name}
+            className="z-[1] relative"
+          />
+          <div className="bg-gradient-to-br from-green-2 to-yellow-1 animate-pulse w-full h-full absolute top-0 left-0" />
+        </div>
+      )}
       {link && (
         <a
           href={link}
@@ -32,13 +44,16 @@ export default function MapPopup({ name, link, image, kegiatans }: { name: strin
       )}
       {kegiatans && <h1 className="font-jakarta w-full mt-2 font-semibold text-[17px]">Kegiatan:</h1>}
       <ul className={kegiatans ? "flex flex-col justify-start w-full !list-disc pl-5 pt-1 text-[15px]" : "hidden"}>
-        {
-          kegiatans?.map((kegiatan, index) => {
-            return(
-              <li key={index} className="!w-full">{kegiatan}</li>
-            )
-          })
-        }
+        {kegiatans?.map((kegiatan, index) => {
+          return (
+            <li
+              key={index}
+              className="!w-full"
+            >
+              {kegiatan}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

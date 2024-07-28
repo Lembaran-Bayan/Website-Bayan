@@ -3,18 +3,18 @@
     "id": 1,
     "name": "Posko Subunit Bayan",
     "position": [-8.270411, 116.426298],
-    "kegiatans": ["Hidup"]
+    "kegiatans": ["Pembuatan Website Lembaran Bayan"]
   },
   {
     "id": 2,
     "name": "Posko Subunit Senaru",
     "position": [-8.292491, 116.410713],
-    "kegiatans": ["Hidup"]
+    "kegiatans": ["Penyambutan Wakil Bupati KLU"]
   },
   {
     "id": 3,
     "name": "Rumah Budidaya Maggot",
-    "position": [-8.268492, 116.41264],
+    "position": [-8.269624, 116.41272],
     "kegiatans": ["Pembangunan Rumah Budidaya Maggot", "Sosialisasi Maggot"]
   },
   {
@@ -26,7 +26,7 @@
   {
     "id": 5,
     "name": "Dusun Pada Mangko",
-    "position": [],
+    "position": [-8.270408, 116.430207],
     "kegiatans": ["Pemasangan PJUTS"]
   },
   {
@@ -38,20 +38,20 @@
   {
     "id": 7,
     "name": "Dusun Montong Baru",
-    "position": [],
+    "position": [-8.280565, 116.423921],
     "kegiatans": ["Pemasangan PJUTS"]
   },
   {
     "id": 8,
     "name": "Kantor Desa Bayan",
     "position": [-8.2695559, 116.4257218],
-    "kegiatans": ["Koordinasi dengan Pemerintah Desa"]
+    "kegiatans": ["Koordinasi dengan Pemerintah Desa", "Piket Harian"]
   },
   {
     "id": 9,
     "name": "Kantor Desa Senaru",
     "position": [-8.3020921, 116.4014001],
-    "kegiatans": ["Koordinasi dengan Pemerintah Desa"]
+    "kegiatans": ["Koordinasi dengan Pemerintah Desa", "Perayaan Hari Anak Nasional KLU"]
   },
   {
     "id": 10,
@@ -65,7 +65,7 @@
   },
   {
     "id": 11,
-    "name": "Pintu Pendakian Senaru TN Gunung Rinjani",
+    "name": "Pintu Pendakian Taman Nasional Gunung Rinjani",
     "position": [-8.3185854, 116.3833505],
     "kegiatans": ["Sosialisasi Fotografi \"Lensa Penghasil Cuan\"", "Sosialisasi Digital Marketing"]
   },
@@ -74,5 +74,35 @@
     "name": "Kantor Camat Bayan",
     "position": [-8.229826, 116.425924],
     "kegiatans": ["Upacara Penerimaan"]
+  },
+  {
+    "id": 13,
+    "name": "Air Terjun Tiu Kelep",
+    "position": [-8.311553, 116.403792],
+    "kegiatans": ["Wisata"]
+  },
+  {
+    "id": 14,
+    "name": "Air Terjun Sendang Gile",
+    "position": [-8.3064721, 116.4083054],
+    "kegiatans": ["Wisata"]
+  },
+  {
+    "id": 15,
+    "name": "Savana Lendang Danger",
+    "position": [-8.2386757, 116.467267],
+    "kegiatans": ["Wisata"]
+  },
+  {
+    "id": 16,
+    "name": "Kedai Sawah Sembalun",
+    "position": [-8.3777143, 116.5339445],
+    "kegiatans": ["Wisata"]
+  },
+  {
+    "id": 16,
+    "name": "Bukit Selong Sembalun",
+    "position": [-8.366197, 116.53983],
+    "kegiatans": ["Wisata"]
   }
 ]
