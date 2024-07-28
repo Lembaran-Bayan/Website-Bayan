@@ -1,11 +1,11 @@
 import Image, { StaticImageData } from "next/image";
 import Gmap from "@/../public/Gmap.webp";
 
-export default function MapPopup({ name, link, image }: { name: string; link?: string; image: StaticImageData }) {
+export default function MapPopup({ name, link, image, kegiatans }: { name: string; link?: string; image: StaticImageData; kegiatans?: string[] }) {
   return (
-    <div className="bg-white/70 md:p-3 rounded-[15px] flex flex-col justify-center items-center outline outline-white p-1">
-      <h1 className="text-[20px] font-jakarta font-semibold mb-2">{name}</h1>
-      <div className="w-[250px] md:w-[300px] aspect-[5/3] relative">
+    <div className="md:p-3 rounded-[15px] flex flex-col justify-center items-center p-2 !w-fit !translate-x-0 font-jakarta">
+      <h1 className="text-[20px] font-jakarta font-semibold mb-2 text-center">{name}</h1>
+      <div className="w-[250px] md:w-[300px] aspect-[5/3] relative flex justify-center items-center overflow-hidden">
         <Image
           src={image}
           alt={"Foto " + name}
@@ -30,6 +30,16 @@ export default function MapPopup({ name, link, image }: { name: string; link?: s
           </button>
         </a>
       )}
+      <h1 className="font-jakarta w-full mt-2 font-semibold text-[17px]">Kegiatan:</h1>
+      <ul className={kegiatans ? "flex flex-col justify-start w-full !list-disc pl-5 pt-1 text-[15px]" : "hidden"}>
+        {
+          kegiatans?.map((kegiatan, index) => {
+            return(
+              <li key={index} className="!w-full">{kegiatan}</li>
+            )
+          })
+        }
+      </ul>
     </div>
   );
 }

@@ -56,15 +56,23 @@
 }
 
 .leaflet-popup-content {
-  margin: 10px !important;
+  width: fit-content !important;
+  margin: 0 !important;
 }
 
-@media screen and (max-width: 640px) {
+/* @media screen and (max-width: 640px) {
   .leaflet-popup-content {
     margin: 5px !important;
   } 
-}
+} */
 
 .leaflet-popup-close-button {
-  margin: 10px !important;
+  display: none !important;
+}
+
+.leaflet-popup-content-wrapper {
+  width: fit-content !important;
+  background: rgba(255,255,255,.8) !important;
+  padding: 0px !important;
+  margin: 0px !important;
 }

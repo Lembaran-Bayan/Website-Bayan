@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Posko Subunit Bayan",
+    "position": [-8.27027, 116.426253],
+    "kegiatans": ["Hidup"]
+  },
+  {
+    "id": 2,
+    "name": "Posko Subunit Senaru",
+    "position": [-8.292491, 116.410713],
+    "kegiatans": ["Hidup"]
+  },
+  {
+    "id": 3,
+    "name": "Rumah Budidaya Maggot",
+    "position": [-8.268492, 116.41264],
+    "kegiatans": ["Pembangunan Rumah Budidaya Maggot", "Sosialisasi Maggot"]
+  },
+  {
+    "id": 4,
+    "name": "Dusun Bayan Barat",
+    "position": [-8.268283, 116.425987],
+    "kegiatans": ["Pemasangan PJUTS"]
+  },
+  {
+    "id": 5,
+    "name": "Dusun Pada Mangko",
+    "position": [],
+    "kegiatans": ["Pemasangan PJUTS"]
+  },
+  {
+    "id": 6,
+    "name": "Dusun Sembulan",
+    "position": [],
+    "kegiatans": ["Pemasangan PJUTS"]
+  },
+  {
+    "id": 7,
+    "name": "Dusun Montong Baru",
+    "position": [],
+    "kegiatans": ["Pemasangan PJUTS"]
+  },
+  {
+    "id": 8,
+    "name": "Kantor Desa Bayan",
+    "position": [-8.2695559, 116.4257218],
+    "kegiatans": ["Koordinasi dengan Pemerintah Desa"]
+  },
+  {
+    "id": 9,
+    "name": "Kantor Desa Senaru",
+    "position": [-8.3020921, 116.4014001],
+    "kegiatans": ["Koordinasi dengan Pemerintah Desa"]
+  },
+  {
+    "id": 10,
+    "name": "SMPN Satap 4 Bayan / SMPN 6 Bayan",
+    "position": [-8.297037, 116.424045],
+    "kegiatans": [
+      "Sosialisasi Perencanaan Keuangan",
+      "Sosialisasi Kelestarian Lingkungan dan Hutan Adat",
+      "Sosialisasi Literasi Digital"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Pintu Pendakian Senaru TN Gunung Rinjani",
+    "position": [-8.3185854, 116.3833505],
+    "kegiatans": ["Sosialisasi Fotografi \"Lensa Penghasil Cuan\"", "Sosialisasi Digital Marketing"]
+  }
+]

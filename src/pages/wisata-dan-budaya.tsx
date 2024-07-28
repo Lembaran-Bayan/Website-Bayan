@@ -76,6 +76,7 @@ export default function ProfilePage() {
               ),
             },
           ]}
+          zoom={15}
         />
       </section>
 

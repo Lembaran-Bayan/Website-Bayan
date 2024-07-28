@@ -8,32 +8,21 @@ function Map({
   geojson,
   center,
   markers,
+  zoom = 16,
 }: {
   geojson?: any;
   center?: [number, number];
   markers?: any;
+  zoom: number;
 }) {
-  const RefreshMapCenter = ({ newCenter }: { newCenter: [number, number] }) => {
-    const map = useMap();
-
-    useEffect(() => {
-      if (newCenter[0] === 0 && newCenter[1] === 0) {
-        console.log("true");
-        map.setView(newCenter, map.getZoom());
-      }
-    }, [newCenter, map]);
-
-    return null;
-  };
   return (
-    <div className="w-[90%] max-w-[1020px] aspect-[3/4] sm:aspect-[1020/615] rounded-[30px] md:rounded-[45px] overflow-hidden">
+    <div className="w-[90%] max-w-[1020px] aspect-[3/4] sm:aspect-[1020/615] rounded-[30px] md:rounded-[45px] overflow-hidden font-jakarta">
       <MapContainer
         center={center ?? [-7.801363, 110.364787]}
-        zoom={16}
+        zoom={zoom}
         scrollWheelZoom={true}
         className="w-full h-full"
       >
-        <RefreshMapCenter newCenter={center == undefined ? [0, 0] : center} />
         <TileLayer
           attribution='&copy; <span href="https://www.openstreetmap.org/copyright">OpenStreetMap</span> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -53,7 +42,7 @@ function Map({
                 key={marker.key}
               >
                 <Popup
-                  className="!p-0 !bg-transparent !outline-none !border-0 !shadow-none"
+                  className="!p-0 !bg-transparent !outline-none !border-0 !shadow-none !w-fit"
                   offset={marker?.popupAnchor}
                 >
                   {marker?.children}

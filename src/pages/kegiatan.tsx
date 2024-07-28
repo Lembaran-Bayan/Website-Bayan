@@ -1,10 +1,49 @@
 import Image from "next/image";
-import Kegiatan from "@/../public/Kegiatan.webp"
+import Kegiatan from "@/../public/Kegiatan.webp";
 import TopArticle from "@/components/TopArticle";
 import Footer from "@/components/Footer";
 import ArticleSlider from "@/components/ArticleSlider";
+import { useMemo } from "react";
+import dynamic from "next/dynamic";
+import { MdMap } from "react-icons/md";
+import MapPopup from "@/components/MapPopup";
+import Gmap from "@/../public/Gmap.webp";
+import listKegiatan from "@/data/kegiatan.json";
 
 export default function ProfilePage() {
+  const Map = useMemo(
+    () =>
+      dynamic(() => import("@/components/Map"), {
+        ssr: false,
+        loading: () => <div>Loading...</div>,
+      }),
+    []
+  );
+
+  const kegiatanMarkers: any = [];
+  listKegiatan.forEach((kegiatan) => {
+    if (kegiatan.position[0] == undefined) return;
+    console.log(kegiatan.kegiatans);
+    kegiatanMarkers.push({
+      position: kegiatan.position,
+      name: kegiatan.name,
+      kegiatans: kegiatan.kegiatans,
+      children: (
+        <MapPopup
+          image={Gmap}
+          name={kegiatan.name}
+          key={kegiatan.id}
+          kegiatans={kegiatan.kegiatans}
+        />
+      ),
+
+      iconUrl: "/MarkerIcon.png",
+      iconSize: [20, 38],
+      iconAnchor: [10, 38],
+      popupAnchor: [0, -30],
+    });
+  });
+
   return (
     <main className="bg-white min-h-screen">
       <section className="min-h-screen flex flex-col justify-center items-center">
@@ -32,6 +71,21 @@ export default function ProfilePage() {
       <TopArticle />
 
       <ArticleSlider />
+
+      <section className="flex flex-col justify-center items-center relative z-[0] my-[120px] gap-[30px]">
+        <div
+          data-aos="fade-up"
+          className="flex items-center justify-center gap-[11px]"
+        >
+          <h1 className="text-green-1 font-semibold text-[25px] md:text-[30px]">Peta Kegiatan</h1>
+          <MdMap className="text-[34px] text-green-1" />
+        </div>
+        <Map
+          center={[-8.2695575, 116.4265542]}
+          markers={kegiatanMarkers}
+          zoom={13}
+        />
+      </section>
 
       <Footer className="!pt-20" />
     </main>
