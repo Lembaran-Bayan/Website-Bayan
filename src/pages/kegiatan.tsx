@@ -3,11 +3,10 @@ import Kegiatan from "@/../public/Kegiatan.webp";
 import TopArticle from "@/components/TopArticle";
 import Footer from "@/components/Footer";
 import ArticleSlider from "@/components/ArticleSlider";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo} from "react";
 import dynamic from "next/dynamic";
 import { MdMap } from "react-icons/md";
 import MapPopup from "@/components/MapPopup";
-import Gmap from "@/../public/Gmap.webp";
 import listKegiatan from "@/data/kegiatan.json";
 import calculateMiddlePoint from "@/utilities/CalculateCentroid";
 

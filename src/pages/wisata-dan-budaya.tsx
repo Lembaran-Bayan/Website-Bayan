@@ -4,13 +4,16 @@ import Footer from "@/components/Footer";
 import TopArticle from "@/components/TopArticle";
 import ArticleSlider from "@/components/ArticleSlider";
 import PostArticle from "@/components/PostArticle";
-import { Children, useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import dynamic from "next/dynamic";
 import { MdMap } from "react-icons/md";
-import Gmap from "@/../public/Gmap.webp";
 import MapPopup from "@/components/MapPopup";
+import calculateMiddlePoint from "@/utilities/CalculateCentroid";
+import listWisata from "@/data/pariwisata.json";
 
 export default function ProfilePage() {
+  const centroid: [number, number] = [-8.269707961538461,116.41556806153848];
+  const zoom = 13;
   const Map = useMemo(
     () =>
       dynamic(() => import("@/components/Map"), {
@@ -19,6 +22,35 @@ export default function ProfilePage() {
       }),
     []
   );
+
+  const wisataMarkers: any = [];
+  listWisata.forEach((wisata) => {
+    if (wisata.position[0] == undefined) return;
+    wisataMarkers.push({
+      position: wisata.position,
+      name: wisata.name,
+      link: wisata.link,
+      children: (
+        <MapPopup
+          name={wisata.name}
+          key={wisata.id}
+          link={wisata.link}
+          image={wisata.image}
+        />
+      ),
+
+      iconUrl: "/MarkerIcon.png",
+      iconSize: [20, 38],
+      iconAnchor: [10, 38],
+      popupAnchor: [0, -30],
+    });
+  });
+
+  useEffect(() => {
+    console.log(calculateMiddlePoint(wisataMarkers)[0] + "," + calculateMiddlePoint(wisataMarkers)[1]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <main className="bg-white min-h-screen">
       <section className="min-h-screen flex flex-col justify-center items-center relative overflow-x-hidden">
@@ -58,25 +90,9 @@ export default function ProfilePage() {
           <MdMap className="text-[34px] text-green-1" />
         </div>
         <Map
-          center={[-8.2695575, 116.4265542]}
-          markers={[
-            {
-              position: [-8.2666852, 116.4271543],
-              name: "Masjid Kuno Bayan",
-              iconUrl: "/MarkerIcon.png",
-              iconSize: [20, 38],
-              iconAnchor: [10, 38],
-              popupAnchor: [0, -30],
-              children: (
-                <MapPopup
-                  name="Masjid Kuno Bayan"
-                  link="https://maps.app.goo.gl/DKRgnuf9gWFHaihi8"
-                  image={Gmap}
-                />
-              ),
-            },
-          ]}
-          zoom={15}
+          center={centroid}
+          markers={wisataMarkers}
+          zoom={zoom}
         />
       </section>
 
