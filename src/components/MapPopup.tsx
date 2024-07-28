@@ -19,6 +19,7 @@ export default function MapPopup({
         <div className="w-[250px] md:w-[300px] aspect-[5/3] relative flex justify-center items-center overflow-hidden mt-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
+            // src={(process.env.NEXT_PUBLIC_ENV == "dev" ? "http://localhost:3000" : "https://lembaran-bayan.id") + image}
             src={image}
             alt={"Foto " + name}
             className="z-[1] relative object-cover w-full h-full"
