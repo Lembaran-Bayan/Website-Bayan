@@ -53,3 +53,17 @@
 .leaflet-control {
   margin: 20px !important;
 }
+
+.leaflet-popup-content {
+  margin: 10px !important;
+}
+
+@media screen and (max-width: 640px) {
+  .leaflet-popup-content {
+    margin: 5px !important;
+  } 
+}
+
+.leaflet-popup-close-button {
+  margin: 10px !important;
+}

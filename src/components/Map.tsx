@@ -58,14 +58,7 @@ function Map({
               >
                 <Popup
                   className="!p-0 !bg-transparent !outline-none !border-0 !shadow-none"
-                  // interactive
                   offset={marker?.popupAnchor}
-                  // permanent  
-                  // sticky
-                  eventHandlers={{
-                    mouseover: (e) => {e.target.openPopup()},
-                    mouseout: (e) => {console.log("adsadsdas")}
-                  }}
                 >
                   {marker?.children}
                 </Popup>
