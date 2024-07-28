@@ -30,7 +30,7 @@ export default function MapPopup({ name, link, image, kegiatans }: { name: strin
           </button>
         </a>
       )}
-      <h1 className="font-jakarta w-full mt-2 font-semibold text-[17px]">Kegiatan:</h1>
+      {kegiatans && <h1 className="font-jakarta w-full mt-2 font-semibold text-[17px]">Kegiatan:</h1>}
       <ul className={kegiatans ? "flex flex-col justify-start w-full !list-disc pl-5 pt-1 text-[15px]" : "hidden"}>
         {
           kegiatans?.map((kegiatan, index) => {

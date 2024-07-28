@@ -18,7 +18,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setIsMenuOpen(false);
-    console.log(router.pathname.split("/")[1])
+    // console.log(router.pathname.split("/")[1])
   }, [router])
 
   return (

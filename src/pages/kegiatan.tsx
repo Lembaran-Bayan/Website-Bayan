@@ -12,7 +12,7 @@ import listKegiatan from "@/data/kegiatan.json";
 import calculateMiddlePoint from "@/utilities/CalculateCentroid";
 
 export default function ProfilePage() {
-  const [centroid, setCentroid] = useState<[number, number]>([0,0]);
+  const centroid: [number, number] = [-8.285868425, 116.41376942500001];
   const Map = useMemo(
     () =>
       dynamic(() => import("@/components/Map"), {
@@ -25,7 +25,6 @@ export default function ProfilePage() {
   const kegiatanMarkers: any = [];
   listKegiatan.forEach((kegiatan) => {
     if (kegiatan.position[0] == undefined) return;
-    console.log(kegiatan.kegiatans);
     kegiatanMarkers.push({
       position: kegiatan.position,
       name: kegiatan.name,
@@ -47,11 +46,9 @@ export default function ProfilePage() {
   });
 
   useEffect(() => {
-    if (centroid[0] === 0 && centroid[1] === 0) {
-      setCentroid(calculateMiddlePoint(kegiatanMarkers));
-    }
+    console.log(calculateMiddlePoint(kegiatanMarkers));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [kegiatanMarkers]);
+  }, []);
 
   return (
     <main className="bg-white min-h-screen">

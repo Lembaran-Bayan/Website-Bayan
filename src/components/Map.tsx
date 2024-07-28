@@ -28,7 +28,7 @@ function Map({
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {markers &&
-          markers.map((marker: any) => {
+          markers.map((marker: any, index: number) => {
             return (
               <Marker
                 position={marker.position}
@@ -39,7 +39,7 @@ function Map({
                     iconAnchor: marker.iconAnchor,
                   })
                 }
-                key={marker.key}
+                key={index}
               >
                 <Popup
                   className="!p-0 !bg-transparent !outline-none !border-0 !shadow-none !w-fit"
