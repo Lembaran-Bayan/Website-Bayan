@@ -7,6 +7,8 @@ import PostArticle from "@/components/PostArticle";
 import { Children, useMemo } from "react";
 import dynamic from "next/dynamic";
 import { MdMap } from "react-icons/md";
+import Gmap from "@/../public/Gmap.webp";
+import MapPopup from "@/components/MapPopup";
 
 export default function ProfilePage() {
   const Map = useMemo(
@@ -47,7 +49,7 @@ export default function ProfilePage() {
 
       <PostArticle />
 
-      <section className="flex flex-col justify-center items-center relative z-[0] min-h-screen gap-[30px]">
+      <section className="flex flex-col justify-center items-center relative z-[0] my-[120px] gap-[30px]">
         <div
           data-aos="fade-up"
           className="flex items-center justify-center gap-[11px]"
@@ -66,11 +68,56 @@ export default function ProfilePage() {
               iconUrl: "/MarkerIcon.png",
               iconSize: [20, 38],
               iconAnchor: [10, 38],
-              popupAnchor: [20, -19],
+              popupAnchor: [0, -30],
               children: (
-                <div className="bg-white/90 p-4 rounded-[15px]">
-                  <h1 className="text-[20px] font-jakarta font-semibold mb-2">Masjid Kuno Bayan</h1>
-                  <div className="w-[250px] aspect-[5/3] bg-gradient-to-br from-green-2 to-yellow-1" />
+                <MapPopup
+                  name="Masjid Kuno Bayan"
+                  link="https://maps.app.goo.gl/DKRgnuf9gWFHaihi8"
+                  image={Gmap}
+                />
+              ),
+            },
+            {
+              position: [-8.270265, 116.426247],
+              name: "Posko Sub Unit Bayan",
+              iconUrl: "/MarkerIcon.png",
+              iconSize: [20, 38],
+              iconAnchor: [10, 38],
+              popupAnchor: [0, -30],
+              children: (
+                <div className="bg-white/70 px-4 py-3 rounded-[15px] flex flex-col justify-center items-center outline outline-white">
+                  <h1 className="text-[20px] font-jakarta font-semibold mb-2">Posko Sub Unit Bayan</h1>
+                  <div className="w-[300px] aspect-[5/3] bg-gradient-to-br from-green-2 to-yellow-1"></div>
+                  <button className="font-jakarta text-[18px] flex items-center justify-center px-4 py-2 mt-2 !bg-white shadow-[0_4px_4px_rgba(0,0,0,.5)] rounded-[8px] gap-2 !w-fit hover:!bg-[#f2f2f2] transition">
+                    <Image
+                      src={Gmap}
+                      alt="Gmaps"
+                      className="w-[28px]"
+                    />
+                    Google Maps
+                  </button>
+                </div>
+              ),
+            },
+            {
+              position: [-8.2777424, 116.4236611],
+              name: "Pemandian Mandala Bayan",
+              iconUrl: "/MarkerIcon.png",
+              iconSize: [20, 38],
+              iconAnchor: [10, 38],
+              popupAnchor: [0, -30],
+              children: (
+                <div className="bg-white/70 px-4 py-3 rounded-[15px] flex flex-col justify-center items-center outline outline-white">
+                  <h1 className="text-[20px] font-jakarta font-semibold mb-2">Pemandian Mandala Bayan</h1>
+                  <div className="w-[300px] aspect-[5/3] bg-gradient-to-br from-green-2 to-yellow-1" />
+                  <button className="font-jakarta text-[18px] flex items-center justify-center px-4 py-2 mt-2 !bg-white shadow-[0_4px_4px_rgba(0,0,0,.5)] rounded-[8px] gap-2 !w-fit hover:!bg-[#f2f2f2] transition">
+                    <Image
+                      src={Gmap}
+                      alt="Gmaps"
+                      className="w-[28px]"
+                    />
+                    Google Maps
+                  </button>
                 </div>
               ),
             },

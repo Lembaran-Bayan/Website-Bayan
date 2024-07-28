@@ -49,3 +49,7 @@
 .animate-bounce-horizontal {
   animation: bounce-horizontal 1s infinite;
 }
+
+.leaflet-control {
+  margin: 20px !important;
+}

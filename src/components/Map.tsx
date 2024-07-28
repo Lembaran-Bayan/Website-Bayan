@@ -1,4 +1,4 @@
-import { MapContainer, Marker, TileLayer, Tooltip, useMap, GeoJSON } from "react-leaflet";
+import { MapContainer, Marker, TileLayer, Tooltip, useMap, GeoJSON, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import dynamic from "next/dynamic";
 import { icon, Icon } from "leaflet";
@@ -30,7 +30,7 @@ function Map({
     return null;
   };
   return (
-    <div className="w-[90%] max-w-[1020px] aspect-[1020/615] rounded-[45px] overflow-hidden">
+    <div className="w-[90%] max-w-[1020px] aspect-[3/4] sm:aspect-[1020/615] rounded-[30px] md:rounded-[45px] overflow-hidden">
       <MapContainer
         center={center ?? [-7.801363, 110.364787]}
         zoom={15}
@@ -56,14 +56,19 @@ function Map({
                 }
                 key={marker.key}
               >
-                <Tooltip
+                <Popup
                   className="!p-0 !bg-transparent !outline-none !border-0 !shadow-none"
-                  interactive
+                  // interactive
                   offset={marker?.popupAnchor}
-                  permanent
+                  // permanent  
+                  // sticky
+                  eventHandlers={{
+                    mouseover: (e) => {e.target.openPopup()},
+                    mouseout: (e) => {console.log("adsadsdas")}
+                  }}
                 >
                   {marker?.children}
-                </Tooltip>
+                </Popup>
               </Marker>
             );
           })}
