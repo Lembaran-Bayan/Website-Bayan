@@ -3,7 +3,35 @@
     "id": 1,
     "name": "Masjid Kuno Bayan",
     "position": [-8.2666852, 116.4271543],
-    "link": "https://maps.app.goo.gl/QmWt9u2LP4ZEo6hi6",
+    "link": "https://maps.app.goo.gl/DKRgnuf9gWFHaihi8",
     "image": "/wisata/1.png"
+  },
+  {
+    "id": 2,
+    "name": "Pintu Pendakian Taman Nasional Gunung Rinjani",
+    "position": [-8.3185854, 116.3833505],
+    "link": "https://maps.app.goo.gl/tXFiCLWAkg2c7G836",
+    "image": "/wisata/2.png"
+  },
+  {
+    "id": 3,
+    "name": "Air Terjun Tiu Kelep",
+    "position": [-8.311553, 116.403792],
+    "link": "https://maps.app.goo.gl/efTiEpKEwbhT1zjw8",
+    "image": "/wisata/3.png"
+  },
+  {
+    "id": 4,
+    "name": "Air Terjun Sendang Gile",
+    "position": [-8.3064721, 116.4083054],
+    "link": "https://maps.app.goo.gl/NF535M6SymaLGBnk7",
+    "image": "/wisata/4.png"
+  },
+  {
+    "id": 5,
+    "name": "Pemandian Mandala",
+    "position": [-8.2777477, 116.4222596],
+    "link": "https://maps.app.goo.gl/9ttnNvKdRdfPDK2D8",
+    "image": "/wisata/5.png"
   }
 ]
