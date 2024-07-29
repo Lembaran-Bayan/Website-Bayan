@@ -13,7 +13,7 @@ import listWisata from "@/data/pariwisata.json";
 import SideDeco from "@/components/SideDeco";
 
 export default function ProfilePage() {
-  const centroid: [number, number] = [-8.269707961538461,116.41556806153848];
+  const centroid: [number, number] = [-8.29620868, 116.40897236];
   const zoom = 13;
   const Map = useMemo(
     () =>
