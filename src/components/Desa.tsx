@@ -10,7 +10,7 @@ export default function Desa() {
       <h1 className="text-[31px] pb-[18px] text-green-1 text-center">
         Kenali Desa <strong>Bayan</strong> dan Desa <strong>Senaru</strong>
       </h1>
-      <section className="z-[1] w-full flex justify-center items-center">
+      <section className="z-[1] w-full flex flex-col lg:flex-row justify-center items-center">
         <div className="w-[90%] max-w-[450px] mt-5 relative flex flex-col justify-center items-center">
           <div data-aos="fade-left">
             <svg
