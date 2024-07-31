@@ -32,7 +32,7 @@ export default function ArticlePage() {
         </div>
       </section>
 
-      <section className="flex flex-col justify-center items-center mt-12 z-[1] relative">
+      <section className="flex flex-col justify-center items-center mt-12 z-[1] relative gap-2">
         <p className="text-justify w-[90%] max-w-[844px] text-[22px]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

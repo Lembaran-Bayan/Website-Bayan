@@ -99,7 +99,7 @@ export default function UploadArticle() {
       const previewArticle = JSON.parse(localStorage.getItem("preview-article") as string);
       setTitle(previewArticle.title);
       setWriter(previewArticle.writer);
-      setParagraphs(previewArticle.paragpraphs);
+      setParagraphs(previewArticle.paragpraphs.join("\n"));
       setDesa(previewArticle.desa);
       setKategori(previewArticle.category);
       setSelectedImage(previewArticle.image);

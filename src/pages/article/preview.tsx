@@ -143,7 +143,7 @@ export default function ArticlePage() {
         </div>
       </section>
 
-      <section className="flex flex-col justify-center items-center mt-12 z-[1] relative">
+      <section className="flex flex-col justify-center items-center mt-12 z-[1] relative gap-2">
         {paragraphs?.map((p, index) => {
           return (
             <p
