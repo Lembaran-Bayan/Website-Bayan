@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import FormDropdown from "@/components/FormDropdown";
 import SideDeco from "@/components/SideDeco";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { MdClose, MdInsertLink } from "react-icons/md";
 import Facebook from "@/../public/Facebook.png";
 import Tiktok from "@/../public/Tiktok.png";
@@ -13,6 +13,7 @@ import GMaps from "@/../public/Gmap.webp";
 import Image, { StaticImageData } from "next/image";
 import Button from "@/components/Button";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 // Define the type for the keys of the linkIconMap
 type SocialMedia = "youtube" | "facebook" | "tiktok" | "instagram" | "tokopedia" | "shopee" | "googlemaps";
@@ -69,6 +70,7 @@ function IconLink({ link }: { link: string }) {
 }
 
 export default function UploadArticle() {
+  const router = useRouter();
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     console.log(title, writer, paragraphs, desa, kategori, link1, link2, link3, link4);
@@ -89,6 +91,24 @@ export default function UploadArticle() {
   const [link2, setLink2] = useState<string>("");
   const [link3, setLink3] = useState<string>("");
   const [link4, setLink4] = useState<string>("");
+
+  useEffect(() => {
+    if (!localStorage.getItem("preview-article")) {
+      router.push("/article/upload");
+    } else {
+      const previewArticle = JSON.parse(localStorage.getItem("preview-article") as string);
+      setTitle(previewArticle.title);
+      setWriter(previewArticle.writer);
+      setParagraphs(previewArticle.paragpraphs);
+      setDesa(previewArticle.desa);
+      setKategori(previewArticle.category);
+      setSelectedImage(previewArticle.image);
+      setLink1(previewArticle.links[0]);
+      setLink2(previewArticle.links[1]);
+      setLink3(previewArticle.links[2]);
+      setLink4(previewArticle.links[3]);
+    }
+  }, [router]);
 
   return (
     <main className="pt-[120px] lg:pt-[200px] pb-[120px] relative overflow-hidden min-h-screen">
@@ -226,7 +246,24 @@ export default function UploadArticle() {
           <Button
             type="button"
             ariaLabel="Submit"
-            className="hover:bg-[#f0af06] bg-[#e8b73c]"
+            className="hover:bg-[#f0af06] !bg-[#e8b73c]"
+            onClick={() => {
+              if(!title || !paragraphs || !selectedImage || (!link1 && !link2 && !link3 && !link4) || !desa || !kategori ) {
+                return alert("Mohon lengkapi data artikel")
+              }
+              const previewArticle = {
+                title,
+                paragpraphs: paragraphs.split("\n"),
+                image: selectedImage,
+                writer,
+                links: [link1, link2, link3, link4],
+                desa,
+                category: kategori,
+                status: "Draft"
+              }
+              localStorage.setItem("preview-article", JSON.stringify(previewArticle));
+              router.push("/article/preview")
+            }}
           >
             Lihat Pratinjau
           </Button>
