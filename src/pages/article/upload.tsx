@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import FormDropdown from "@/components/FormDropdown";
 import SideDeco from "@/components/SideDeco";
 import { FormEvent, useState } from "react";
-import { MdInsertLink } from "react-icons/md";
+import { MdClose, MdInsertLink } from "react-icons/md";
 import Facebook from "@/../public/Facebook.png";
 import Tiktok from "@/../public/Tiktok.png";
 import Youtube from "@/../public/Youtube.png";
@@ -83,6 +84,7 @@ export default function UploadArticle() {
   const [paragraphs, setParagraphs] = useState<string>("");
   const [desa, setDesa] = useState<null | "Bayan" | "Senaru">(null);
   const [kategori, setKategori] = useState<null | "Wisata" | "UMKM">(null);
+  const [selectedImage, setSelectedImage] = useState<any>(null);
   const [link1, setLink1] = useState<string>("");
   const [link2, setLink2] = useState<string>("");
   const [link3, setLink3] = useState<string>("");
@@ -153,17 +155,36 @@ export default function UploadArticle() {
               placeholder="Pilih Kategori"
             />
           </label>
-          <label className={labelClass}>
+          <label className={labelClass + (selectedImage !== null ? " hidden" : "")}>
             Unggah Gambar
             <input
               type="file"
               className="hidden"
               accept="image/*"
+              onChange={(e) => {
+                // @ts-ignore
+                const file = e?.target?.files[0];
+                if (file) {
+                  setSelectedImage(URL.createObjectURL(file));
+                  console.log(URL.createObjectURL(file))
+                }
+              }}
             />
             <div className="text-[18px] flex justify-center items-center outline-dashed outline-green-2 outline-2 rounded-[8px] py-10 hover:bg-[#f2f2f2] cursor-pointer">
               Klik di sini untuk memilih gambar
             </div>
           </label>
+          {
+            selectedImage !== null && (
+              <div className="flex flex-col gap-2">
+                <label className={labelClass}>Unggah Gambar</label>
+              <div className="flex gap-2">
+                <img className="w-[500px] aspect-[620/415]" src={selectedImage} alt="Uploaded photo" />
+                <button className="bg-red-500 hover:bg-red-700 text-white rounded-full self-start text-[18px] p-1 flex items-center" onClick={() => setSelectedImage(null)}><MdClose /></button>
+              </div>
+              </div>
+            )
+          }
           <label className={labelClass}>Link Media Sosial</label>
           <div className="flex items-center gap-2">
             <IconLink link={link1} />
