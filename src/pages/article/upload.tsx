@@ -11,6 +11,7 @@ import Shoppee from "@/../public/Shoppee.png";
 import GMaps from "@/../public/Gmap.webp";
 import Image, { StaticImageData } from "next/image";
 import Button from "@/components/Button";
+import axios from "axios";
 
 // Define the type for the keys of the linkIconMap
 type SocialMedia = "youtube" | "facebook" | "tiktok" | "instagram" | "tokopedia" | "shopee" | "googlemaps";
@@ -69,11 +70,17 @@ function IconLink({ link }: { link: string }) {
 export default function UploadArticle() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    alert("Hello World");
+    console.log(title, writer, paragraphs, desa, kategori, link1, link2, link3, link4);
+    axios
+      .post(process.env.NEXT_PUBLIC_API_URL + "/article")
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err.response.data));
   };
   const labelClass = "flex flex-col w-full text-[20px] font-semibold gap-1";
   const inputClass = "outline outline-2 outline-green-2 font-normal px-2 py-1 rounded-[8px]";
-
+  const [title, setTitle] = useState<string>("");
+  const [writer, setWriter] = useState<string>("");
+  const [paragraphs, setParagraphs] = useState<string>("");
   const [desa, setDesa] = useState<null | "Bayan" | "Senaru">(null);
   const [kategori, setKategori] = useState<null | "Wisata" | "UMKM">(null);
   const [link1, setLink1] = useState<string>("");
@@ -82,15 +89,15 @@ export default function UploadArticle() {
   const [link4, setLink4] = useState<string>("");
 
   return (
-    <main className="pt-[200px] pb-[120px] relative overflow-hidden min-h-screen">
+    <main className="pt-[120px] lg:pt-[200px] pb-[120px] relative overflow-hidden min-h-screen">
       <SideDeco position={true} />
       <SideDeco position={false} />
 
-      <section className="z-[1] flex flex-col justify-center items-center">
+      <section className="z-[1] flex flex-col justify-center items-center relative">
         <h1 className="text-green-1 font-bold text-[29px] md:text-[39px]">Ajukan Artikel Baru</h1>
 
         <form
-          className="bg-green-2/10 w-[90%] max-w-[700px] flex flex-col gap-4"
+          className="w-[90%] max-w-[700px] flex flex-col gap-4"
           onSubmit={(e) => handleSubmit(e)}
         >
           <label className={labelClass}>
@@ -99,6 +106,8 @@ export default function UploadArticle() {
               type="text"
               className={inputClass}
               placeholder=""
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
           </label>
           <label className={labelClass}>
@@ -107,12 +116,18 @@ export default function UploadArticle() {
               type="text"
               className={inputClass}
               placeholder=""
+              value={writer}
+              onChange={(e) => setWriter(e.target.value)}
             />
           </label>
           <label className={labelClass}>
             Konten Artikel
             {/* <input type="text" className={inputClass} placeholder=""/> */}
-            <textarea className={inputClass + " min-h-[300px]"}></textarea>
+            <textarea
+              className={inputClass + " min-h-[300px]"}
+              value={paragraphs}
+              onChange={(e) => setParagraphs(e.target.value)}
+            ></textarea>
           </label>
           <label className={labelClass}>
             Pilih Desa
@@ -137,6 +152,17 @@ export default function UploadArticle() {
               setState={(value: "Wisata" | "UMKM") => setKategori(value)}
               placeholder="Pilih Kategori"
             />
+          </label>
+          <label className={labelClass}>
+            Unggah Gambar
+            <input
+              type="file"
+              className="hidden"
+              accept="image/*"
+            />
+            <div className="text-[18px] flex justify-center items-center outline-dashed outline-green-2 outline-2 rounded-[8px] py-10 hover:bg-[#f2f2f2] cursor-pointer">
+              Klik di sini untuk memilih gambar
+            </div>
           </label>
           <label className={labelClass}>Link Media Sosial</label>
           <div className="flex items-center gap-2">
@@ -176,6 +202,13 @@ export default function UploadArticle() {
             />
           </div>
 
+          <Button
+            type="button"
+            ariaLabel="Submit"
+            className="hover:bg-[#f0af06] bg-[#e8b73c]"
+          >
+            Lihat Pratinjau
+          </Button>
           <Button
             type="submit"
             ariaLabel="Submit"
