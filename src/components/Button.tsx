@@ -6,6 +6,7 @@ interface Props {
   ariaLabel: string;
   onClick?: () => any;
   disabled?: boolean;
+  type?: "button" | "submit" | "reset" | undefined
 }
 
 export default function Button({
@@ -14,6 +15,7 @@ export default function Button({
   ariaLabel = "Button",
   onClick = () => console.log("Clicked"),
   disabled = false,
+  type= "button"
 }: Props) {
   return (
     <button
@@ -27,6 +29,7 @@ export default function Button({
         onClick();
       }}
       disabled={disabled}
+      type={type}
     >
       {children}
     </button>
