@@ -80,8 +80,6 @@ export default function ProfilePage() {
 
       <ArticleSlider />
 
-      <PostArticle />
-
       <section className="flex flex-col justify-center items-center relative z-[0] py-[120px] gap-[30px] overflow-x-hidden">
         <SideDeco position={true} />
         <SideDeco position={false} />
@@ -98,6 +96,8 @@ export default function ProfilePage() {
           zoom={zoom}
         />
       </section>
+
+      <PostArticle />
 
       <Footer className="!pt-20" />
     </main>
