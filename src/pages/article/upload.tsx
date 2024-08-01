@@ -79,8 +79,8 @@ export default function UploadArticle() {
     if (!paragraphs) return alert("Konten artikel wajib diisi!");
     if (!desa) return alert("Pilih desa yang terkait dengan isi artikel!");
     if (!kategori) return alert("Pilih kategori yang sesuai dengan isi artikel!");
-    if (!selectedImage) return alert("Gambar artikel wajib diisi!");
-
+    if (!imageFile) return alert("Gambar wajib diisi!");
+    console.log(JSON.stringify(paragraphs.split("\n")));
     const formData = new FormData();
     formData.append("title", title);
     formData.append("paragraphs", JSON.stringify(paragraphs.split("\n")));
@@ -97,16 +97,17 @@ export default function UploadArticle() {
     axios
       .post(process.env.NEXT_PUBLIC_API_URL + "/article", formData, {
         headers: {
-          'Content-Type': "multipart/form-data"
-        }
+          "Content-Type": "multipart/form-data",
+        },
       })
       .then((res) => {
         console.log(res.data);
         alert("Artikel sukses diunggah dan akan menunggu verifikasi admin");
-        router.push(kategori == "UMKM" ? "/umkm" : "/wisata-dan-budaya")
+        router.replace(kategori == "UMKM" ? "/umkm" : "/wisata-dan-budaya");
+        localStorage.removeItem("preview-article");
       })
       .catch((err) => {
-        console.log(err.response.data);
+        console.log(err?.response?.data);
         alert("Gagal mengunggah artikel");
       });
   };
@@ -125,9 +126,7 @@ export default function UploadArticle() {
   const [link4, setLink4] = useState<string>("");
 
   useEffect(() => {
-    if (!localStorage.getItem("preview-article")) {
-      router.push("/article/upload");
-    } else {
+    if (localStorage.getItem("preview-article")) {
       const previewArticle = JSON.parse(localStorage.getItem("preview-article") as string);
       setTitle(previewArticle.title);
       setWriter(previewArticle.writer);

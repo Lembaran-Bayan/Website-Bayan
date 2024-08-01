@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { MdArrowBack } from "react-icons/md";
 import Umkm from "@/../public/Umkm.webp";
+import Link from "next/link";
 
 export default function PostArticle() {
   const [isHovered, setIsHovered] = useState<boolean>(false);
@@ -29,16 +30,18 @@ export default function PostArticle() {
         <p className="text-[16px] md:text-[18px] max-w-[500px] mt-4 text-center">
           Kirimkan draft artikelmu terkait UMKM, wisata, budaya, atau kegiatan yang ada di Bayan.
         </p>
-        <button
-          className="flex items-center gap-5 text-[16px] md:text-[18px] mt-5 font-medium py-2 mx-auto bg-black/60 hover:bg-black font-poppins px-10 rounded-full transition shadow-[0_0_2px_rgba(255,255,255,.5)] hover:shadow-[0_0_6px_rgba(255,255,255,.8)] active:shadow-[0_0_8px_#FFF]"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          <span>Unggah di sini</span>
-          <div className={"text-[30px] " + (isHovered ? "animate-bounce-horizontal" : "")}>
-            <MdArrowBack className="rotate-180" />
-          </div>
-        </button>
+        <Link href="/article/upload">
+          <button
+            className="flex items-center gap-5 text-[16px] md:text-[18px] mt-5 font-medium py-2 mx-auto bg-black/60 hover:bg-black font-poppins px-10 rounded-full transition shadow-[0_0_2px_rgba(255,255,255,.5)] hover:shadow-[0_0_6px_rgba(255,255,255,.8)] active:shadow-[0_0_8px_#FFF]"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <span>Unggah di sini</span>
+            <div className={"text-[30px] " + (isHovered ? "animate-bounce-horizontal" : "")}>
+              <MdArrowBack className="rotate-180" />
+            </div>
+          </button>
+        </Link>
       </div>
     </section>
   );
