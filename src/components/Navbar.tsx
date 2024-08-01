@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const opaqueRoutes = ["profile", "article"];
+  const hiddenRoutes = ["admin"];
   const router = useRouter();
   const scrollPosition = useScrollPosition();
   const [scrollPerVH, setScrollPerVH] = useState<number>(0);
@@ -20,6 +21,10 @@ export default function Navbar() {
     setIsMenuOpen(false);
     // console.log(router.pathname.split("/")[1])
   }, [router])
+
+  if(router.pathname === "/admin") {
+    return null;
+  }
 
   return (
     <nav
