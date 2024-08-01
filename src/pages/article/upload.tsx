@@ -13,7 +13,7 @@ import GMaps from "@/../public/Gmap.webp";
 import Image, { StaticImageData } from "next/image";
 import Button from "@/components/Button";
 import axios from "axios";
-import { useRouter } from "next/router";
+import { Router, useRouter } from "next/router";
 
 // Define the type for the keys of the linkIconMap
 type SocialMedia = "youtube" | "facebook" | "tiktok" | "instagram" | "tokopedia" | "shopee" | "googlemaps";
@@ -74,10 +74,41 @@ export default function UploadArticle() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     console.log(title, writer, paragraphs, desa, kategori, link1, link2, link3, link4);
+    if (!title) return alert("Judul artikel wajib diisi!");
+    if (!writer) return alert("Nama penulis wajib diisi!");
+    if (!paragraphs) return alert("Konten artikel wajib diisi!");
+    if (!desa) return alert("Pilih desa yang terkait dengan isi artikel!");
+    if (!kategori) return alert("Pilih kategori yang sesuai dengan isi artikel!");
+    if (!selectedImage) return alert("Gambar artikel wajib diisi!");
+
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("paragraphs", JSON.stringify(paragraphs.split("\n")));
+    formData.append("writer", writer);
+    formData.append("desa", desa);
+    formData.append("category", kategori);
+    formData.append("links", JSON.stringify([link1, link2, link3, link4]));
+    formData.append("image", imageFile);
+    console.log(formData);
+    if (imageFile.size > 1024 * 1024) {
+      return alert("Ukuran maksimal file gambar adalah 1 MB");
+    }
+    console.log(imageFile);
     axios
-      .post(process.env.NEXT_PUBLIC_API_URL + "/article")
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err.response.data));
+      .post(process.env.NEXT_PUBLIC_API_URL + "/article", formData, {
+        headers: {
+          'Content-Type': "multipart/form-data"
+        }
+      })
+      .then((res) => {
+        console.log(res.data);
+        alert("Artikel sukses diunggah dan akan menunggu verifikasi admin");
+        router.push(kategori == "UMKM" ? "/umkm" : "/wisata-dan-budaya")
+      })
+      .catch((err) => {
+        console.log(err.response.data);
+        alert("Gagal mengunggah artikel");
+      });
   };
   const labelClass = "flex flex-col w-full text-[20px] font-semibold gap-1";
   const inputClass = "outline outline-2 outline-green-2 font-normal px-2 py-1 rounded-[8px]";
@@ -87,6 +118,7 @@ export default function UploadArticle() {
   const [desa, setDesa] = useState<null | "Bayan" | "Senaru">(null);
   const [kategori, setKategori] = useState<null | "Wisata" | "UMKM">(null);
   const [selectedImage, setSelectedImage] = useState<any>(null);
+  const [imageFile, setImageFile] = useState<any>(null);
   const [link1, setLink1] = useState<string>("");
   const [link2, setLink2] = useState<string>("");
   const [link3, setLink3] = useState<string>("");
@@ -186,7 +218,7 @@ export default function UploadArticle() {
                 const file = e?.target?.files[0];
                 if (file) {
                   setSelectedImage(URL.createObjectURL(file));
-                  console.log(URL.createObjectURL(file))
+                  setImageFile(file);
                 }
               }}
             />
@@ -194,17 +226,24 @@ export default function UploadArticle() {
               Klik di sini untuk memilih gambar
             </div>
           </label>
-          {
-            selectedImage !== null && (
-              <div className="flex flex-col gap-2">
-                <label className={labelClass}>Unggah Gambar</label>
+          {selectedImage !== null && (
+            <div className="flex flex-col gap-2">
+              <label className={labelClass}>Unggah Gambar</label>
               <div className="flex gap-2">
-                <img className="w-[500px] aspect-[620/415]" src={selectedImage} alt="Uploaded photo" />
-                <button className="bg-red-500 hover:bg-red-700 text-white rounded-full self-start text-[18px] p-1 flex items-center" onClick={() => setSelectedImage(null)}><MdClose /></button>
+                <img
+                  className="w-[500px] aspect-[620/415]"
+                  src={selectedImage}
+                  alt="Uploaded photo"
+                />
+                <button
+                  className="bg-red-500 hover:bg-red-700 text-white rounded-full self-start text-[18px] p-1 flex items-center"
+                  onClick={() => setSelectedImage(null)}
+                >
+                  <MdClose />
+                </button>
               </div>
-              </div>
-            )
-          }
+            </div>
+          )}
           <label className={labelClass}>Link Media Sosial</label>
           <div className="flex items-center gap-2">
             <IconLink link={link1} />
@@ -247,9 +286,17 @@ export default function UploadArticle() {
             type="button"
             ariaLabel="Submit"
             className="hover:bg-[#f0af06] !bg-[#e8b73c]"
+            // disabled={!title || !paragraphs || !selectedImage || (!link1 && !link2 && !link3 && !link4) || !desa || !kategori}
             onClick={() => {
-              if(!title || !paragraphs || !selectedImage || (!link1 && !link2 && !link3 && !link4) || !desa || !kategori ) {
-                return alert("Mohon lengkapi data artikel")
+              if (
+                !title ||
+                !paragraphs ||
+                !selectedImage ||
+                (!link1 && !link2 && !link3 && !link4) ||
+                !desa ||
+                !kategori
+              ) {
+                return alert("Mohon lengkapi data artikel");
               }
               const previewArticle = {
                 title,
@@ -259,10 +306,10 @@ export default function UploadArticle() {
                 links: [link1, link2, link3, link4],
                 desa,
                 category: kategori,
-                status: "Draft"
-              }
+                status: "Draft",
+              };
               localStorage.setItem("preview-article", JSON.stringify(previewArticle));
-              router.push("/article/preview")
+              router.push("/article/preview");
             }}
           >
             Lihat Pratinjau
