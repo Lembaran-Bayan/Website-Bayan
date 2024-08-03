@@ -129,12 +129,13 @@ export default function ArticlePage() {
           {desa}
         </div>
 
-        <div className="w-[90%] max-w-[620px] aspect-[620/415] bg-gradient-to-br from-green-2 from-20% to-yellow-1 rounded-[30px] overflow-hidden">
+        <div className="w-[90%] max-w-[620px] aspect-[620/415] rounded-[30px] overflow-hidden relative">
           <img
             src={selectedImage}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover z-[1] relative"
             alt={"foto " + title}
           />
+          <div className="bg-gradient-to-br from-green-2 from-20% to-yellow-1 w-full h-full absolute top-0 left-0 animate-pulse " />
         </div>
 
         <div className="flex flex-col justify-center items-center">
