@@ -53,7 +53,6 @@ export default function AdminPage() {
         className="w-[90%] max-w-[500px]"
         onSubmit={(e) => {
           e.preventDefault();
-          console.log(process.env.NEXT_PUBLIC_ADMIN_PASSWORD);
           if (password == process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
             setIsLoggedIn(true);
           } else {
