@@ -94,6 +94,15 @@ export default function Navbar() {
         >
           UMKM
         </Link>
+        <Link
+          href="/atasi-stunting"
+          className={
+            "after:h-[3px] after:bg-white after:absolute relative after:top-[100%] after:left-0 after:w-[0px] hover:after:w-full after:transition-width after:duration-200 " +
+            (router.pathname === "/atasi-stunting" ? "after:w-full" : "after:w-0")
+          }
+        >
+          Atasi Stunting
+        </Link>
       </div>
 
       <div className="relative flex items-center lg:hidden">
@@ -162,6 +171,12 @@ export default function Navbar() {
               href="/umkm"
             >
               UMKM
+            </Link>
+            <Link
+              className={"relative block w-fit text-[14px] md:text-[18px] after:block after:h-[3px] after:bg-white text-shadow-2 hover:after:w-full after:transition-width after:duration-200 " + (router.pathname === "/atasi-stunting" ? "after:w-full" : "after:w-0")}
+              href="/atasi-stunting"
+            >
+              Atasi Stunting
             </Link>
           </div>
         </div>

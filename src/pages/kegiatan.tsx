@@ -67,9 +67,9 @@ export default function ProfilePage() {
           <h2
             data-aos="fade-up"
             data-aos-delay="400"
-            className="text-[30px] md:text-[40px]"
+            className="text-[30px] md:text-[40px] font-normal"
           >
-            Membangun <strong>Masa Depan</strong>
+            Membangun <strong className="font-bold">Masa Depan</strong>
           </h2>
         </div>
       </section>

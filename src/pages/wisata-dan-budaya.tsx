@@ -69,9 +69,9 @@ export default function ProfilePage() {
           <h2
             data-aos="fade-up"
             data-aos-delay="400"
-            className="text-[30px] md:text-[40px]"
+            className="text-[30px] md:text-[40px] font-normal"
           >
-            Keindahan dan Kekayaan <strong>Budaya</strong>
+            Keindahan dan Kekayaan <strong className="font-bold">Budaya</strong>
           </h2>
         </div>
       </section>

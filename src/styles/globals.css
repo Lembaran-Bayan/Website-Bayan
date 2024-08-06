@@ -76,3 +76,9 @@
   padding: 0px !important;
   margin: 0px !important;
 }
+
+.svg-fill path {
+  fill: #18400f !important;
+  stroke: #18400f !important;
+  stroke-width: 1px !important;
+}
