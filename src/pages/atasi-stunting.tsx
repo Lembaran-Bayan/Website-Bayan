@@ -3,6 +3,7 @@ import Stunting from "@/../public/Stunting.webp";
 import { HiQuestionMarkCircle } from "react-icons/hi";
 import SideDeco from "@/components/SideDeco";
 import { AiTwotonePieChart } from "react-icons/ai";
+import StatistikStunting from "@/components/StatistikStunting";
 
 export default function AtasiStunting() {
   return (
@@ -52,17 +53,7 @@ export default function AtasiStunting() {
         </p>
       </section>
 
-      <section className="overflow-hidden relative min-h-screen py-20 lg:py-[120px]">
-        <SideDeco position={true} />
-        <SideDeco position={false} />
-        <div
-          // data-aos="fade-up"
-          className="flex items-center justify-center gap-2 lg:gap-[11px]"
-        >
-          <h1 className="text-green-1 text-center font-bold text-[25px] md:text-[30px] w-[90%] md:w-fit">Statistik Kab. Lombok Utara dan NTB</h1>
-          <AiTwotonePieChart className="hidden md:inline-block text-[34px] text-green-1 svg-fill" />
-        </div>
-      </section>
+      <StatistikStunting />
     </main>
   );
 }
