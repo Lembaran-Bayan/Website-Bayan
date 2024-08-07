@@ -53,7 +53,7 @@ const linkIconMap: Record<SocialMedia, { patterns: string[]; icon: StaticImageDa
 function IconLink({ link }: { link: string }) {
   // Find the corresponding icon based on the link
   const iconKey = (Object.keys(linkIconMap) as SocialMedia[]).find((key) =>
-    linkIconMap[key].patterns.some((pattern) => link.includes(pattern))
+    linkIconMap[key]?.patterns.some((pattern) => link?.includes(pattern))
   );
 
   if (iconKey) {
@@ -133,7 +133,7 @@ export default function UploadArticle() {
       setParagraphs(previewArticle.paragpraphs.join("\n"));
       setDesa(previewArticle.desa);
       setKategori(previewArticle.category);
-      setSelectedImage(previewArticle.image);
+      // setSelectedImage(previewArticle.image);
       setLink1(previewArticle.links[0]);
       setLink2(previewArticle.links[1]);
       setLink3(previewArticle.links[2]);

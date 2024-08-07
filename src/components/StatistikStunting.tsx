@@ -1,6 +1,7 @@
 import { AiTwotonePieChart } from "react-icons/ai";
 import SideDeco from "./SideDeco";
 import { useState } from "react";
+import { HiCursorClick } from "react-icons/hi";
 
 export default function StatistikStunting() {
   const [index, setIndex] = useState(0);
@@ -18,7 +19,7 @@ export default function StatistikStunting() {
         <AiTwotonePieChart className="hidden md:inline-block text-[34px] text-green-1 svg-fill" />
       </div>
 
-      <div className="flex flex-row flex-wrap gap-8 lg:gap-[50px] relative z-[1] justify-center items-center py-10 mb-5 w-[90%] mx-auto">
+      <div className="flex flex-row flex-wrap gap-8 lg:gap-[50px] relative z-[1] justify-center items-center pt-10 w-[90%] mx-auto">
         <button
           type="button"
           onClick={() => setIndex(0)}
@@ -49,6 +50,15 @@ export default function StatistikStunting() {
             text="Angka Stunting di Provinsi Nusa Tenggara Barat"
           />
         </button>
+      </div>
+
+      <div
+        className="hidden md:flex my-10 w-max bg-green-1 text-white px-4 py-2 rounded-full items-center gap-2 mx-auto"
+        data-aos="fade-left"
+        data-aos-delay="200"
+      >
+        <HiCursorClick className="text-[20px]" />
+        Klik untuk berinteraksi
       </div>
 
       {index === 1 && (
@@ -97,8 +107,8 @@ export default function StatistikStunting() {
             harus memperkuat intervensi yang berfokus pada peningkatan gizi ibu dan anak, mempromosikan pemberian ASI
             eksklusif, dan meningkatkan layanan kesehatan
           </strong>
-          . Dengan menciptakan lingkungan yang mendukung dan mengatasi masalah ini, NTB dapat bekerja <strong>menuju pencapaian
-          target kesehatan dan secara signifikan mengurangi prevalensi stunting</strong>.
+          . Dengan menciptakan lingkungan yang mendukung dan mengatasi masalah ini, NTB dapat bekerja{" "}
+          <strong>menuju pencapaian target kesehatan dan secara signifikan mengurangi prevalensi stunting</strong>.
         </p>
       )}
     </section>
