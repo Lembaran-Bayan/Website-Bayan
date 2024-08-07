@@ -5,6 +5,7 @@ import SideDeco from "@/components/SideDeco";
 import { AiTwotonePieChart } from "react-icons/ai";
 import StatistikStunting from "@/components/StatistikStunting";
 import PenyebabStunting from "@/components/PenyebabStunting";
+import MengatasiStunting from "@/components/MengatasiStunting";
 
 export default function AtasiStunting() {
   return (
@@ -58,7 +59,7 @@ export default function AtasiStunting() {
 
       <PenyebabStunting />
 
-      {/* <PenyebabStunting /> */}
+      <MengatasiStunting />
     </main>
   );
 }

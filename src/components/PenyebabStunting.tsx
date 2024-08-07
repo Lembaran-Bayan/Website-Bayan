@@ -90,7 +90,7 @@ export default function PenyebabStunting() {
         <button
           type="button"
           onClick={() => setIndex(4)}
-          className={index === 4 ? "scale-[1.1]" : "hover:scale-[1.1]"}
+          className={index === 4 ? "scale-[1.1]" : "hover:scale-[1.1] transition"}
         >
           <Box
             image={
