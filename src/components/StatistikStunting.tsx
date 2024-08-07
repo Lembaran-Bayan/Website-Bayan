@@ -117,7 +117,7 @@ export default function StatistikStunting() {
 
 function StatisticBox({ num, subnum, text }: { num: string; subnum: string; text: string }) {
   return (
-    <div className="size-[170px] sm:size-[200px] lg:size-[290px] bg-white shadow-[3px_4px_8px_rgba(24,64,15,.75)] rounded-[20px] flex flex-col justify-center items-center hover:scale-[1.1] transition cursor-pointer">
+    <div className="size-[170px] sm:size-[200px] lg:size-[290px] bg-white shadow-[3px_4px_8px_rgba(24,64,15,.75)] rounded-[20px] flex flex-col justify-center items-center hover:scale-[1.05] transition cursor-pointer">
       <p className="font-extrabold text-[46.9px] sm:text-[55.1px] lg:text-[80px] text-green-1">
         {num}
         <span className="text-[20.5px] sm:text-[24.14px] lg:text-[35px] font-semibold">{subnum}</span>

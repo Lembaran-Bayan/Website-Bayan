@@ -28,7 +28,7 @@ export default function MengatasiStunting() {
         <button
           type="button"
           onClick={() => setIndex(0)}
-          className={index === 0 ? "scale-[1.1] transition" : "hover:scale-[1.1] transition"}
+          className={index === 0 ? "scale-[1.05] transition" : "hover:scale-[1.05] transition"}
         >
           <Box
             image={
@@ -43,7 +43,7 @@ export default function MengatasiStunting() {
         <button
           type="button"
           onClick={() => setIndex(1)}
-          className={index === 1 ? "scale-[1.1] transition" : "hover:scale-[1.1] transition"}
+          className={index === 1 ? "scale-[1.05] transition" : "hover:scale-[1.05] transition"}
         >
           <Box
             image={
@@ -58,7 +58,7 @@ export default function MengatasiStunting() {
         <button
           type="button"
           onClick={() => setIndex(2)}
-          className={index === 2 ? "scale-[1.1] transition" : "hover:scale-[1.1] transition"}
+          className={index === 2 ? "scale-[1.05] transition" : "hover:scale-[1.05] transition"}
         >
           <Box
             image={
@@ -73,7 +73,7 @@ export default function MengatasiStunting() {
         <button
           type="button"
           onClick={() => setIndex(3)}
-          className={index === 3 ? "scale-[1.1] transition" : "hover:scale-[1.1] transition"}
+          className={index === 3 ? "scale-[1.05] transition" : "hover:scale-[1.05] transition"}
         >
           <Box
             image={
@@ -88,7 +88,7 @@ export default function MengatasiStunting() {
         <button
           type="button"
           onClick={() => setIndex(4)}
-          className={index === 4 ? "scale-[1.1] transition" : "hover:scale-[1.1] transition"}
+          className={index === 4 ? "scale-[1.05] transition" : "hover:scale-[1.05] transition"}
         >
           <Box
             image={
