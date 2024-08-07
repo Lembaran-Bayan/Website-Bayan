@@ -6,7 +6,7 @@ import { HiCursorClick } from "react-icons/hi";
 export default function StatistikStunting() {
   const [index, setIndex] = useState(0);
   return (
-    <section className="overflow-hidden relative py-20 lg:py-[120px]">
+    <section className="overflow-hidden relative py-10">
       <SideDeco position={true} />
       <SideDeco position={false} />
       <div

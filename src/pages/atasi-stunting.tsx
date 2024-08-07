@@ -4,6 +4,7 @@ import { HiQuestionMarkCircle } from "react-icons/hi";
 import SideDeco from "@/components/SideDeco";
 import { AiTwotonePieChart } from "react-icons/ai";
 import StatistikStunting from "@/components/StatistikStunting";
+import PenyebabStunting from "@/components/PenyebabStunting";
 
 export default function AtasiStunting() {
   return (
@@ -54,6 +55,10 @@ export default function AtasiStunting() {
       </section>
 
       <StatistikStunting />
+
+      <PenyebabStunting />
+
+      {/* <PenyebabStunting /> */}
     </main>
   );
 }

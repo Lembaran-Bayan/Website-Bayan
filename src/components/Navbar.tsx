@@ -31,7 +31,7 @@ export default function Navbar() {
       // data-aos="fade-down"
       // data-aos-delay="0"
       className={
-        "fixed top-0 py-3 md:py-5 px-[20px] md:px-[50px] lg:px-[100px] flex w-full justify-between text-white items-center z-[99]"
+        "fixed top-0 py-3 md:py-5 px-[20px] md:px-[50px] xl:px-[100px] flex w-full justify-between text-white items-center z-[99]"
       }
       style={{ background: opaqueRoutes.includes(router.pathname.split("/")[1]) ? "rgba(24,64,15)" : `rgba(24,64,15,${scrollPerVH > 0.9 ? 1 : Number(scrollPerVH.toFixed(2))})` }}
     >
@@ -48,7 +48,7 @@ export default function Navbar() {
         </div>
       </Link>
 
-      <div className="text-shadow-2 lg:flex gap-7 hidden">
+      <div className="text-shadow-2 xl:flex gap-7 hidden">
         <Link
           href="/"
           className={
@@ -105,9 +105,9 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <div className="relative flex items-center lg:hidden">
+      <div className="relative flex items-center xl:hidden">
         <button
-          className="w-[25px] lg:hidden"
+          className="w-[25px] xl:hidden"
           onClick={() => {
             setIsMenuOpen(!isMenuOpen);
           }}
