@@ -13,7 +13,7 @@ import Image from "next/image";
 export default function MengatasiStunting() {
   const [index, setIndex] = useState(0);
   return (
-    <section className="overflow-hidden relative py-10">
+    <section className="overflow-hidden relative pt-10 pb-[150px]">
       <SideDeco position={true} />
       <SideDeco position={false} />
       <div

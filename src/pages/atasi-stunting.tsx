@@ -2,10 +2,10 @@ import Image from "next/image";
 import Stunting from "@/../public/Stunting.webp";
 import { HiQuestionMarkCircle } from "react-icons/hi";
 import SideDeco from "@/components/SideDeco";
-import { AiTwotonePieChart } from "react-icons/ai";
 import StatistikStunting from "@/components/StatistikStunting";
 import PenyebabStunting from "@/components/PenyebabStunting";
 import MengatasiStunting from "@/components/MengatasiStunting";
+import KalkulatorStunting from "@/components/KalkulatorStunting";
 
 export default function AtasiStunting() {
   return (
@@ -21,9 +21,9 @@ export default function AtasiStunting() {
           <div className="bg-gradient-to-b from-black/70 to-black/20 to-95% w-full h-full absolute z-[1] top-0 left-0" />
         </div>
         <div className="text-center text-[24px] md:text-[28px] text-shadow-1 text-white font-normal p-5 sm:p-0 z-[2]">
-          {/* <h2 data-aos="fade-up">Masa Depan yang Lebih Sehat,</h2> */}
+          <h2 data-aos="fade-up">Masa Depan yang Lebih Sehat,</h2>
           <h2
-            // data-aos="fade-up"
+            data-aos="fade-up"
             data-aos-delay="400"
             className="text-[30px] md:text-[40px] font-normal"
           >
@@ -60,6 +60,8 @@ export default function AtasiStunting() {
       <PenyebabStunting />
 
       <MengatasiStunting />
+
+      <KalkulatorStunting />
     </main>
   );
 }
