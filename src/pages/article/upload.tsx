@@ -116,7 +116,7 @@ export default function UploadArticle() {
   const [title, setTitle] = useState<string>("");
   const [writer, setWriter] = useState<string>("");
   const [paragraphs, setParagraphs] = useState<string>("");
-  const [desa, setDesa] = useState<null | "Bayan" | "Senaru">(null);
+  const [desa, setDesa] = useState<null | string>(null);
   const [kategori, setKategori] = useState<null | "Wisata" | "UMKM">(null);
   const [selectedImage, setSelectedImage] = useState<any>(null);
   const [imageFile, setImageFile] = useState<any>(null);
@@ -188,9 +188,19 @@ export default function UploadArticle() {
               options={[
                 { display: "Desa Bayan", value: "Bayan" },
                 { display: "Desa Senaru", value: "Senaru" },
+                { display: "Desa Anyar", value: "Anyar" },
+                { display: "Desa Akar-Akar", value: "Akar-Akar" },
+                { display: "Desa Karangbajo", value: "Karangbajo" },
+                { display: "Desa Loloan", value: "Loloan" },
+                { display: "Desa Mumbul Sari", value: "Mumbul Sari" },
+                { display: "Desa Sambik Elen", value: "Sambik Elen" },
+                { display: "Desa Sukadana", value: "Sukadana" },
+                { display: "Desa Gunjan Asri", value: "Gunjan Asri" },
+                { display: "Desa Andalan", value: "Andalan" },
+                { display: "Desa Batu Rakit", value: "Batu Rakit" },
               ]}
               state={desa}
-              setState={(value: "Bayan" | "Senaru") => setDesa(value)}
+              setState={(value: string) => setDesa(value)}
               placeholder="Pilih Desa"
             />
           </label>
