@@ -136,7 +136,7 @@ export default function MengatasiStunting() {
       {index === 2 && (
         <div className="mt-10 text-center w-[90%] mx-auto">
           <h1 className="text-[25px] sm:text-[28px] lg:text-[30px] font-extrabold mb-3 md:mb-6">
-            Hindari Pernihakan Dini
+            Hindari Pernikahan Dini
           </h1>
           <p className="w-[90%] max-w-[920px] text-center mx-auto text-[16px] sm:text-[20px] lg:text-[24px]">
             Hindari pernikahan dini untuk mencegah stunting pada generasi berikutnya. Pernikahan dini sering kali
