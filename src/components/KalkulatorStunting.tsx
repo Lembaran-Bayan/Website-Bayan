@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "./Button";
 
 export default function KalkulatorStunting() {
-  const labelClass = "flex flex-col w-full text-white text-[20px] font-semibold gap-1";
+  const labelClass = "flex flex-col w-full text-white text-[16px] lg:text-[20px] font-semibold gap-1";
   const inputClass = "outline outline-2 outline-[#FCD05F] font-normal px-2 py-1 rounded-[8px] text-black";
 
   const [height, setHeight] = useState<string>("");
