@@ -13,15 +13,11 @@ export default function KalkulatorStunting() {
   const [smoking, setSmoking] = useState<boolean>(false);
   const [risk, setRisk] = useState<null | number>(null);
   const [error, setError] = useState("");
-  const [modalIsOpen, setModalIsOpen] = useState(true);
-  const [initialModal, setInitialModal] = useState(true);
 
   const calculateRisk = () => {
     if (!height || !weight || !age || !hemoglobin) {
       setError("Mohon isi semua kolom!");
       setRisk(null);
-      setInitialModal(false);
-      setModalIsOpen(true);
       return;
     }
 
@@ -52,9 +48,6 @@ export default function KalkulatorStunting() {
     let normalizedRiskScore = (riskScore / totalWeight) * 100;
     setRisk(Number(normalizedRiskScore.toFixed(2)));
     console.log(Number(normalizedRiskScore.toFixed(2)));
-
-    setModalIsOpen(true);
-    setInitialModal(false);
   };
 
   return (
