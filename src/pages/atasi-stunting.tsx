@@ -6,6 +6,7 @@ import StatistikStunting from "@/components/StatistikStunting";
 import PenyebabStunting from "@/components/PenyebabStunting";
 import MengatasiStunting from "@/components/MengatasiStunting";
 import KalkulatorStunting from "@/components/KalkulatorStunting";
+import Footer from "@/components/Footer";
 
 export default function AtasiStunting() {
   return (
@@ -62,6 +63,8 @@ export default function AtasiStunting() {
       <MengatasiStunting />
 
       <KalkulatorStunting />
+
+      <Footer />
     </main>
   );
 }

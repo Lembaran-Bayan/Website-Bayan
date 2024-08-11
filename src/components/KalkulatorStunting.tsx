@@ -160,7 +160,7 @@ export default function KalkulatorStunting() {
           <Button
             type="submit"
             ariaLabel="Calculate Risk"
-            className="bg-[#FCD05F] hover:bg-[#F8B60D] text-black"
+            className="!bg-[#ffc531] hover:!bg-[#F8B60D] text-black"
           >
             Hitung
           </Button>
