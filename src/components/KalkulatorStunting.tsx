@@ -12,16 +12,13 @@ export default function KalkulatorStunting() {
   const [maternalDisease, setMaternalDisease] = useState<boolean>(false);
   const [smoking, setSmoking] = useState<boolean>(false);
   const [risk, setRisk] = useState<null | number>(null);
-  const [error, setError] = useState("");
 
   const calculateRisk = () => {
     if (!height || !weight || !age || !hemoglobin) {
-      setError("Mohon isi semua kolom!");
+      alert("Lengkapi data yang diperlukan!")
       setRisk(null);
       return;
     }
-
-    setError("");
 
     let riskScore = 0;
     let totalWeight = 100; // Total weight must be 100%
