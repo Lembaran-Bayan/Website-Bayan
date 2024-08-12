@@ -80,7 +80,6 @@ export default function UploadArticle() {
     if (!desa) return alert("Pilih desa yang terkait dengan isi artikel!");
     if (!kategori) return alert("Pilih kategori yang sesuai dengan isi artikel!");
     if (!imageFile) return alert("Gambar wajib diisi!");
-    console.log(JSON.stringify(paragraphs.split("\n")));
     const formData = new FormData();
     formData.append("title", title);
     formData.append("paragraphs", JSON.stringify(paragraphs.split("\n")));
@@ -89,9 +88,9 @@ export default function UploadArticle() {
     formData.append("category", kategori);
     formData.append("links", JSON.stringify([link1, link2, link3, link4]));
     formData.append("image", imageFile);
-    console.log(formData);
-    if (imageFile.size > 1024 * 1024) {
-      return alert("Ukuran maksimal file gambar adalah 1 MB");
+
+    if (imageFile.size > 2 * 1024 * 1024) {
+      return alert("Ukuran maksimal file gambar adalah 2 MB");
     }
     console.log(imageFile);
     axios

@@ -50,7 +50,7 @@ const linkIconMap: Record<SocialMedia, { patterns: string[]; icon: StaticImageDa
 function IconLink({ link }: { link: string }) {
   // Find the corresponding icon based on the link
   const iconKey = (Object.keys(linkIconMap) as SocialMedia[]).find((key) =>
-    linkIconMap[key].patterns.some((pattern) => link.includes(pattern))
+    linkIconMap[key].patterns.some((pattern) => link?.includes(pattern))
   );
 
   if (iconKey) {
@@ -67,10 +67,11 @@ function IconLink({ link }: { link: string }) {
 }
 
 function ExternalLink({ link }: { link: string }) {
+  if (link === null) return;
   const getDomainName = (link: string) => {
     // Regular expression to extract the domain name
     const regex = /^(?:https?:\/\/)?(?:www\.)?([^\/]+)/i;
-    const match = link.match(regex);
+    const match = link?.match(regex);
     if (match) {
       const domain = match[1].split(".")[0];
       return domain.charAt(0).toUpperCase() + domain.slice(1);
@@ -82,7 +83,7 @@ function ExternalLink({ link }: { link: string }) {
   console.log(domain);
   return (
     <a
-      href={link.startsWith("http://") || link.startsWith("https://") ? link : "https://" + link}
+      href={link?.startsWith("http://") || link?.startsWith("https://") ? link : "https://" + link}
       target="_blank"
       rel="noopener noreferrer"
     >
