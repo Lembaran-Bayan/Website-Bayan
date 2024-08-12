@@ -23,6 +23,7 @@ function ArticleSlide({ article }: { article: Article }) {
   const router = useRouter();
   return (
     <button
+      title={article.title}
       onClick={() => {
         router.push("/article/" + article._id);
       }}
@@ -45,7 +46,10 @@ function ArticleSlide({ article }: { article: Article }) {
       </div>
       <div className="flex justify-center items-center gap-5 mt-[10px] md:mt-[20px] text-center">
         <h1 className="text-[24px] md:text-[30px] font-bold px-[5%]">
-          {article.title.length > 27 ? article.title.slice(0, 27) + "..." : article.title}
+          {/* {article.title.length > 27 ? article.title.slice(0, 27) + "..." : article.title} */}
+          {article.title.length > 27
+            ? article.title.slice(0, article.title.slice(0, 33).lastIndexOf(" ")) + "..."
+            : article.title}
         </h1>
       </div>
       <div className="flex justify-center items-center gap-5 mt-[10px]">

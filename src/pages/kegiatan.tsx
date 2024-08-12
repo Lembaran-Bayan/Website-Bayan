@@ -76,7 +76,7 @@ export default function ProfilePage() {
 
       <TopArticle />
 
-      <ArticleSlider />
+      <ArticleSlider articles={[]} />
 
       <section className="flex flex-col justify-center items-center relative z-[0] py-[120px] gap-[30px] overflow-x-hidden">
         <SideDeco position={true} />
