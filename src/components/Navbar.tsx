@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
-  const opaqueRoutes = ["profile", "article"];
+  const opaqueRoutes = ["profile", "article", "preview"];
   const hiddenRoutes = ["admin"];
   const router = useRouter();
   const scrollPosition = useScrollPosition();
@@ -139,7 +139,7 @@ export default function Navbar() {
             (isMenuOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr] !py-0") +
             (scrollPerVH > 0.6 ? " //bg-green-1 text-white" : "")
           }
-          style={{ background: opaqueRoutes.includes(router.pathname) ? "rgba(24,64,15)" : `rgba(24,64,15,${scrollPerVH > 0.9 ? 1 : Number(scrollPerVH.toFixed(2))})` }}
+          style={{ background: opaqueRoutes.includes(router.pathname.split("/")[1]) ? "rgba(24,64,15,1)" : `rgba(24,64,15,${scrollPerVH > 0.9 ? 1 : Number(scrollPerVH.toFixed(2))})` }}
         >
           <div className="overflow-hidden flex flex-col gap-2 w-max">
             <Link
