@@ -80,7 +80,7 @@ function ExternalLink({ link }: { link: string }) {
   };
 
   const domain = getDomainName(link);
-  console.log(domain);
+  // console.log(domain);
   return (
     <a
       href={link?.startsWith("http://") || link?.startsWith("https://") ? link : "https://" + link}
@@ -111,13 +111,14 @@ export default function ArticlePage() {
       router.push("/article/upload");
     } else {
       const previewArticle = JSON.parse(localStorage.getItem("preview-article") as string);
+      console.log(previewArticle.links)
       setTitle(previewArticle.title);
       setWriter(previewArticle.writer);
       setParagraphs(previewArticle.paragpraphs);
       setDesa(previewArticle.desa);
       setKategori(previewArticle.category);
       setSelectedImage(previewArticle.image);
-      setLinks(previewArticle.links);
+      setLinks(JSON.parse(previewArticle.links));
     }
   }, [router]);
 
@@ -140,7 +141,7 @@ export default function ArticlePage() {
         </div>
 
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-green-1 font-bold text-[29px] md:text-[39px]">{title}</h1>
+          <h1 className="text-green-1 font-bold text-[29px] md:text-[39px] text-center max-w-[25ch]">{title}</h1>
           <h2 className="text-[16px] md:text-[21px]">Ditulis oleh: {writer}</h2>
         </div>
       </section>
@@ -159,7 +160,7 @@ export default function ArticlePage() {
 
         <div className="mt-[50px] flex gap-5">
           {links.map((l, index) => {
-            return l == "" ? null : <ExternalLink link={l} />;
+            return l == "" ? null : <ExternalLink link={l} key={index} />;
           })}
         </div>
 
