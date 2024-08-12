@@ -141,7 +141,7 @@ export default function ArticlePage() {
         </div>
 
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-green-1 font-bold text-[29px] md:text-[39px] text-center max-w-[25ch]">{title}</h1>
+          <h1 className="text-green-1 font-bold text-[29px] md:text-[39px] text-center max-w-[25ch] leading-[120%]">{title}</h1>
           <h2 className="text-[16px] md:text-[21px]">Ditulis oleh: {writer}</h2>
         </div>
       </section>
