@@ -83,7 +83,7 @@ export default function ArticleSlider({ articles = [] }: { articles: Article[] }
   }, []);
 
   return (
-    <section className="flex flex-col sm:flex-row justify-center items-center relative pb-5 lg:pb-20 overflow-x-hidden">
+    <section className="flex flex-col sm:flex-row justify-center items-center relative pb-5 lg:pb-10 overflow-x-hidden">
       <SideDeco position={true} />
       <SideDeco position={false} />
       <button
