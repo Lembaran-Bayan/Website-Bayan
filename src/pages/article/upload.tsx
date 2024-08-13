@@ -116,7 +116,7 @@ export default function UploadArticle() {
   const [writer, setWriter] = useState<string>("");
   const [paragraphs, setParagraphs] = useState<string>("");
   const [desa, setDesa] = useState<null | string>(null);
-  const [kategori, setKategori] = useState<null | "Wisata" | "UMKM">(null);
+  const [kategori, setKategori] = useState<null | "Wisata" | "UMKM" | "Kegiatan">(null);
   const [selectedImage, setSelectedImage] = useState<any>(null);
   const [imageFile, setImageFile] = useState<any>(null);
   const [link1, setLink1] = useState<string>("");
@@ -209,9 +209,10 @@ export default function UploadArticle() {
               options={[
                 { display: "Wisata dan Budaya", value: "Wisata" },
                 { display: "UMKM", value: "UMKM" },
+                { display: "Kegiatan", value: "Kegiatan" },
               ]}
               state={kategori}
-              setState={(value: "Wisata" | "UMKM") => setKategori(value)}
+              setState={(value: "Wisata" | "UMKM" | "Kegiatan") => setKategori(value)}
               placeholder="Pilih Kategori"
             />
           </label>

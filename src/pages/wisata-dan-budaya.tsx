@@ -109,7 +109,7 @@ export default function ProfilePage() {
 
       <ArticleSlider articles={articles} />
 
-      <section className="flex flex-col justify-center items-center relative z-[0] py-[120px] gap-[30px] overflow-x-hidden">
+      <section className="flex flex-col justify-center items-center relative z-[0] py-10 lg:py-[120px] gap-[30px] overflow-x-hidden">
         <SideDeco position={true} />
         <SideDeco position={false} />
         <div

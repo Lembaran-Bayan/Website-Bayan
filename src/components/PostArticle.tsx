@@ -8,21 +8,21 @@ export default function PostArticle() {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   return (
-    <section className="pt-20 pb-20 lg:pb-[120px] flex justify-center items-center text-white gap-20 lg:gap-[140px] flex-col lg:flex-row px-[5%] sm:px-0 bg-green-1 overflow-hidden relative">
+    <section className="pt-20 pb-20 lg:pb-[120px] flex justify-center items-center text-white gap-20 lg:gap-[140px] flex-col lg:flex-row px-[5%] sm:px-0 bg-[url('/Umkm.webp')] bg-cover overflow-hidden relative bg-right">
       {/* <div className="relative flex-shrink-0 -translate-x-[50px] sm:-translate-x-[80px] lg:-translate-x-0 2xl:-translate-x-[80px]">
         <div className="aspect-[160/105] bg-gradient-to-br from-green-2 to-yellow-1 w-[200px] md:w-[270px] lg:w-[318px] rounded-[16px] shadow-[0_8px_8px_rgba(0,0,0,.4)]" />
         <div className="aspect-[160/105] bg-gradient-to-br from-green-2 to-yellow-1 w-[200px] md:w-[270px] lg:w-[318px] rounded-[16px] absolute top-10 left-[100px] shadow-[0_8px_8px_rgba(0,0,0,.4)]" />
       </div> */}
 
-      <div className="absolute overflow-hidden">
+      {/* <div className="absolute overflow-hidden w-full h-full">
         <Image
           src={Umkm}
-          className="object-fill z-[0]"
+          className="object-fill z-[0] w-fullk h-full top-0 left-0"
           alt=""
         />
-        <div className="bg-black/60 z-[1] absolute w-full h-full top-0 left-0" />
-      </div>
+        </div> */}
 
+        <div className="bg-black/50 backdrop-blur-[1px] z-[1] absolute w-full h-full top-0 left-0" />
       <div className="mt-2 text-white z-[1]">
         <h1 className="max-w-[437px] text-[25px] md:text-[30px] lg:text-[36px] font-semibold text-center mx-auto">
           Ingin Artikelmu Dimuat di Lembaran Bayan?

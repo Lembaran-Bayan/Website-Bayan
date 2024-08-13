@@ -29,12 +29,21 @@ function ArticleSlide({ article }: { article: Article }) {
       }}
       className="flex flex-col justify-center items-center p-3 hover:shadow-[0_0_5px_rgba(0,0,0,.6)] bg-white rounded-[15px] w-full flex-shrink-0 transition"
     >
-      <div className="w-full h-[320px] aspect-[19/16] bg-gradient-to-br from-green-2 from-20% to-yellow-1 rounded-[40px] flex justify-center items-center text-white text-[16px] md:text-[18px] font-semibold text-shadow-1 overflow-hidden">
+      {/* <div className="w-full h-[320px] aspect-[19/16] bg-gradient-to-br from-green-2 from-20% to-yellow-1 rounded-[40px] flex justify-center items-center text-white text-[16px] md:text-[18px] font-semibold text-shadow-1 overflow-hidden">
         <img
           src={process.env.NEXT_PUBLIC_API_URL + "/article/image/" + article.image}
           alt="Thumbnail Artikel"
           className="w-full h-full object-cover"
         />
+      </div> */}
+      
+      <div className="flex justify-center items-center gap-5 mt-[10px] md:mt-[20px] text-center">
+        <h1 className="text-[24px] md:text-[30px] font-bold px-[5%]">
+          {/* {article.title.length > 27 ? article.title.slice(0, 27) + "..." : article.title} */}
+          {article.title.length > 27
+            ? article.title.slice(0, article.title.slice(0, 33).lastIndexOf(" ")) + "..."
+            : article.title}
+        </h1>
       </div>
       <div className="flex justify-center items-center gap-5 mt-[20px]">
         <div className="bg-green-1 text-white font-poppins text-[18px] px-8 md:px-12 py-2 rounded-full">
@@ -43,14 +52,6 @@ function ArticleSlide({ article }: { article: Article }) {
         <div className="text-[18px] md:text-[25px] font-semibold">
           {new Date(article.createdAt).toLocaleDateString()}
         </div>
-      </div>
-      <div className="flex justify-center items-center gap-5 mt-[10px] md:mt-[20px] text-center">
-        <h1 className="text-[24px] md:text-[30px] font-bold px-[5%]">
-          {/* {article.title.length > 27 ? article.title.slice(0, 27) + "..." : article.title} */}
-          {article.title.length > 27
-            ? article.title.slice(0, article.title.slice(0, 33).lastIndexOf(" ")) + "..."
-            : article.title}
-        </h1>
       </div>
       <div className="flex justify-center items-center gap-5 mt-[10px]">
         <p className="text-[16px] md:text-[18px] w-[90%] max-w-[680px] text-center">
@@ -82,11 +83,11 @@ export default function ArticleSlider({ articles = [] }: { articles: Article[] }
   }, []);
 
   return (
-    <section className="flex flex-col sm:flex-row justify-center items-center relative pb-20 overflow-x-hidden">
+    <section className="flex flex-col sm:flex-row justify-center items-center relative pb-5 lg:pb-20 overflow-x-hidden">
       <SideDeco position={true} />
       <SideDeco position={false} />
       <button
-        className="outline outline-transparent hover:outline-green-1 transition-[outline] rounded-full hidden sm:block"
+        className="outline outline-transparent hover:outline-green-1 transition-[outline] rounded-full hidden sm:block relative z-[1]"
         onClick={() => swiper.slidePrev()}
       >
         <MdPlayCircle className="text-[50px] text-green-1 top-[50%] left-0 scale-[-1]" />
@@ -100,7 +101,7 @@ export default function ArticleSlider({ articles = [] }: { articles: Article[] }
         //   },
         // }}
         onSlideChange={() => console.log("slide change")}
-        className="!flex !justify-center !items-center w-[90%] !max-w-[840px] !p-1 sm:!p-5 sm:!mx-5 relative min-h-[600px]"
+        className="!flex !justify-center !items-center w-[90%] !max-w-[840px] !p-1 sm:!p-5 sm:!mx-5 relative //min-h-[600px]"
         onSwiper={setSwiper}
       >
         {articles.length === 0 && (
@@ -124,7 +125,7 @@ export default function ArticleSlider({ articles = [] }: { articles: Article[] }
         </SwiperSlide> */}
       </Swiper>
       <button
-        className="outline outline-transparent hover:outline-green-1 transition-[outline] rounded-full hidden sm:block"
+        className="outline outline-transparent hover:outline-green-1 transition-[outline] rounded-full hidden sm:block relative z-[1]"
         onClick={() => {
           swiper.slideNext();
         }}
