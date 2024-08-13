@@ -85,15 +85,15 @@ export default function AdminPage() {
       <section className="w-[90%] max-w-[1500px]">
         <h1 className="text-green-1 font-bold text-[29px] md:text-[39px] text-center">Admin</h1>
 
-        <div className="w-full flex flex-col justify-center items-center mt-10">
-          <table className="table-auto w-full">
+        <div className="w-[90%] flex flex-col justify-center items-center mt-10 overflow-auto mx-auto">
+          <table className="table-auto min-w-[700px]">
             <thead className="bg-green-1 text-white">
               <tr>
-                <th className="text-center py-3 rounded-l-[10px]">Judul</th>
-                <th className="text-center py-3">Penulis</th>
-                <th className="text-center py-3">Kategori</th>
-                <th className="text-center py-3">Status</th>
-                <th className="text-center py-3 rounded-r-[10px] w-[200px]">Aksi</th>
+                <th className="text-center p-3 rounded-l-[10px]">Judul</th>
+                <th className="text-center p-3">Penulis</th>
+                <th className="text-center p-3">Kategori</th>
+                <th className="text-center p-3">Status</th>
+                <th className="text-center p-3 rounded-r-[10px] w-[200px]">Aksi</th>
               </tr>
             </thead>
             <tbody>

@@ -139,7 +139,7 @@ export default function ArticlePage() {
   }, [router.query.id]);
 
   return (
-    <main className="pt-[200px] pb-[120px] relative overflow-hidden">
+    <main className="pt-[120px] lg:pt-[200px] pb-[80px] lg:pb-[120px] relative overflow-hidden">
       <SideDeco position={true} />
       <SideDeco position={false} />
       <section className="flex flex-col justify-center items-center gap-8 z-[1] relative">
@@ -154,7 +154,7 @@ export default function ArticlePage() {
 
         <div
           className={
-            "w-[90%] max-w-[620px] h-[415px] aspect-[620/415] rounded-[30px] overflow-hidden relative bg-gradient-to-br from-green-2 from-20% to-yellow-1 " +
+            "w-[90%] max-w-[620px] max-h-[415px] aspect-[620/415] rounded-[30px] overflow-hidden relative bg-gradient-to-br from-green-2 from-20% to-yellow-1 " +
             (article.image === "" ? "animate-pulse" : "")
           }
         >
@@ -172,7 +172,7 @@ export default function ArticlePage() {
           <h1
             className={
               "text-green-1 font-bold text-[29px] md:text-[39px] max-w-[25ch] leading-[120%] text-center " +
-              (article.title === "" ? "bg-slate-200 rounded-[8px] animate-pulse h-[40px] w-full" : "")
+              (article.title === "" ? "bg-slate-200 rounded-[8px] animate-pulse h-[40px] w-[90%]" : "")
             }
           >
             {article.title}
@@ -183,7 +183,7 @@ export default function ArticlePage() {
         </div>
       </section>
 
-      <section className="flex flex-col justify-center items-center mt-12 z-[1] relative gap-2">
+      <section className="flex flex-col justify-center items-center mt-5 md:mt-12 z-[1] relative gap-2">
         {
           article.paragraphs.length === 0 && (
             <div className="w-[90%] max-w-[844px] bg-slate-200 animate-pulse h-[300px] rounded-[8px]"></div>
@@ -193,14 +193,14 @@ export default function ArticlePage() {
           return (
             <p
               key={index}
-              className="text-justify w-[90%] max-w-[844px] text-[22px]"
+              className="text-justify w-[90%] max-w-[844px] text-[16px] sm:text-[20px] lg:text-[22px]"
             >
               {p}
             </p>
           );
         })}
 
-        <div className="mt-[50px] flex gap-5">
+        <div className="mt-[20px] md:mt-[50px] flex gap-5">
           {article.links?.map((l: string, index: number) => {
             if (l === "") return;
             return (
@@ -214,7 +214,7 @@ export default function ArticlePage() {
 
         <Button
           ariaLabel="Back Button"
-          className="mt-[60px]"
+          className="mt-[30px] md:mt-[60px]"
           onClick={() => {
             router.back();
           }}

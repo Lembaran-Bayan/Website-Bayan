@@ -123,7 +123,7 @@ export default function ArticlePage() {
   }, [router]);
 
   return (
-    <main className="pt-[200px] pb-[120px] relative overflow-hidden">
+    <main className="pt-[120px] lg:pt-[200px] pb-[80px] lg:pb-[120px] relative overflow-hidden">
       <SideDeco position={true} />
       <SideDeco position={false} />
       <section className="flex flex-col justify-center items-center gap-8 z-[1] relative">
@@ -141,24 +141,24 @@ export default function ArticlePage() {
         </div>
 
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-green-1 font-bold text-[29px] md:text-[39px] text-center max-w-[25ch] leading-[120%]">{title}</h1>
-          <h2 className="text-[16px] md:text-[21px]">Ditulis oleh: {writer}</h2>
+          <h1 className="text-green-1 font-bold text-[24px] sm:text-[29px] md:text-[39px] text-center max-w-[25ch] leading-[120%]">{title}</h1>
+          <h2 className="text-[16px] md:text-[21px] mt-3">Ditulis oleh: {writer}</h2>
         </div>
       </section>
 
-      <section className="flex flex-col justify-center items-center mt-12 z-[1] relative gap-2">
+      <section className="flex flex-col justify-center items-center mt-5 md:mt-12 z-[1] relative gap-2">
         {paragraphs?.map((p, index) => {
           return (
             <p
               key={index}
-              className="text-justify w-[90%] max-w-[844px] text-[22px]"
+              className="text-justify w-[90%] max-w-[844px] text-[16px] sm:text-[20px] lg:text-[22px] "
             >
               {p}
             </p>
           );
         })}
 
-        <div className="mt-[50px] flex gap-5">
+        <div className="mt-[20px] md:mt-[50px] flex gap-5 flex-wrap justify-center">
           {links.map((l, index) => {
             return l == "" ? null : <ExternalLink link={l} key={index} />;
           })}
@@ -166,7 +166,7 @@ export default function ArticlePage() {
 
         <Button
           ariaLabel="Back Button"
-          className="mt-[60px]"
+          className="mt-[30px] md:mt-[60px]"
           onClick={() => router.back()}
         >
           Kembali
