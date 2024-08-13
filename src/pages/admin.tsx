@@ -31,16 +31,17 @@ export default function AdminPage() {
   };
 
   useEffect(() => {
-    if(isLoggedIn) {
+    localStorage.removeItem("preview-article");
+    if (isLoggedIn) {
       axios
-      .get(process.env.NEXT_PUBLIC_API_URL + "/article")
-      .then((res) => {
-        setArticles(res.data);
-      })
-      .catch((err) => {
-        console.log(err?.message);
-        alert("Gagal mengambil data");
-      });
+        .get(process.env.NEXT_PUBLIC_API_URL + "/article")
+        .then((res) => {
+          setArticles(res.data);
+        })
+        .catch((err) => {
+          console.log(err?.message);
+          alert("Gagal mengambil data");
+        });
     }
   }, [refetchTrigger, isLoggedIn]);
 

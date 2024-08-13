@@ -36,7 +36,7 @@ function ArticleSlide({ article }: { article: Article }) {
           className="w-full h-full object-cover"
         />
       </div> */}
-      
+
       <div className="flex justify-center items-center gap-5 mt-[10px] md:mt-[20px] text-center">
         <h1 className="text-[24px] md:text-[30px] font-bold px-[5%]">
           {/* {article.title.length > 27 ? article.title.slice(0, 27) + "..." : article.title} */}
@@ -101,11 +101,14 @@ export default function ArticleSlider({ articles = [] }: { articles: Article[] }
         //   },
         // }}
         onSlideChange={() => console.log("slide change")}
-        className="!flex !justify-center !items-center w-[90%] !max-w-[840px] !p-1 sm:!p-5 sm:!mx-5 relative //min-h-[600px]"
+        className={
+          "!flex !justify-center !items-center w-[90%] !max-w-[840px] !p-1 sm:!p-5 sm:!mx-5 relative " +
+          (articles.length === 0 ? "min-h-[600px]" : "")
+        }
         onSwiper={setSwiper}
       >
         {articles.length === 0 && (
-          <div className="w-full h-[600px] bg-slate-500/20 rounded-[30px] animate-pulse absolute grid place-items-center">
+          <div className="w-full h-full bg-slate-500/20 rounded-[30px] animate-pulse absolute grid place-items-center">
             {/* <span className="text-[40px] font-semibold !opacity-100">Belum ada artikel</span> */}
           </div>
         )}
