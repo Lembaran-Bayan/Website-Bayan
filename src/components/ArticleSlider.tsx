@@ -68,7 +68,6 @@ export default function ArticleSlider({ articles = [] }: { articles: Article[] }
   const [swiper, setSwiper] = useState<any>(null);
 
   useEffect(() => {
-    console.log(articles);
     setScreenWidth(window.innerWidth);
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
@@ -114,7 +113,6 @@ export default function ArticleSlider({ articles = [] }: { articles: Article[] }
           </div>
         )}
         {articles?.map((article: Article, index: number) => {
-          console.log(article);
           return (
             <SwiperSlide
               key={index}

@@ -92,7 +92,6 @@ function ExternalLink({ link }: { link: string }) {
   };
 
   const domain = getDomainName(link);
-  console.log(domain);
   return (
     <a
       href={link?.startsWith("http://") || link?.startsWith("https://") ? link : "https://" + link}
@@ -127,7 +126,7 @@ export default function ArticlePage() {
     axios
       .get(process.env.NEXT_PUBLIC_API_URL + "/article/" + router.query.id)
       .then((res) => {
-        console.log(JSON.parse(res.data.links[0]));
+        // console.log(JSON.parse(res.data.links[0]));
         setArticle({
           ...res.data,
           links: JSON.parse(res.data.links[0]),

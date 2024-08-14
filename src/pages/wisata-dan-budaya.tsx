@@ -105,7 +105,7 @@ export default function ProfilePage() {
         </div>
       </section>
 
-      <TopArticle />
+      <TopArticle id="66b472889b91afc445630409" />
 
       <ArticleSlider articles={articles} />
 
