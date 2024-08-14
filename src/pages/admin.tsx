@@ -32,6 +32,19 @@ export default function AdminPage() {
 
   useEffect(() => {
     localStorage.removeItem("preview-article");
+    if (sessionStorage.getItem("authToken")) {
+      axios
+        .post(process.env.NEXT_PUBLIC_API_URL + "/validate-token", { token: sessionStorage.getItem("authToken") })
+        .then((res) => {
+          // console.log(res);
+          if(res.data.valid) {
+            setIsLoggedIn(true);
+          }
+        })
+        .catch((err) => {
+          console.log(err?.message);
+        });
+    }
     if (isLoggedIn) {
       axios
         .get(process.env.NEXT_PUBLIC_API_URL + "/article")
@@ -54,11 +67,19 @@ export default function AdminPage() {
         className="w-[90%] max-w-[500px]"
         onSubmit={(e) => {
           e.preventDefault();
-          if (password == process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
-            setIsLoggedIn(true);
-          } else {
-            alert("Password salah");
-          }
+          axios
+            .post(process.env.NEXT_PUBLIC_API_URL + "/login", { password })
+            .then((res) => {
+              // console.log(res);
+              alert(res.data.message);
+              console.log(res.data.token);
+              sessionStorage.setItem("authToken", res.data.token);
+              setIsLoggedIn(true);
+            })
+            .catch((err) => {
+              // console.log(err);
+              alert(err?.response?.data?.message);
+            });
         }}
       >
         <label className={labelClass}>
