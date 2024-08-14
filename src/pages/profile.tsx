@@ -84,11 +84,51 @@ export default function ProfilePage() {
               {activeVillage === null ? "Kecamatan Bayan" : activeVillage == "bayan" ? "Desa Bayan" : "Desa Senaru"}
             </h2>
             <p className="text-[19px] text-center">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum.
+            {activeVillage === null ? (
+              <>
+                Kecamatan Bayan adalah salah satu kecamatan yang terletak di Kabupaten Lombok Utara, Provinsi Nusa
+                Tenggara Barat. Kecamatan ini dikenal sebagai wilayah yang{" "}
+                <strong>kaya akan budaya, wisata, dan sejarah</strong>, terutama karena adanya desa-desa adat yang{" "}
+                <strong>masih mempertahankan tradisi leluhur</strong> seperti <strong>Desa Bayan</strong> dan{" "}
+                <strong>Desa Senaru</strong>. Di kawasan ini, terdapat <strong>Masjid Kuno Bayan Beleq</strong> yang
+                merupakan salah satu situs bersejarah penting, mencerminkan warisan Islam yang sudah berabad-abad.
+                Kecamatan Bayan juga merupakan pintu gerbang menuju <strong>Gunung Rinjani</strong>, dengan jalur
+                pendakian yang sering dimulai dari Desa Senaru. Selain itu, Kecamatan Bayan memiliki{" "}
+                <strong>keindahan alam yang memukau</strong>, termasuk air terjun, hutan, dan lahan pertanian yang
+                subur, menjadikannya destinasi favorit bagi para wisatawan yang mencari pengalaman budaya dan alam yang
+                autentik.
+              </>
+            ) : activeVillage === "bayan" ? (
+              <>
+                Desa wisata Bayan adalah salah satu destinasi utama di Kecamatan Bayan yang dikenal sebagai pusat
+                kebudayaan. Desa ini menawarkan pengalaman unik yang memperlihatkan bagaimana masyarakat setempat
+                melestarikan tradisi dan adat istiadat yang telah diwariskan dari generasi ke generasi. Beberapa tradisi
+                adat yang sangat dihormati dan masih dijalankan hingga hari ini meliputi <strong>maulid adat</strong>,{" "}
+                <strong>lebaran adat</strong>, dan <strong>ngaji makam</strong>, yang semuanya merupakan bagian integral
+                dari kehidupan spiritual dan sosial masyarakat Bayan. Selain itu, Desa Bayan memiliki{" "}
+                <strong>hutan adat</strong> yang dijaga dengan ketat oleh penduduk setempat. Hutan ini bukan hanya
+                sekadar kawasan alami, tetapi juga merupakan bagian dari identitas budaya masyarakat, di mana mereka
+                melaksanakan berbagai ritual adat dan menjaga keseimbangan ekosistem lokal. Desa ini menawarkan
+                perpaduan yang harmonis antara warisan budaya dan kelestarian alam, menjadikannya salah satu destinasi
+                wisata budaya yang sangat diminati oleh wisatawan yang ingin merasakan kehidupan tradisional Lombok yang
+                autentik.
+              </>
+            ) : (
+              <>
+                Desa Senaru merupakan destinasi yang tidak kalah menarik dari Desa Bayan, namun dengan fokus yang
+                berbeda. Jika Bayan dikenal sebagai pusat kebudayaan, maka Senaru adalah{" "}
+                <strong>pusat wisata alam</strong> di Kecamatan Bayan. Desa ini menawarkan pemandangan alam yang luar
+                biasa, yang membuatnya menjadi salah satu destinasi favorit bagi para pencinta alam dan petualang.
+                Senaru adalah pintu gerbang utama menuju <strong>Gunung Rinjani</strong>, gunung tertinggi kedua di
+                Indonesia, yang terkenal dengan keindahan dan tantangannya. Jalur pendakian yang dimulai dari Senaru
+                menawarkan pemandangan yang menakjubkan, mulai dari hutan tropis, air terjun, hingga danau vulkanik yang
+                mempesona. Selain Gunung Rinjani, desa ini juga memiliki beberapa <strong>destinasi wisata</strong>{" "}
+                lainnya, seperti <strong>tiu</strong> (air terjun) dan danau yang menambah daya tariknya sebagai
+                destinasi wisata alam. Pada tahun 2021, Desa Senaru mendapatkan penghargaan{" "}
+                <strong>Anugerah Desa Wisata (ADWI)</strong> dari Kemenparekraf, yang menegaskan posisinya sebagai salah
+                satu desa wisata terkemuka di Indonesia.
+              </>
+            )}
             </p>
           </div>
         </section>
