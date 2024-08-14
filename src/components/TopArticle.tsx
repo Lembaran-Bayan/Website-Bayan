@@ -101,9 +101,9 @@ export default function TopArticle({ id }: { id: string }) {
             "text-[16px] md:text-[18px] w-[90%] max-w-[680px] text-center " + (article === null ? "opacity-0" : "")
           }
         >
-          {article !== null && article?.paragraphs[0] !== undefined && article?.paragraphs[0].length < 150
+          {(article?.paragraphs) && (article.paragraphs[0] !== undefined && article?.paragraphs[0].length < 150
             ? article?.paragraphs[0]
-            : article?.paragraphs[0].slice(0, 147) + "..."}
+            : article?.paragraphs[0].slice(0, 147) + "...")}
         </p>
       </div>
       {article !== null && (
