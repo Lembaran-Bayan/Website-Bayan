@@ -168,16 +168,16 @@ export default function KalkulatorStunting() {
           {risk !== null && (
             <div className="text-white text-[25px]">
               <p className="text-center mt-3 mb-5">
-                Risiko stunting anda adalah <span className="font-bold">{risk}%</span>
+                Risiko stunting sebesar <span className="font-bold">{risk}%</span>
               </p>
               <p className="text-center">
                 {risk <= 20
-                  ? "Risiko stunting anda rendah, pertahankan gaya hidup yang sehat untuk mencegah stunting. Tetap jaga asupan gizi yang seimbang, lakukan cek kesehatan berkala, dan hindari merokok."
+                  ? "Risiko stunting rendah, pertahankan gaya hidup yang sehat untuk mencegah stunting. Tetap jaga asupan gizi yang seimbang, lakukan cek kesehatan berkala, dan hindari merokok."
                   : risk > 20 && risk <= 40
-                  ? "Risiko Anda sedang. Pertimbangkan untuk melakukan beberapa penyesuaian gaya hidup untuk mengurangi risiko Anda. Pastikan asupan gizi yang cukup, pantau kadar hemoglobin, dan dapatkan saran dari penyedia layanan kesehatan."
+                  ? "Risiko stunting sedang. Pertimbangkan untuk melakukan beberapa penyesuaian gaya hidup untuk mengurangi risiko stunting. Pastikan asupan gizi yang cukup, pantau kadar hemoglobin, dan dapatkan saran dari penyedia layanan kesehatan."
                   : risk > 40 && risk <= 60
-                  ? "Risiko Anda tinggi. Penting untuk mengambil langkah proaktif untuk mengurangi risiko Anda. Ikuti diet kaya nutrisi, hindari merokok, kelola penyakit maternal jika ada, dan konsultasikan dengan profesional kesehatan untuk saran yang dipersonalisasi."
-                  : "Risiko Anda sangat tinggi. Tindakan segera diperlukan untuk mengurangi risiko stunting. Segera cari pertolongan medis, ikuti rencana nutrisi yang ketat, dan atasi masalah kesehatan. Pemantauan dan intervensi yang teratur sangat penting."}
+                  ? "Risiko stunting tinggi. Penting untuk mengambil langkah proaktif untuk mengurangi risiko stunting. Ikuti diet kaya nutrisi, hindari merokok, kelola penyakit maternal jika ada, dan konsultasikan dengan profesional kesehatan untuk saran yang dipersonalisasi."
+                  : "Risiko stunting sangat tinggi. Tindakan segera diperlukan untuk mengurangi risiko stunting. Segera cari pertolongan medis, ikuti rencana nutrisi yang ketat, dan atasi masalah kesehatan. Pemantauan dan intervensi yang teratur sangat penting."}
               </p>
             </div>
           )}
