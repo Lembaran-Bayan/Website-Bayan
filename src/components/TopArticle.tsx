@@ -22,6 +22,9 @@ type Article = {
 export default function TopArticle({ id }: { id: string }) {
   const [article, setArticle] = useState<Article | null>(null);
   useEffect(() => {
+    if (id === "") {
+      return;
+    }
     axios
       .get(process.env.NEXT_PUBLIC_API_URL + "/article/" + id)
       .then((res) => {
@@ -101,9 +104,10 @@ export default function TopArticle({ id }: { id: string }) {
             "text-[16px] md:text-[18px] w-[90%] max-w-[680px] text-center " + (article === null ? "opacity-0" : "")
           }
         >
-          {(article?.paragraphs) && (article.paragraphs[0] !== undefined && article?.paragraphs[0].length < 150
-            ? article?.paragraphs[0]
-            : article?.paragraphs[0].slice(0, 147) + "...")}
+          {article?.paragraphs &&
+            (article.paragraphs[0] !== undefined && article?.paragraphs[0].length < 150
+              ? article?.paragraphs[0]
+              : article?.paragraphs[0].slice(0, 147) + "...")}
         </p>
       </div>
       {article !== null && (
