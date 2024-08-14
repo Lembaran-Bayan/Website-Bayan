@@ -72,7 +72,6 @@ export default function AdminPage() {
             .then((res) => {
               // console.log(res);
               alert(res.data.message);
-              console.log(res.data.token);
               sessionStorage.setItem("authToken", res.data.token);
               setIsLoggedIn(true);
             })
