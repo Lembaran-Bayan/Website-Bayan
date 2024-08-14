@@ -27,7 +27,7 @@ function ArticleSlide({ article }: { article: Article }) {
       onClick={() => {
         router.push("/article/" + article._id);
       }}
-      className="flex flex-col justify-center items-center p-3 hover:shadow-[0_0_5px_rgba(0,0,0,.6)] bg-white rounded-[15px] w-full flex-shrink-0 transition"
+      className="flex flex-col justify-center items-center p-3 hover:shadow-[0_0_5px_rgba(0,0,0,.6)] bg-white rounded-[15px] w-full flex-shrink-0 transition min-h-[370px]"
     >
       {/* <div className="w-full h-[320px] aspect-[19/16] bg-gradient-to-br from-green-2 from-20% to-yellow-1 rounded-[40px] flex justify-center items-center text-white text-[16px] md:text-[18px] font-semibold text-shadow-1 overflow-hidden">
         <img
@@ -102,13 +102,13 @@ export default function ArticleSlider({ articles = [] }: { articles: Article[] }
         // }}
         onSlideChange={() => console.log("slide change")}
         className={
-          "!flex !justify-center !items-center w-[90%] !max-w-[840px] !p-1 sm:!p-5 sm:!mx-5 relative " +
+          "!flex !justify-center /items-center w-[90%] !max-w-[840px] !p-1 sm:!p-5 sm:!mx-5 relative " +
           (articles.length === 0 ? "min-h-[600px]" : "")
         }
         onSwiper={setSwiper}
       >
         {articles.length === 0 && (
-          <div className="w-full h-full bg-slate-500/20 rounded-[30px] animate-pulse absolute grid place-items-center">
+          <div className="w-full h-[90%] bg-slate-500/20 rounded-[30px] animate-pulse absolute grid place-items-center">
             {/* <span className="text-[40px] font-semibold !opacity-100">Belum ada artikel</span> */}
           </div>
         )}
@@ -117,7 +117,7 @@ export default function ArticleSlider({ articles = [] }: { articles: Article[] }
           return (
             <SwiperSlide
               key={index}
-              className="!flex !justify-center !items-center"
+              className=""
             >
               <ArticleSlide article={article} />
             </SwiperSlide>
