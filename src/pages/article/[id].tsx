@@ -99,7 +99,9 @@ function ExternalLink({ link }: { link: string }) {
       rel="noopener noreferrer"
     >
       <button className="bg-white rounded-[8px] shadow-[0_3px_4px_rgba(0,0,0,.4)] flex gap-3 items-center px-3 py-2 font-poppins hover:bg-[#F0F0F0] transition-colors active:bg-[#DEDEDE]">
+      <div className="size-[26px] grid place-items-center my-1">
         <IconLink link={link} />
+        </div>
         <span>{domain}</span>
       </button>
     </a>

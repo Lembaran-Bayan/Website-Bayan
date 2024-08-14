@@ -73,7 +73,7 @@ export default function UploadArticle() {
   const router = useRouter();
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log(title, writer, paragraphs, desa, kategori, link1, link2, link3, link4);
+    console.log(JSON.stringify([link1, link2, link3, link4]));
     if (!title) return alert("Judul artikel wajib diisi!");
     if (!writer) return alert("Nama penulis wajib diisi!");
     if (!paragraphs) return alert("Konten artikel wajib diisi!");
@@ -307,6 +307,7 @@ export default function UploadArticle() {
               ) {
                 return alert("Mohon lengkapi data artikel");
               }
+              console.log(JSON.stringify([link1, link2, link3, link4]));
               const previewArticle = {
                 title,
                 paragpraphs: paragraphs.split("\n"),

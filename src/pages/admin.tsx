@@ -1,6 +1,7 @@
 import Button from "@/components/Button";
 import SideDeco from "@/components/SideDeco";
 import axios from "axios";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { MdCheckBoxOutlineBlank } from "react-icons/md";
@@ -37,7 +38,7 @@ export default function AdminPage() {
         .post(process.env.NEXT_PUBLIC_API_URL + "/validate-token", { token: sessionStorage.getItem("authToken") })
         .then((res) => {
           // console.log(res);
-          if(res.data.valid) {
+          if (res.data.valid) {
             setIsLoggedIn(true);
           }
         })
@@ -139,9 +140,9 @@ function ArticleTableRow({ article, refetch }: { article: Article; refetch: () =
 
   return (
     <tr className="hover:bg-gray-100">
-      <td className="text-left px-4 py-4 font-semibold rounded-l-[10px]">{article.title}</td>
-      <td className="text-center py-4 font-semibold">{article.writer}</td>
-      <td className="text-center py-4 font-semibold">{article.category}</td>
+      <td className="text-left p-4 font-semibold rounded-l-[10px] max-w-[60ch]">{article.title}</td>
+      <td className="text-center p-4 font-semibold">{article.writer}</td>
+      <td className="text-center p-4 font-semibold">{article.category}</td>
       <td
         className={
           "text-center py-4 font-semibold " + (article.status === "Verified" ? "text-green-600" : "text-red-600")
@@ -202,26 +203,14 @@ function ArticleTableRow({ article, refetch }: { article: Article; refetch: () =
             Hapus
           </button>
         </div>
-        <button
-          className="bg-yellow-500 text-white px-2 py-1 w-full rounded-full hover:bg-yellow-500/90 transition"
-          title="Verifikasi"
-          onClick={() => {
-            const previewArticle = {
-              title: article.title,
-              paragpraphs: article.paragraphs,
-              image: process.env.NEXT_PUBLIC_API_URL + "/article/image/" + article.image,
-              writer: article.writer,
-              links: article.links,
-              desa: article.desa,
-              category: article.category,
-              status: "Draft",
-            };
-            localStorage.setItem("preview-article", JSON.stringify(previewArticle));
-            router.push("/article/preview");
-          }}
-        >
-          Lihat
-        </button>
+        <Link href={"/article/" + article._id} className="w-full">
+          <button
+            className="bg-yellow-500 text-white px-2 py-1 w-full rounded-full hover:bg-yellow-500/90 transition"
+            title="Verifikasi"
+          >
+            Lihat
+          </button>
+        </Link>
       </td>
     </tr>
   );
