@@ -5,9 +5,14 @@ import SideDeco from "@/components/SideDeco";
 import Footer from "@/components/Footer";
 import { HiCursorClick } from "react-icons/hi";
 import { useState } from "react";
+import { MdOutlineMenuBook } from "react-icons/md";
+import Button from "@/components/Button";
+import Link from "next/link";
 
 export default function ProfilePage() {
   const [activeVillage, setActiveVillage] = useState<null | "bayan" | "senaru">(null);
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <main className="bg-white min-h-screen">
       <section className="z-[1] w-full flex flex-col justify-center items-center relative overflow-x-hidden pt-[160px] px-[5%]">
@@ -76,59 +81,59 @@ export default function ProfilePage() {
           </div>
 
           <div
-            className="mt-[30px] w-[90%] max-w-[730px]"
+            className="mt-[30px] w-[95%] max-w-[730px]"
             data-aos="fade-right"
             data-aos-delay="200"
           >
             <h2 className="text-[26px] font-bold text-center mb-[15px] font-poppins text-green-1">
               {activeVillage === null ? "Kecamatan Bayan" : activeVillage == "bayan" ? "Desa Bayan" : "Desa Senaru"}
             </h2>
-            <p className="text-[19px] text-center">
-            {activeVillage === null ? (
-              <>
-                Kecamatan Bayan adalah salah satu kecamatan yang terletak di Kabupaten Lombok Utara, Provinsi Nusa
-                Tenggara Barat. Kecamatan ini dikenal sebagai wilayah yang{" "}
-                <strong>kaya akan budaya, wisata, dan sejarah</strong>, terutama karena adanya desa-desa adat yang{" "}
-                <strong>masih mempertahankan tradisi leluhur</strong> seperti <strong>Desa Bayan</strong> dan{" "}
-                <strong>Desa Senaru</strong>. Di kawasan ini, terdapat <strong>Masjid Kuno Bayan Beleq</strong> yang
-                merupakan salah satu situs bersejarah penting, mencerminkan warisan Islam yang sudah berabad-abad.
-                Kecamatan Bayan juga merupakan pintu gerbang menuju <strong>Gunung Rinjani</strong>, dengan jalur
-                pendakian yang sering dimulai dari Desa Senaru. Selain itu, Kecamatan Bayan memiliki{" "}
-                <strong>keindahan alam yang memukau</strong>, termasuk air terjun, hutan, dan lahan pertanian yang
-                subur, menjadikannya destinasi favorit bagi para wisatawan yang mencari pengalaman budaya dan alam yang
-                autentik.
-              </>
-            ) : activeVillage === "bayan" ? (
-              <>
-                Desa wisata Bayan adalah salah satu destinasi utama di Kecamatan Bayan yang dikenal sebagai pusat
-                kebudayaan. Desa ini menawarkan pengalaman unik yang memperlihatkan bagaimana masyarakat setempat
-                melestarikan tradisi dan adat istiadat yang telah diwariskan dari generasi ke generasi. Beberapa tradisi
-                adat yang sangat dihormati dan masih dijalankan hingga hari ini meliputi <strong>maulid adat</strong>,{" "}
-                <strong>lebaran adat</strong>, dan <strong>ngaji makam</strong>, yang semuanya merupakan bagian integral
-                dari kehidupan spiritual dan sosial masyarakat Bayan. Selain itu, Desa Bayan memiliki{" "}
-                <strong>hutan adat</strong> yang dijaga dengan ketat oleh penduduk setempat. Hutan ini bukan hanya
-                sekadar kawasan alami, tetapi juga merupakan bagian dari identitas budaya masyarakat, di mana mereka
-                melaksanakan berbagai ritual adat dan menjaga keseimbangan ekosistem lokal. Desa ini menawarkan
-                perpaduan yang harmonis antara warisan budaya dan kelestarian alam, menjadikannya salah satu destinasi
-                wisata budaya yang sangat diminati oleh wisatawan yang ingin merasakan kehidupan tradisional Lombok yang
-                autentik.
-              </>
-            ) : (
-              <>
-                Desa Senaru merupakan destinasi yang tidak kalah menarik dari Desa Bayan, namun dengan fokus yang
-                berbeda. Jika Bayan dikenal sebagai pusat kebudayaan, maka Senaru adalah{" "}
-                <strong>pusat wisata alam</strong> di Kecamatan Bayan. Desa ini menawarkan pemandangan alam yang luar
-                biasa, yang membuatnya menjadi salah satu destinasi favorit bagi para pencinta alam dan petualang.
-                Senaru adalah pintu gerbang utama menuju <strong>Gunung Rinjani</strong>, gunung tertinggi kedua di
-                Indonesia, yang terkenal dengan keindahan dan tantangannya. Jalur pendakian yang dimulai dari Senaru
-                menawarkan pemandangan yang menakjubkan, mulai dari hutan tropis, air terjun, hingga danau vulkanik yang
-                mempesona. Selain Gunung Rinjani, desa ini juga memiliki beberapa <strong>destinasi wisata</strong>{" "}
-                lainnya, seperti <strong>tiu</strong> (air terjun) dan danau yang menambah daya tariknya sebagai
-                destinasi wisata alam. Pada tahun 2021, Desa Senaru mendapatkan penghargaan{" "}
-                <strong>Anugerah Desa Wisata (ADWI)</strong> dari Kemenparekraf, yang menegaskan posisinya sebagai salah
-                satu desa wisata terkemuka di Indonesia.
-              </>
-            )}
+            <p className="text-[16px] sm:text-[18px] md:text-[19px] text-center">
+              {activeVillage === null ? (
+                <>
+                  Kecamatan Bayan adalah salah satu kecamatan yang terletak di Kabupaten Lombok Utara, Provinsi Nusa
+                  Tenggara Barat. Kecamatan ini dikenal sebagai wilayah yang{" "}
+                  <strong>kaya akan budaya, wisata, dan sejarah</strong>, terutama karena adanya desa-desa adat yang{" "}
+                  <strong>masih mempertahankan tradisi leluhur</strong> seperti <strong>Desa Bayan</strong> dan{" "}
+                  <strong>Desa Senaru</strong>. Di kawasan ini, terdapat <strong>Masjid Kuno Bayan Beleq</strong> yang
+                  merupakan salah satu situs bersejarah penting, mencerminkan warisan Islam yang sudah berabad-abad.
+                  Kecamatan Bayan juga merupakan pintu gerbang menuju <strong>Gunung Rinjani</strong>, dengan jalur
+                  pendakian yang sering dimulai dari Desa Senaru. Selain itu, Kecamatan Bayan memiliki{" "}
+                  <strong>keindahan alam yang memukau</strong>, termasuk air terjun, hutan, dan lahan pertanian yang
+                  subur, menjadikannya destinasi favorit bagi para wisatawan yang mencari pengalaman budaya dan alam
+                  yang autentik.
+                </>
+              ) : activeVillage === "bayan" ? (
+                <>
+                  Desa wisata Bayan adalah salah satu destinasi utama di Kecamatan Bayan yang dikenal sebagai pusat
+                  kebudayaan. Desa ini menawarkan pengalaman unik yang memperlihatkan bagaimana masyarakat setempat
+                  melestarikan tradisi dan adat istiadat yang telah diwariskan dari generasi ke generasi. Beberapa
+                  tradisi adat yang sangat dihormati dan masih dijalankan hingga hari ini meliputi{" "}
+                  <strong>maulid adat</strong>, <strong>lebaran adat</strong>, dan <strong>ngaji makam</strong>, yang
+                  semuanya merupakan bagian integral dari kehidupan spiritual dan sosial masyarakat Bayan. Selain itu,
+                  Desa Bayan memiliki <strong>hutan adat</strong> yang dijaga dengan ketat oleh penduduk setempat. Hutan
+                  ini bukan hanya sekadar kawasan alami, tetapi juga merupakan bagian dari identitas budaya masyarakat,
+                  di mana mereka melaksanakan berbagai ritual adat dan menjaga keseimbangan ekosistem lokal. Desa ini
+                  menawarkan perpaduan yang harmonis antara warisan budaya dan kelestarian alam, menjadikannya salah
+                  satu destinasi wisata budaya yang sangat diminati oleh wisatawan yang ingin merasakan kehidupan
+                  tradisional Lombok yang autentik.
+                </>
+              ) : (
+                <>
+                  Desa Senaru merupakan destinasi yang tidak kalah menarik dari Desa Bayan, namun dengan fokus yang
+                  berbeda. Jika Bayan dikenal sebagai pusat kebudayaan, maka Senaru adalah{" "}
+                  <strong>pusat wisata alam</strong> di Kecamatan Bayan. Desa ini menawarkan pemandangan alam yang luar
+                  biasa, yang membuatnya menjadi salah satu destinasi favorit bagi para pencinta alam dan petualang.
+                  Senaru adalah pintu gerbang utama menuju <strong>Gunung Rinjani</strong>, gunung tertinggi kedua di
+                  Indonesia, yang terkenal dengan keindahan dan tantangannya. Jalur pendakian yang dimulai dari Senaru
+                  menawarkan pemandangan yang menakjubkan, mulai dari hutan tropis, air terjun, hingga danau vulkanik
+                  yang mempesona. Selain Gunung Rinjani, desa ini juga memiliki beberapa{" "}
+                  <strong>destinasi wisata</strong> lainnya, seperti <strong>tiu</strong> (air terjun) dan danau yang
+                  menambah daya tariknya sebagai destinasi wisata alam. Pada tahun 2021, Desa Senaru mendapatkan
+                  penghargaan <strong>Anugerah Desa Wisata (ADWI)</strong> dari Kemenparekraf, yang menegaskan posisinya
+                  sebagai salah satu desa wisata terkemuka di Indonesia.
+                </>
+              )}
             </p>
           </div>
         </section>
@@ -136,7 +141,8 @@ export default function ProfilePage() {
         <SideDeco position={false} />
       </section>
 
-      <section className="flex flex-col justify-center items-center relative overflow-x-hidden pt-20">
+      {/* Visi */}
+      {/* <section className="flex flex-col justify-center items-center relative overflow-x-hidden pt-20">
         <h1
           data-aos="fade-right"
           className="text-[26px] md:text-[31px] text-green-1 text-center"
@@ -153,9 +159,10 @@ export default function ProfilePage() {
         </p>
         <SideDeco position={true} />
         <SideDeco position={false} />
-      </section>
+      </section> */}
 
-      <section className="flex flex-col justify-center items-center relative overflow-x-hidden pt-20 pb-[50px] md:pb-[150px]">
+      {/* Misi */}
+      {/* <section className="flex flex-col justify-center items-center relative overflow-x-hidden pt-20 pb-[50px] md:pb-[150px]">
         <h1
           data-aos="fade-right"
           data-aos-delay="400"
@@ -173,7 +180,35 @@ export default function ProfilePage() {
         </p>
         <SideDeco position={true} />
         <SideDeco position={false} />
+      </section> */}
+
+      <section className="flex flex-col justify-center items-center relative pt-20 pb-[50px] md:pb-[150px] gap-10">
+        <div
+          // data-aos="fade-up"
+          className="flex items-center justify-center gap-2 lg:gap-[11px] relative z-[1]"
+        >
+          <h1 className="text-green-1 text-center font-bold text-[25px] md:text-[30px] w-fit">Buku Profil</h1>
+          <MdOutlineMenuBook className="text-[34px] text-green-1" />
+        </div>
+        <iframe
+          onLoad={() => setIsLoading(false)}
+          src="https://drive.google.com/file/d/1w4s9M4QVewHFNl8dp03T3pDngpbUFUIG/preview"
+          allow="autoplay"
+          className="w-[90%] max-w-[700px] aspect-[.75] relative z-[2]"
+        />
+        {isLoading && <div className="w-[90%] aspect-[.75] bg-neutral-100/70 animate-pulse absolute"></div>}
+        <Link href="/Buku Profil Bayan.pdf">
+          <Button ariaLabel="Download">Download</Button>
+        </Link>
       </section>
+
+      {/* <iframe
+        src="https://drive.google.com/file/d/1w4s9M4QVewHFNl8dp03T3pDngpbUFUIG/preview"
+        width="640"
+        height="480"
+        allow="autoplay"
+      ></iframe> */}
+
       <Footer />
     </main>
   );
