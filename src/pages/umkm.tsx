@@ -4,7 +4,7 @@ import TopArticle from "@/components/TopArticle";
 import Footer from "@/components/Footer";
 import ArticleSlider from "@/components/ArticleSlider";
 import PostArticle from "@/components/PostArticle";
-import { MdMap } from "react-icons/md";
+import { MdMap, MdOutlineMenuBook } from "react-icons/md";
 import dynamic from "next/dynamic";
 import { useEffect, useMemo, useState } from "react";
 import listUmkm from "@/data/pariwisata.json";
@@ -12,6 +12,8 @@ import calculateMiddlePoint from "@/utilities/CalculateCentroid";
 import MapPopup from "@/components/MapPopup";
 import SideDeco from "@/components/SideDeco";
 import axios from "axios";
+import Link from "next/link";
+import Button from "@/components/Button";
 
 type Article = {
   title: string;
@@ -38,6 +40,7 @@ export default function ProfilePage() {
       }),
     []
   );
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     axios
@@ -124,6 +127,26 @@ export default function ProfilePage() {
           markers={UmkmMarkers}
           zoom={zoom}
         />
+      </section>
+
+      <section className="flex flex-col justify-center items-center relative pt-20 pb-[50px] md:pb-[150px] gap-10">
+        <div
+          // data-aos="fade-up"
+          className="flex items-center justify-center gap-2 lg:gap-[11px] relative z-[1]"
+        >
+          <h1 className="text-green-1 text-center font-bold text-[25px] md:text-[30px] w-fit">Buku Potensi UMKM</h1>
+          <MdOutlineMenuBook className="text-[34px] text-green-1" />
+        </div>
+        <iframe
+          onLoad={() => setIsLoading(false)}
+          src="https://drive.google.com/file/d/1URAGSLhyiVmipk5Gh7CNXtvQHmbx0Mgt/preview"
+          allow="autoplay"
+          className="w-[90%] max-w-[700px] aspect-[.75] relative z-[2]"
+        />
+        {isLoading && <div className="w-[90%] aspect-[.75] bg-neutral-100/70 animate-pulse absolute"></div>}
+        <Link href="/Laporan Observasi Fix.pdf">
+          <Button ariaLabel="Download">Download</Button>
+        </Link>
       </section>
 
       <PostArticle />
