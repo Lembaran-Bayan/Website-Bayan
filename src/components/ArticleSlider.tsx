@@ -108,7 +108,7 @@ export default function ArticleSlider({ articles = [] }: { articles: Article[] }
         onSwiper={setSwiper}
       >
         {articles.length === 0 && (
-          <div className="w-full h-[90%] bg-slate-500/20 rounded-[30px] animate-pulse absolute grid place-items-center">
+          <div className="w-full h-[90%] bg-slate-200 rounded-[30px] animate-pulse absolute grid place-items-center">
             {/* <span className="text-[40px] font-semibold !opacity-100">Belum ada artikel</span> */}
           </div>
         )}
