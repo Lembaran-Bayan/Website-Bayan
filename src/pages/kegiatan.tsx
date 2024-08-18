@@ -3,13 +3,27 @@ import Kegiatan from "@/../public/Kegiatan.webp";
 import TopArticle from "@/components/TopArticle";
 import Footer from "@/components/Footer";
 import ArticleSlider from "@/components/ArticleSlider";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import { MdMap } from "react-icons/md";
 import MapPopup from "@/components/MapPopup";
 import listKegiatan from "@/data/kegiatan.json";
 import calculateMiddlePoint from "@/utilities/CalculateCentroid";
 import SideDeco from "@/components/SideDeco";
+import axios from "axios";
+
+type Article = {
+  title: string;
+  writer: string;
+  desa: string;
+  status: string;
+  category: string;
+  links: string[];
+  image: string;
+  createdAt: string;
+  paragraphs: string[];
+  _id: string;
+};
 
 export default function ProfilePage() {
   const centroid: [number, number] = [-8.269707961538461, 116.41556806153848];
@@ -22,6 +36,21 @@ export default function ProfilePage() {
       }),
     []
   );
+  const [articles, setArticles] = useState<Article[]>([]);
+
+  useEffect(() => {
+    axios
+      .get(process.env.NEXT_PUBLIC_API_URL + "/article")
+      .then((res) => {
+        const verifiedArticles = res.data.filter((article: Article) => {
+          return article.status === "Verified" && article.category === "Kegiatan";
+        });
+        setArticles(verifiedArticles);
+      })
+      .catch((err) => {
+        console.log(err.data);
+      });
+  }, []);
 
   const kegiatanMarkers: any = [];
   listKegiatan.forEach((kegiatan) => {
@@ -76,7 +105,7 @@ export default function ProfilePage() {
 
       <TopArticle id="" />
 
-      <ArticleSlider articles={[]} />
+      <ArticleSlider articles={articles} />
 
       <section className="flex flex-col justify-center items-center relative z-[0] py-[120px] gap-[30px] overflow-x-hidden">
         <SideDeco position={true} />
