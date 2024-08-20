@@ -1,37 +1,100 @@
 [
   {
     "id": 1,
-    "name": "Masjid Kuno Bayan",
-    "position": [-8.2666852, 116.4271543],
-    "link": "https://maps.app.goo.gl/DKRgnuf9gWFHaihi8",
+    "name": "Masjid Kuno",
+    "position": [-8.2666875, 116.4270625],
+    "link": "",
     "image": "/wisata/1.png"
   },
   {
     "id": 2,
-    "name": "Pintu Pendakian Taman Nasional Gunung Rinjani",
-    "position": [-8.3185854, 116.3833505],
-    "link": "https://maps.app.goo.gl/tXFiCLWAkg2c7G836",
-    "image": "/wisata/2.png"
+    "name": "Wisata Tenun",
+    "position": [-8.2668125, 116.4265625],
+    "link": "",
+    "image": ""
   },
   {
     "id": 3,
-    "name": "Air Terjun Tiu Kelep",
-    "position": [-8.311553, 116.403792],
-    "link": "https://maps.app.goo.gl/efTiEpKEwbhT1zjw8",
-    "image": "/wisata/3.png"
+    "name": "Rumah Adat Bayan Barat",
+    "position": [-8.2674625, 116.4265781],
+    "link": "",
+    "image": ""
   },
   {
     "id": 4,
-    "name": "Air Terjun Sendang Gile",
-    "position": [-8.3064721, 116.4083054],
-    "link": "https://maps.app.goo.gl/NF535M6SymaLGBnk7",
-    "image": "/wisata/4.png"
+    "name": "Rumah Adat Penghulu",
+    "position": [-8.2684875, 116.4261406],
+    "link": "",
+    "image": ""
   },
   {
     "id": 5,
-    "name": "Pemandian Mandala",
-    "position": [-8.2777477, 116.4222596],
-    "link": "https://maps.app.goo.gl/9ttnNvKdRdfPDK2D8",
+    "name": "Rumah Adat Karangsalah",
+    "position": [-8.2674375, 116.4263281],
+    "link": "",
+    "image": ""
+  },
+  {
+    "id": 6,
+    "name": "Rumah Adat Bayan Timur",
+    "position": [-8.2680625, 116.4271875],
+    "link": "",
+    "image": ""
+  },
+  {
+    "id": 7,
+    "name": "Rumah Adat Perumbak Daya",
+    "position": [-8.2999375, 116.4170625],
+    "link": "",
+    "image": ""
+  },
+  {
+    "id": 8,
+    "name": "Terasering Bangket Bayan",
+    "position": [-8.2985625, 116.4169375],
+    "link": "",
+    "image": ""
+  },
+  {
+    "id": 9,
+    "name": "Tiu Sajang",
+    "position": [-8.3014917, 116.4157271],
+    "link": "",
+    "image": ""
+  },
+  {
+    "id": 10,
+    "name": "Tiu Singgang Pitune",
+    "position": [-8.3025625, 116.4121875],
+    "link": "",
+    "image": ""
+  },
+  {
+    "id": 11,
+    "name": "Hutan Mandala",
+    "position": [-8.2776875, 116.4261875],
+    "link": "",
+    "image": ""
+  },
+  {
+    "id": 12,
+    "name": "Hutan Tiu Rarangan",
+    "position": [-8.2933886, 116.4312246],
+    "link": "",
+    "image": ""
+  },
+  {
+    "id": 13,
+    "name": "Hutan Adat Bangket Bayan",
+    "position": [-8.3011430, 116.4165770],
+    "link": "",
+    "image": ""
+  },
+  {
+    "id": 14,
+    "name": "Kolam Pemandian Mandala",
+    "position": [-8.2776875, 116.4261875],
+    "link": "",
     "image": "/wisata/5.png"
   }
 ]
