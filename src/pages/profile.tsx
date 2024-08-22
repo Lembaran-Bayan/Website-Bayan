@@ -1,6 +1,3 @@
-import Image from "next/image";
-import ComingSoon from "./coming-soon";
-import KluMap from "@/../public/KluMap.svg";
 import SideDeco from "@/components/SideDeco";
 import Footer from "@/components/Footer";
 import { HiCursorClick } from "react-icons/hi";
