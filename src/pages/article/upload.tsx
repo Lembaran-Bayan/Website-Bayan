@@ -72,6 +72,7 @@ function IconLink({ link }: { link: string }) {
 export default function UploadArticle() {
   const router = useRouter();
   const handleSubmit = (e: FormEvent) => {
+    setIsLoading(true);
     e.preventDefault();
     console.log(JSON.stringify([link1, link2, link3, link4]));
     if (!title) return alert("Judul artikel wajib diisi!");
@@ -108,7 +109,10 @@ export default function UploadArticle() {
       .catch((err) => {
         console.log(err?.response?.data);
         alert("Gagal mengunggah artikel");
-      });
+      })
+      .finally(() => {
+        setIsLoading(false);
+      })
   };
   const labelClass = "flex flex-col w-full text-[20px] font-semibold gap-1";
   const inputClass = "outline outline-2 outline-green-2 font-normal px-2 py-1 rounded-[8px]";
@@ -123,6 +127,7 @@ export default function UploadArticle() {
   const [link2, setLink2] = useState<string>("");
   const [link3, setLink3] = useState<string>("");
   const [link4, setLink4] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     if (localStorage.getItem("preview-article")) {
@@ -295,7 +300,7 @@ export default function UploadArticle() {
             type="button"
             ariaLabel="Submit"
             className="hover:bg-[#f0af06] !bg-[#e8b73c]"
-            // disabled={!title || !paragraphs || !selectedImage || (!link1 && !link2 && !link3 && !link4) || !desa || !kategori}
+            disabled={isLoading}
             onClick={() => {
               if (
                 !title ||
@@ -327,6 +332,7 @@ export default function UploadArticle() {
           <Button
             type="submit"
             ariaLabel="Submit"
+            disabled={isLoading}
           >
             Ajukan
           </Button>
