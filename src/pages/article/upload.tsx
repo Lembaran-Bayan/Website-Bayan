@@ -13,7 +13,7 @@ import GMaps from "@/../public/Gmap.webp";
 import Image, { StaticImageData } from "next/image";
 import Button from "@/components/Button";
 import axios from "axios";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 
 // Define the type for the keys of the linkIconMap
 type SocialMedia = "youtube" | "facebook" | "tiktok" | "instagram" | "tokopedia" | "shopee" | "googlemaps";
