@@ -2,7 +2,6 @@ import Desa from "@/components/Desa";
 import Film from "@/components/Film";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import Navbar from "@/components/Navbar";
 import { useEffect } from "react";
 
 export default function Home() {
