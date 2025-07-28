@@ -29,7 +29,7 @@ export default function Hero() {
         <div className="text-center mb-4">
           <p className="text-white text-shadow-1 text-sm font-medium">Didukung oleh:</p>
         </div>
-        <div className="overflow-hidden bg-transparent py-4">
+        <div className="overflow-hidden bg-white py-4 rounded-lg">
           <div 
             className="flex items-center gap-6"
             style={{
@@ -43,7 +43,7 @@ export default function Hero() {
             </div>
 
             {/* 2025 Sponsors */}
-            <div className="w-[200px] h-[120px] flex items-center justify-center flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-lg shadow-md">
+            <div className="w-[200px] h-[120px] flex items-center justify-center flex-shrink-0">
               <img
                 src="/sponsors/Nata Bumi Sinergi - Logo.png"
                 alt="Nata Bumi Sinergi"
@@ -51,7 +51,7 @@ export default function Hero() {
               />
             </div>
             
-            <div className="w-[80px] h-[48px] flex items-center justify-center flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-lg shadow-md">
+            <div className="w-[80px] h-[48px] flex items-center justify-center flex-shrink-0">
               <img
                 src="/sponsors/PT Tatalogam Lestari.jpg"
                 alt="PT Tatalogam Lestari"
@@ -72,7 +72,7 @@ export default function Hero() {
               href="https://www.pupukkaltim.com/id/home"
               target="_blank"
               rel="noref noreferrer"
-              className="w-[200px] h-[120px] flex items-center justify-center flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-lg shadow-md hover:bg-white/95 transition-all"
+              className="w-[200px] h-[120px] flex items-center justify-center flex-shrink-0 hover:opacity-80 transition-all"
             >
               <img
                 src="/sponsors/PupukKaltim.svg"
@@ -85,7 +85,7 @@ export default function Hero() {
               href="https://www.everyprint.co.id"
               target="_blank"
               rel="noref noreferrer"
-              className="w-[160px] h-[96px] flex items-center justify-center flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-lg shadow-md hover:bg-white/95 transition-all"
+              className="w-[160px] h-[96px] flex items-center justify-center flex-shrink-0 hover:opacity-80 transition-all"
             >
               <img
                 src="/sponsors/EveryPrint.svg"
@@ -98,7 +98,7 @@ export default function Hero() {
               href="https://www.rentokil-initial.com"
               target="_blank"
               rel="noref noreferrer"
-              className="w-[80px] h-[48px] flex items-center justify-center flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-lg shadow-md hover:bg-white/95 transition-all"
+              className="w-[80px] h-[48px] flex items-center justify-center flex-shrink-0 hover:opacity-80 transition-all"
             >
               <img
                 src="/sponsors/RentoKillInitial.svg"
@@ -111,7 +111,7 @@ export default function Hero() {
               href="https://www.badaklng.com"
               target="_blank"
               rel="noref noreferrer"
-              className="w-[60px] h-[36px] flex items-center justify-center flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-lg shadow-md hover:bg-white/95 transition-all"
+              className="w-[60px] h-[36px] flex items-center justify-center flex-shrink-0 hover:opacity-80 transition-all"
             >
               <img
                 src="/sponsors/Nasa.svg"
@@ -129,10 +129,10 @@ export default function Hero() {
               2025
             </div>
             
-            <div className="w-[200px] h-[120px] flex items-center justify-center flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-lg shadow-md">
+            <div className="w-[200px] h-[120px] flex items-center justify-center flex-shrink-0">
               <img src="/sponsors/Nata Bumi Sinergi - Logo.png" alt="Nata Bumi Sinergi" className="max-w-full max-h-full w-auto h-auto object-contain p-2" />
             </div>
-            <div className="w-[80px] h-[48px] flex items-center justify-center flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-lg shadow-md">
+            <div className="w-[80px] h-[48px] flex items-center justify-center flex-shrink-0">
               <img src="/sponsors/PT Tatalogam Lestari.jpg" alt="PT Tatalogam Lestari" className="max-w-full max-h-full w-auto h-auto object-contain p-1" />
             </div>
             
