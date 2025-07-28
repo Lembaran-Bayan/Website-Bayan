@@ -6,13 +6,13 @@ import Image, { StaticImageData } from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { MdInsertLink } from "react-icons/md";
-import Facebook from "@/../public/Facebook.png";
-import Tiktok from "@/../public/Tiktok.png";
-import Youtube from "@/../public/Youtube.png";
-import Instagram from "@/../public/Instagram.png";
-import Tokopedia from "@/../public/Tokopedia.png";
-import Shoppee from "@/../public/Shoppee.png";
-import GMaps from "@/../public/Gmap.webp";
+import Facebook from "@/../public/icons/social/Facebook.png";
+import Tiktok from "@/../public/icons/social/Tiktok.png";
+import Youtube from "@/../public/icons/social/Youtube.png";
+import Instagram from "@/../public/icons/social/Instagram.png";
+import Tokopedia from "@/../public/icons/social/Tokopedia.png";
+import Shoppee from "@/../public/icons/social/Shoppee.png";
+import GMaps from "@/../public/images/backgrounds/Gmap.webp";
 
 type Article = {
   title: string;

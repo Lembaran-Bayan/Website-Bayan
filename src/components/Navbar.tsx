@@ -1,4 +1,4 @@
-import LogoWhite from "@/../public/LogoWhite.png";
+import LogoWhite from "@/../public/logos/LogoWhite.png";
 import useScrollPosition from "@/hooks/useScrollPosition";
 import Image from "next/image";
 import Link from "next/link";

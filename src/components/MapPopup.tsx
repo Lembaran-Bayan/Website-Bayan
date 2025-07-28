@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import Gmap from "@/../public/Gmap.webp";
+import Gmap from "@/../public/images/backgrounds/Gmap.webp";
 
 export default function MapPopup({
   name,

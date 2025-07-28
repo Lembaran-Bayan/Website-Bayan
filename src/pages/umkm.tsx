@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Umkm from "@/../public/Umkm 2.webp";
+import Umkm from "@/../public/images/backgrounds/Umkm 2.webp";
 import TopArticle from "@/components/TopArticle";
 import Footer from "@/components/Footer";
 import ArticleSlider from "@/components/ArticleSlider";
@@ -72,7 +72,7 @@ export default function ProfilePage() {
         />
       ),
 
-      iconUrl: "/MarkerIcon.png",
+      iconUrl: "/images/general/MarkerIcon.png",
       iconSize: [20, 38],
       iconAnchor: [10, 38],
       popupAnchor: [0, -30],
@@ -144,7 +144,7 @@ export default function ProfilePage() {
           className="w-[90%] max-w-[700px] aspect-[.75] relative z-[2]"
         />
         {isLoading && <div className="w-[90%] aspect-[.75] bg-neutral-100/70 animate-pulse absolute"></div>}
-        <Link href="/Laporan Observasi Fix.pdf">
+        <Link href="/docs/Laporan Observasi Fix.pdf">
           <Button ariaLabel="Download">Download</Button>
         </Link>
       </section>

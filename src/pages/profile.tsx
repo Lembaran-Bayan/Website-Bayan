@@ -4782,7 +4782,7 @@ export default function ProfilePage() {
           className="w-[90%] max-w-[700px] aspect-[.75] relative z-[2]"
         />
         {isLoading && <div className="w-[90%] aspect-[.75] bg-neutral-100/70 animate-pulse absolute"></div>}
-        <Link href="/Buku Profil Bayan.pdf">
+        <Link href="/docs/Buku Profil Bayan.pdf">
           <Button ariaLabel="Download">Download</Button>
         </Link>
       </section>

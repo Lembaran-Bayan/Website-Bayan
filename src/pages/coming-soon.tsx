@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Logo from "@/../public/Logo.png";
+import Logo from "@/../public/logos/Logo.png";
 import Image from "next/image";
-import Rinjani from "@/../public/Rinjani.webp"
+import Rinjani from "@/../public/images/backgrounds/Rinjani.webp"
 
 export default function ComingSoon() {
   return (

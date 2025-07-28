@@ -3,11 +3,11 @@ import SideDeco from "./SideDeco";
 import { ReactNode, useState } from "react";
 import { HiCursorClick } from "react-icons/hi";
 import { GrCycle } from "react-icons/gr";
-import Hunger from "@/../public/Hunger.png";
-import Baby from "@/../public/Baby.png";
-import Healthcare from "@/../public/Healthcare.png";
-import BadSanitation from "@/../public/BadSanitation.png";
-import Infection from "@/../public/Infection.png";
+import Hunger from "@/../public/images/stunting/Hunger.png";
+import Baby from "@/../public/images/stunting/Baby.png";
+import Healthcare from "@/../public/images/stunting/Healthcare.png";
+import BadSanitation from "@/../public/images/stunting/BadSanitation.png";
+import Infection from "@/../public/images/stunting/Infection.png";
 import Image from "next/image";
 
 export default function PenyebabStunting() {

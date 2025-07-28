@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Kegiatan from "@/../public/Kegiatan.webp";
+import Kegiatan from "@/../public/images/backgrounds/Kegiatan.webp";
 import TopArticle from "@/components/TopArticle";
 import Footer from "@/components/Footer";
 import ArticleSlider from "@/components/ArticleSlider";

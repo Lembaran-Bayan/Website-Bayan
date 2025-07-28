@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Stunting from "@/../public/Stunting.webp";
+import Stunting from "@/../public/images/stunting/Stunting.webp";
 import { HiQuestionMarkCircle } from "react-icons/hi";
 import SideDeco from "@/components/SideDeco";
 import StatistikStunting from "@/components/StatistikStunting";

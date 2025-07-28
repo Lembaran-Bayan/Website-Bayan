@@ -3,11 +3,11 @@ import SideDeco from "./SideDeco";
 import { ReactNode, useState } from "react";
 import { HiCursorClick } from "react-icons/hi";
 import { GrCycle } from "react-icons/gr";
-import Fish from "@/../public/Fish.png";
-import Milk from "@/../public/Milk.png";
-import Ring from "@/../public/Ring.png";
-import Asi from "@/../public/Asi.png";
-import Nutrition from "@/../public/Nutrition.png";
+import Fish from "@/../public/images/stunting/Fish.png";
+import Milk from "@/../public/images/stunting/Milk.png";
+import Ring from "@/../public/images/stunting/Ring.png";
+import Asi from "@/../public/images/stunting/Asi.png";
+import Nutrition from "@/../public/images/stunting/Nutrition.png";
 import Image from "next/image";
 
 export default function MengatasiStunting() {

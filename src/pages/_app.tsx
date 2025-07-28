@@ -18,16 +18,16 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <link
           rel="icon"
-          href="/Logo.png"
+          href="/logos/Logo.png"
         />
         <link
           rel="preload"
-          href="/Rinjani.webp"
+          href="/images/backgrounds/Rinjani.webp"
           as="image"
         ></link>
-        <link rel="preload" href="/Budaya 2.webp" as="image"></link>
-        <link rel="preload" href="/Umkm 2.webp" as="image"></link>
-        <link rel="preload" href="/Kegiatan.webp" as="image"></link>
+        <link rel="preload" href="/images/backgrounds/Budaya 2.webp" as="image"></link>
+        <link rel="preload" href="/images/backgrounds/Umkm 2.webp" as="image"></link>
+        <link rel="preload" href="/images/backgrounds/Kegiatan.webp" as="image"></link>
         <title>Lembaran Bayan</title>
         <meta
           name="description"

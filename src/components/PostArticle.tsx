@@ -1,14 +1,14 @@
 import Image from "next/image";
 import { useState } from "react";
 import { MdArrowBack } from "react-icons/md";
-import Umkm from "@/../public/Umkm.webp";
+import Umkm from "@/../public/images/backgrounds/Umkm.webp";
 import Link from "next/link";
 
 export default function PostArticle() {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   return (
-    <section className="pt-20 pb-20 lg:pb-[120px] flex justify-center items-center text-white gap-20 lg:gap-[140px] flex-col lg:flex-row px-[5%] sm:px-0 bg-[url('/Umkm.webp')] bg-cover overflow-hidden relative bg-right">
+    <section className="pt-20 pb-20 lg:pb-[120px] flex justify-center items-center text-white gap-20 lg:gap-[140px] flex-col lg:flex-row px-[5%] sm:px-0 bg-[url('/images/backgrounds/Umkm.webp')] bg-cover overflow-hidden relative bg-right">
       {/* <div className="relative flex-shrink-0 -translate-x-[50px] sm:-translate-x-[80px] lg:-translate-x-0 2xl:-translate-x-[80px]">
         <div className="aspect-[160/105] bg-gradient-to-br from-green-2 to-yellow-1 w-[200px] md:w-[270px] lg:w-[318px] rounded-[16px] shadow-[0_8px_8px_rgba(0,0,0,.4)]" />
         <div className="aspect-[160/105] bg-gradient-to-br from-green-2 to-yellow-1 w-[200px] md:w-[270px] lg:w-[318px] rounded-[16px] absolute top-10 left-[100px] shadow-[0_8px_8px_rgba(0,0,0,.4)]" />

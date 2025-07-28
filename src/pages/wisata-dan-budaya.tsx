@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Budaya from "@/../public/Budaya 2.webp";
+import Budaya from "@/../public/images/backgrounds/Budaya 2.webp";
 import Footer from "@/components/Footer";
 import TopArticle from "@/components/TopArticle";
 import ArticleSlider from "@/components/ArticleSlider";
